@@ -1,0 +1,10 @@
+# OS / editor
+Thumbs.db
+.DS_Store
+desktop.ini
+*.tmp
+
+# Entornos / secretos (por si más adelante agregamos el script de Windsor)
+.env
+.env.local
+node_modules/
