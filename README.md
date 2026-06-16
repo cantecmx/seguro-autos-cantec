@@ -1,37 +1,42 @@
 # Dashboard GNP Seguros · Auto — Reporte Directivo (Grupo Cantec)
 
 Dashboard ejecutivo de la campaña de generación de prospectos de **Seguro de Auto GNP**
-operada por Grupo Cantec en Meta Ads. Datos de Windsor.ai.
+operada por Grupo Cantec en Meta Ads. Datos de Windsor.ai (cuenta 993894886753623).
 
 ## Estructura
 ```
 .
-├── index.html        # El dashboard (HTML + Chart.js por CDN)
-└── img/
-    ├── arte-nuevo.png      # Arte ganadora (asistencia/emergencia)
-    ├── arte-chocado1.png   # "¿Solo fue un lleguecito?"
-    ├── arte-chocado2.png   # "Un instante cambia todo"
-    ├── logo-cantec.png     # Logo CANTEC
-    └── logo-gnp.jpg        # Logo Intermediario GNP
+├── index.html               # Dashboard (lee data.json y dibuja todo con Chart.js)
+├── data.json                # Datos de la campaña (lo genera el script desde Windsor)
+├── scripts/
+│   └── update-data.ps1      # Consulta Windsor y regenera data.json
+├── .github/workflows/
+│   └── update-data.yml       # Auto-refresh semanal (GitHub Action)
+└── img/                      # Artes (3) + logos CANTEC y Intermediario GNP
 ```
 
-## Desplegar en Vercel
-1. Sube este repositorio a GitHub.
-2. En **vercel.com → Add New → Project**, importa el repo.
-3. Framework Preset: **Other** (es un sitio estático). Root Directory: `/`.
-4. Deploy. Vercel publica el `index.html` automáticamente.
-5. **Dominio:** usa un nombre SIN "GNP" (p. ej. `reportes-cantec`) — el Manual de
-   Marca GNP prohíbe usar "GNP" en dominios.
-6. **Privacidad:** en *Settings → Deployment Protection* activa contraseña.
+## Cómo funciona la actualización
+- `index.html` **no tiene datos fijos**: al cargar lee `data.json`. El botón
+  **"Actualizar datos"** vuelve a leer `data.json` sin recargar toda la página.
+- `scripts/update-data.ps1` consulta la API REST de Windsor, calcula las métricas
+  y reescribe `data.json`. Usa la variable de entorno `WINDSOR_API_KEY`.
+- El **GitHub Action** (`update-data.yml`) corre el script cada lunes (y a demanda),
+  hace commit de `data.json` si cambió, y Netlify redespliega solo.
 
-Cada `git push` a la rama principal vuelve a desplegar el sitio automáticamente.
+### Activar el auto-refresh (una sola vez)
+En GitHub → repo → **Settings → Secrets and variables → Actions → New repository secret**:
+- Name: `WINDSOR_API_KEY`
+- Value: *(tu API key de windsor.ai)*
 
-## Actualizar los datos
-Hoy los datos están escritos en `index.html`. Para refrescarlos desde Windsor:
-- **Manual asistido:** pídele al agente "actualiza el dashboard GNP" → regenera el
-  archivo con los datos más recientes y haces `git push`.
-- **Automático (pendiente):** GitHub Action semanal que consulta la API de Windsor
-  y actualiza el sitio solo. Requiere agregar tu `WINDSOR_API_KEY` como secret.
+Luego, en la pestaña **Actions**, puedes correr "Actualizar datos GNP (Windsor)"
+manualmente con **Run workflow** para probarlo.
 
-## Periodo del último corte
-21 may – 14 jun 2026 · Cuenta Meta 993894886753623
+## Despliegue (Netlify)
+Sitio estático. **Build command:** *(vacío)* · **Publish directory:** `.`
+Cada `git push` redespliega. Dominio sin "GNP" (manual de marca GNP).
+
+## Actualizar a mano (alternativa)
+```powershell
+$env:WINDSOR_API_KEY="..."; ./scripts/update-data.ps1   # regenera data.json
+```
+Luego commit + push.

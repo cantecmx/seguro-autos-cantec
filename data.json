@@ -1,0 +1,336 @@
+{
+    "updatedAt":  "2026-06-16",
+    "periodFrom":  "2026-05-21",
+    "periodTo":  "2026-06-16",
+    "account":  "993894886753623",
+    "kpis":  {
+                 "leads":  90,
+                 "cpl":  71.93,
+                 "spend":  6474,
+                 "reach":  12116,
+                 "frequency":  1.86,
+                 "impressions":  22551,
+                 "cpm":  287,
+                 "linkClicks":  298,
+                 "ctr":  2.45,
+                 "cpc":  21.7,
+                 "convRate":  30.2,
+                 "conversations":  61,
+                 "leadsPerDay":  3.3,
+                 "spendPerDay":  240,
+                 "days":  27
+             },
+    "daily":  [
+                  {
+                      "date":  "2026-05-21",
+                      "spend":  109.58,
+                      "leads":  0,
+                      "cpm":  299
+                  },
+                  {
+                      "date":  "2026-05-22",
+                      "spend":  237.18,
+                      "leads":  5,
+                      "cpm":  406
+                  },
+                  {
+                      "date":  "2026-05-23",
+                      "spend":  223.38,
+                      "leads":  3,
+                      "cpm":  301
+                  },
+                  {
+                      "date":  "2026-05-24",
+                      "spend":  325.09,
+                      "leads":  7,
+                      "cpm":  298
+                  },
+                  {
+                      "date":  "2026-05-25",
+                      "spend":  278.57,
+                      "leads":  8,
+                      "cpm":  269
+                  },
+                  {
+                      "date":  "2026-05-26",
+                      "spend":  226.86,
+                      "leads":  1,
+                      "cpm":  307
+                  },
+                  {
+                      "date":  "2026-05-27",
+                      "spend":  218.78,
+                      "leads":  2,
+                      "cpm":  351
+                  },
+                  {
+                      "date":  "2026-05-28",
+                      "spend":  270.68,
+                      "leads":  5,
+                      "cpm":  367
+                  },
+                  {
+                      "date":  "2026-05-29",
+                      "spend":  240,
+                      "leads":  1,
+                      "cpm":  330
+                  },
+                  {
+                      "date":  "2026-05-30",
+                      "spend":  186.21,
+                      "leads":  1,
+                      "cpm":  422
+                  },
+                  {
+                      "date":  "2026-05-31",
+                      "spend":  317.01,
+                      "leads":  2,
+                      "cpm":  372
+                  },
+                  {
+                      "date":  "2026-06-01",
+                      "spend":  278.47,
+                      "leads":  7,
+                      "cpm":  341
+                  },
+                  {
+                      "date":  "2026-06-02",
+                      "spend":  273.68,
+                      "leads":  10,
+                      "cpm":  276
+                  },
+                  {
+                      "date":  "2026-06-03",
+                      "spend":  258.48,
+                      "leads":  3,
+                      "cpm":  225
+                  },
+                  {
+                      "date":  "2026-06-04",
+                      "spend":  238.85,
+                      "leads":  2,
+                      "cpm":  341
+                  },
+                  {
+                      "date":  "2026-06-05",
+                      "spend":  183.35,
+                      "leads":  2,
+                      "cpm":  320
+                  },
+                  {
+                      "date":  "2026-06-06",
+                      "spend":  195.31,
+                      "leads":  6,
+                      "cpm":  239
+                  },
+                  {
+                      "date":  "2026-06-07",
+                      "spend":  286.29,
+                      "leads":  3,
+                      "cpm":  251
+                  },
+                  {
+                      "date":  "2026-06-08",
+                      "spend":  278.71,
+                      "leads":  5,
+                      "cpm":  222
+                  },
+                  {
+                      "date":  "2026-06-09",
+                      "spend":  214.27,
+                      "leads":  3,
+                      "cpm":  198
+                  },
+                  {
+                      "date":  "2026-06-10",
+                      "spend":  240.06,
+                      "leads":  2,
+                      "cpm":  218
+                  },
+                  {
+                      "date":  "2026-06-11",
+                      "spend":  240.99,
+                      "leads":  5,
+                      "cpm":  268
+                  },
+                  {
+                      "date":  "2026-06-12",
+                      "spend":  252.2,
+                      "leads":  1,
+                      "cpm":  216
+                  },
+                  {
+                      "date":  "2026-06-13",
+                      "spend":  231.37,
+                      "leads":  1,
+                      "cpm":  268
+                  },
+                  {
+                      "date":  "2026-06-14",
+                      "spend":  317.61,
+                      "leads":  4,
+                      "cpm":  262
+                  },
+                  {
+                      "date":  "2026-06-15",
+                      "spend":  269.2,
+                      "leads":  0,
+                      "cpm":  392
+                  },
+                  {
+                      "date":  "2026-06-16",
+                      "spend":  81.82,
+                      "leads":  1,
+                      "cpm":  528
+                  }
+              ],
+    "demo":  {
+                 "ages":  [
+                              "18-24",
+                              "25-34",
+                              "35-44",
+                              "45-54",
+                              "55-64",
+                              "65+"
+                          ],
+                 "male":  [
+                              2,
+                              4,
+                              8,
+                              19,
+                              20,
+                              27
+                          ],
+                 "female":  [
+                                0,
+                                0,
+                                3,
+                                2,
+                                1,
+                                3
+                            ]
+             },
+    "segments":  [
+                     {
+                         "label":  "Hombres 65+",
+                         "spend":  1427,
+                         "leads":  27,
+                         "cpl":  52.9,
+                         "tier":  "best"
+                     },
+                     {
+                         "label":  "Hombres 55-64",
+                         "spend":  1700,
+                         "leads":  20,
+                         "cpl":  85,
+                         "tier":  ""
+                     },
+                     {
+                         "label":  "Hombres 45-54",
+                         "spend":  1332,
+                         "leads":  19,
+                         "cpl":  70.1,
+                         "tier":  ""
+                     },
+                     {
+                         "label":  "Mujeres (todas)",
+                         "spend":  778,
+                         "leads":  9,
+                         "cpl":  86.5,
+                         "tier":  ""
+                     },
+                     {
+                         "label":  "Hombres 35-44",
+                         "spend":  693,
+                         "leads":  8,
+                         "cpl":  86.6,
+                         "tier":  ""
+                     },
+                     {
+                         "label":  "Hombres 25-34",
+                         "spend":  359,
+                         "leads":  4,
+                         "cpl":  89.7,
+                         "tier":  ""
+                     },
+                     {
+                         "label":  "Hombres 18-24",
+                         "spend":  107,
+                         "leads":  2,
+                         "cpl":  53.3,
+                         "tier":  ""
+                     }
+                 ],
+    "regions":  [
+                    {
+                        "region":  "Distrito Federal",
+                        "spend":  1385
+                    },
+                    {
+                        "region":  "State of Mexico",
+                        "spend":  1075
+                    },
+                    {
+                        "region":  "Jalisco",
+                        "spend":  516
+                    },
+                    {
+                        "region":  "Nuevo León",
+                        "spend":  437
+                    },
+                    {
+                        "region":  "Chihuahua",
+                        "spend":  316
+                    },
+                    {
+                        "region":  "Puebla",
+                        "spend":  261
+                    },
+                    {
+                        "region":  "Veracruz",
+                        "spend":  235
+                    },
+                    {
+                        "region":  "__RESTO__",
+                        "spend":  2250
+                    }
+                ],
+    "artes":  [
+                  {
+                      "id":  "nuevo",
+                      "adName":  "Nuevo anuncio de Clientes potenciales",
+                      "leads":  56,
+                      "spend":  3429,
+                      "cpl":  61.23,
+                      "ctr":  2.44,
+                      "conversations":  39,
+                      "pct":  62,
+                      "rankNum":  1,
+                      "tier":  "win"
+                  },
+                  {
+                      "id":  "chocado1",
+                      "adName":  "Auto Chocado 1Prueba",
+                      "leads":  33,
+                      "spend":  2895,
+                      "cpl":  87.74,
+                      "ctr":  2.4,
+                      "conversations":  22,
+                      "pct":  37,
+                      "rankNum":  2,
+                      "tier":  "mid"
+                  },
+                  {
+                      "id":  "chocado2",
+                      "adName":  "Auto Chocado 2Prueba",
+                      "leads":  1,
+                      "spend":  150,
+                      "cpl":  150.35,
+                      "ctr":  3.89,
+                      "conversations":  0,
+                      "pct":  1,
+                      "rankNum":  3,
+                      "tier":  "low"
+                  }
+              ]
+}
