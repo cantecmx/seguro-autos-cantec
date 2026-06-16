@@ -15,7 +15,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1280px;margin:0 auto;padding:24px}
+  .wrap{max-width:1320px;margin:0 auto;padding:24px}
   header.top{position:relative;overflow:hidden;background:linear-gradient(125deg,var(--blue-deep) 0%,var(--blue) 48%,var(--blue2) 100%);color:#fff;border-radius:18px;padding:28px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;box-shadow:0 10px 28px rgba(11,37,69,.22)}
   header.top::before{content:"";position:absolute;left:-160px;top:-120px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(255,154,77,.95),rgba(244,122,31,.55) 45%,rgba(244,122,31,0) 70%);filter:blur(2px);z-index:0}
   header.top::after{content:"";position:absolute;left:-40px;bottom:-90px;width:380px;height:380px;border-radius:50%;border:26px solid rgba(244,122,31,.35);z-index:0}
@@ -33,7 +33,19 @@
   .logo-chip.gnp img{height:60px;border-radius:8px}
   .meta-r{font-size:12px;color:#cdd9ec;line-height:1.6}
   .meta-r strong{color:#fff}
-  .controlbar{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:18px}
+
+  .layout{display:flex;gap:18px;align-items:flex-start;margin-top:18px}
+  .sidebar{width:196px;flex:none;position:sticky;top:18px}
+  .sidebar h3{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:0 0 10px 4px;font-weight:700}
+  .month-btn{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;font-size:13.5px;font-weight:600;color:var(--ink);cursor:pointer;transition:.15s;font-family:inherit}
+  .month-btn:hover:not(.locked):not(.active){border-color:var(--orange);color:var(--orange-d)}
+  .month-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 12px rgba(19,49,107,.25)}
+  .month-btn.locked{color:#aab2c2;cursor:not-allowed;background:#f3f5f8}
+  .month-btn .lock{font-size:12px}
+  .sidebar .legend{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5;padding:0 4px}
+  .main{flex:1;min-width:0}
+
+  .controlbar{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-bottom:6px}
   .upd-stamp{font-size:12px;color:var(--muted)} .upd-stamp b{color:var(--blue)}
   .btn-upd{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;border:none;border-radius:10px;padding:10px 18px;font-size:13.5px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(244,122,31,.35);transition:transform .1s,background .15s}
   .btn-upd:hover{background:var(--orange-d)} .btn-upd:active{transform:scale(.97)}
@@ -41,15 +53,16 @@
   @keyframes spin{to{transform:rotate(360deg)}}
   .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--blue);color:#fff;padding:12px 20px;border-radius:10px;font-size:13.5px;box-shadow:0 8px 24px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.25s;z-index:50}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)} .toast.err{background:var(--orange-d)}
-  .errbar{display:none;background:#fdeede;border:1px solid #f3c39b;color:#9a4a12;border-radius:12px;padding:14px 18px;margin-top:16px;font-size:13.5px}
-  h2.sec{font-size:14px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:30px 4px 14px;font-weight:700;border-left:4px solid var(--orange);padding-left:10px}
+  .errbar,.emptybar{display:none;background:#fdeede;border:1px solid #f3c39b;color:#9a4a12;border-radius:12px;padding:14px 18px;margin-top:6px;font-size:13.5px}
+  .emptybar{background:#eef1f8;border-color:#cdd9ec;color:var(--blue2)}
+  h2.sec{font-size:14px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:26px 4px 14px;font-weight:700;border-left:4px solid var(--orange);padding-left:10px}
   .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
   .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(11,37,69,.05)}
   .kpi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--orange)}
   .kpi.lead::before{background:var(--orange)} .kpi.cpl::before{background:var(--gold)}
   .kpi.spend::before{background:var(--blue)} .kpi.cpm::before{background:var(--blue2)}
   .kpi .lbl{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-  .kpi .val{font-size:30px;font-weight:800;margin-top:8px;line-height:1;color:var(--blue)}
+  .kpi .val{font-size:29px;font-weight:800;margin-top:8px;line-height:1;color:var(--blue)}
   .kpi.lead .val{color:var(--orange-d)}
   .kpi .note{font-size:12px;color:var(--muted);margin-top:8px} .kpi .note b{color:var(--ink)}
   .grid2{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}
@@ -87,7 +100,9 @@
   .ins p{font-size:13px;color:#3f5570;line-height:1.5}
   .ico{width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;color:#fff;flex:none}
   .footbar{height:5px;border-radius:999px;background:linear-gradient(90deg,var(--orange),var(--gold) 40%,var(--blue2) 100%);margin:26px 0 10px}
+  #content.dim{opacity:.4;pointer-events:none}
   @media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.insights{grid-template-columns:1fr}.arte{grid-template-columns:1fr}.arte-cols{grid-template-columns:1fr}.hr{align-items:flex-start;text-align:left}}
+  @media(max-width:880px){.layout{flex-direction:column}.sidebar{width:100%;position:static}.sidebar .months{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}.month-btn{margin-bottom:0;min-width:130px}.sidebar h3,.sidebar .legend{display:none}}
 </style>
 </head>
 <body>
@@ -116,62 +131,75 @@
     </div>
   </header>
 
-  <div class="controlbar">
-    <span class="upd-stamp">Última actualización: <b id="updStamp">—</b></span>
-    <button class="btn-upd" id="btnUpd" onclick="actualizarDatos()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-      Actualizar datos
-    </button>
-  </div>
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Reporte por mes</h3>
+      <div class="months" id="monthList"></div>
+      <div class="legend">🔒 Los meses se desbloquean al iniciar cada mes.</div>
+    </aside>
 
-  <div class="errbar" id="errBanner">No se pudo cargar <code>data.json</code>. Si abriste el archivo localmente con doble clic, ábrelo desde la URL de Netlify (los navegadores bloquean la lectura de datos en archivos locales).</div>
+    <div class="main">
+      <div class="controlbar">
+        <span class="upd-stamp">Última actualización: <b id="updStamp">—</b></span>
+        <button class="btn-upd" id="btnUpd" onclick="actualizarDatos()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          Actualizar datos
+        </button>
+      </div>
 
-  <h2 class="sec">Resultados clave del periodo</h2>
-  <div class="kpis">
-    <div class="kpi lead"><div class="lbl">Leads generados</div><div class="val" id="kLeads">—</div><div class="note">Clientes potenciales · <b id="kLeadsDay">—</b>/día</div></div>
-    <div class="kpi cpl"><div class="lbl">Costo por lead (CPL)</div><div class="val" id="kCpl">—</div><div class="note">MXN por cliente potencial</div></div>
-    <div class="kpi spend"><div class="lbl">Inversión publicitaria</div><div class="val" id="kSpend">—</div><div class="note">MXN · <b id="kSpendDay">—</b>/día prom.</div></div>
-    <div class="kpi cpm"><div class="lbl">Alcance</div><div class="val" id="kReach">—</div><div class="note">personas · frecuencia <b id="kFreq">—</b></div></div>
-  </div>
-  <div class="kpis" style="margin-top:16px">
-    <div class="kpi"><div class="lbl">Impresiones</div><div class="val" id="kImpr">—</div><div class="note">CPM <b id="kCpm">—</b> MXN</div></div>
-    <div class="kpi"><div class="lbl">Clics al enlace</div><div class="val" id="kClicks">—</div><div class="note">CTR <b id="kCtr">—</b> · CPC <span id="kCpc">—</span></div></div>
-    <div class="kpi"><div class="lbl">Tasa de conversión</div><div class="val" id="kConvRate">—</div><div class="note">leads ÷ clics al enlace</div></div>
-    <div class="kpi"><div class="lbl">Conversaciones iniciadas</div><div class="val" id="kConv">—</div><div class="note">métrica secundaria (mensajes)</div></div>
-  </div>
+      <div class="errbar" id="errBanner">No se pudo cargar <code>data.json</code>. Si abriste el archivo localmente con doble clic, ábrelo desde la URL de Netlify (los navegadores bloquean la lectura de datos en archivos locales).</div>
+      <div class="emptybar" id="emptyBanner">Este mes aún no tiene datos de campaña.</div>
 
-  <h2 class="sec">Análisis por arte (creativos en circulación)</h2>
-  <div class="artes" id="artesBox"></div>
+      <div id="content">
+        <h2 class="sec">Resultados clave del periodo</h2>
+        <div class="kpis">
+          <div class="kpi lead"><div class="lbl">Leads generados</div><div class="val" id="kLeads">—</div><div class="note">Clientes potenciales · <b id="kLeadsDay">—</b>/día</div></div>
+          <div class="kpi cpl"><div class="lbl">Costo por lead (CPL)</div><div class="val" id="kCpl">—</div><div class="note">MXN por cliente potencial</div></div>
+          <div class="kpi spend"><div class="lbl">Inversión publicitaria</div><div class="val" id="kSpend">—</div><div class="note">MXN · <b id="kSpendDay">—</b>/día prom.</div></div>
+          <div class="kpi cpm"><div class="lbl">Alcance</div><div class="val" id="kReach">—</div><div class="note">personas · frecuencia <b id="kFreq">—</b></div></div>
+        </div>
+        <div class="kpis" style="margin-top:16px">
+          <div class="kpi"><div class="lbl">Impresiones</div><div class="val" id="kImpr">—</div><div class="note">CPM <b id="kCpm">—</b> MXN</div></div>
+          <div class="kpi"><div class="lbl">Clics al enlace</div><div class="val" id="kClicks">—</div><div class="note">CTR <b id="kCtr">—</b> · CPC <span id="kCpc">—</span></div></div>
+          <div class="kpi"><div class="lbl">Tasa de conversión</div><div class="val" id="kConvRate">—</div><div class="note">leads ÷ clics al enlace</div></div>
+          <div class="kpi"><div class="lbl">Conversaciones iniciadas</div><div class="val" id="kConv">—</div><div class="note">métrica secundaria (mensajes)</div></div>
+        </div>
 
-  <h2 class="sec">Evolución diaria</h2>
-  <div class="grid2">
-    <div class="card"><h3>Inversión vs. Leads por día</h3><div class="csub">Barras = gasto diario (MXN) · Línea = clientes potenciales</div><div class="chartbox"><canvas id="cTrend"></canvas></div></div>
-    <div class="card"><h3>Eficiencia de entrega (CPM)</h3><div class="csub">Costo por mil impresiones — tendencia a la baja = mejor</div><div class="chartbox"><canvas id="cCpm"></canvas></div></div>
-  </div>
+        <h2 class="sec">Análisis por arte (creativos en circulación)</h2>
+        <div class="artes" id="artesBox"></div>
 
-  <h2 class="sec">¿Quién y dónde convierte?</h2>
-  <div class="grid2">
-    <div class="card"><h3>Leads por edad y género</h3><div class="csub">El núcleo de conversión son hombres de mediana edad y mayores</div><div class="chartbox sm"><canvas id="cDemo"></canvas></div></div>
-    <div class="card"><h3>Rendimiento por segmento</h3><div class="csub">Costo por lead según edad/género (segmentos con conversiones)</div>
-      <table><thead><tr><th>Segmento</th><th class="num">Inversión</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead><tbody id="segBody"></tbody></table>
+        <h2 class="sec">Evolución diaria</h2>
+        <div class="grid2">
+          <div class="card"><h3>Inversión vs. Leads por día</h3><div class="csub">Barras = gasto diario (MXN) · Línea = clientes potenciales</div><div class="chartbox"><canvas id="cTrend"></canvas></div></div>
+          <div class="card"><h3>Costo por Lead (CPL) diario</h3><div class="csub">MXN por lead, día a día — tendencia a la baja = mejor</div><div class="chartbox"><canvas id="cCpl"></canvas></div></div>
+        </div>
+
+        <h2 class="sec">¿Quién y dónde convierte?</h2>
+        <div class="grid2">
+          <div class="card"><h3>Leads por edad y género</h3><div class="csub">El núcleo de conversión son hombres de mediana edad y mayores</div><div class="chartbox sm"><canvas id="cDemo"></canvas></div></div>
+          <div class="card"><h3>Rendimiento por segmento</h3><div class="csub">Costo por lead según edad/género (segmentos con conversiones)</div>
+            <table><thead><tr><th>Segmento</th><th class="num">Inversión</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead><tbody id="segBody"></tbody></table>
+          </div>
+        </div>
+
+        <div class="grid2" style="margin-top:16px">
+          <div class="card"><h3>Distribución de inversión por estado</h3><div class="csub">Top estados por gasto · campaña nacional</div><div class="chartbox sm"><canvas id="cRegion"></canvas></div></div>
+          <div class="card"><h3>Resumen de embudo</h3><div class="csub">Del impacto al prospecto</div><div class="chartbox sm"><canvas id="cFunnel"></canvas></div></div>
+        </div>
+
+        <h2 class="sec">Lectura para dirección</h2>
+        <div class="insights">
+          <div class="ins good"><h4><span class="ico" style="background:var(--green)">✓</span>Campaña sana y entregando</h4>
+            <p><b id="iLeads">—</b> prospectos a un <b>CPL de <span id="iCpl">—</span></b>, con CTR de <b id="iCtr">—</b>. La tasa de conversión clic→lead de <b id="iConv">—</b> indica que la oferta resuena con quien hace clic.</p></div>
+          <div class="ins act"><h4><span class="ico" style="background:var(--blue2)">◎</span>Una arte carga el resultado</h4>
+            <p>La arte ganadora trae el <b id="iWinPct">—</b> de los leads y al costo más bajo. Riesgo: dependemos de un solo creativo. <b>Acción:</b> producir variantes de esa línea antes de que se desgaste.</p></div>
+          <div class="ins watch"><h4><span class="ico" style="background:var(--amber)">!</span>Audiencia clara: hombres</h4>
+            <p>Los hombres concentran casi todos los leads; el mejor segmento es <b id="iBestSeg">—</b> con CPL de <b id="iBestCpl">—</b>. Reasignar presupuesto a ese núcleo y reducir segmentos sin conversiones.</p></div>
+          <div class="ins"><h4><span class="ico" style="background:var(--orange)">◔</span>Espacio para escalar</h4>
+            <p>Gasto promedio de <b id="iSpendDay">—</b>/día. La entrega es estable; hay margen para subir presupuesto en la arte y segmentos ganadores sin deteriorar el CPL.</p></div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="grid2" style="margin-top:16px">
-    <div class="card"><h3>Distribución de inversión por estado</h3><div class="csub">Top estados por gasto · campaña nacional</div><div class="chartbox sm"><canvas id="cRegion"></canvas></div></div>
-    <div class="card"><h3>Resumen de embudo</h3><div class="csub">Del impacto al prospecto</div><div class="chartbox sm"><canvas id="cFunnel"></canvas></div></div>
-  </div>
-
-  <h2 class="sec">Lectura para dirección</h2>
-  <div class="insights">
-    <div class="ins good"><h4><span class="ico" style="background:var(--green)">✓</span>Campaña sana y entregando</h4>
-      <p><b id="iLeads">—</b> prospectos a un <b>CPL de <span id="iCpl">—</span></b>, con CTR de <b id="iCtr">—</b>. La tasa de conversión clic→lead de <b id="iConv">—</b> indica que la oferta resuena con quien hace clic.</p></div>
-    <div class="ins act"><h4><span class="ico" style="background:var(--blue2)">◎</span>Una arte carga el resultado</h4>
-      <p>La arte ganadora trae el <b id="iWinPct">—</b> de los leads y al costo más bajo. Riesgo: dependemos de un solo creativo. <b>Acción:</b> producir variantes de esa línea antes de que se desgaste.</p></div>
-    <div class="ins watch"><h4><span class="ico" style="background:var(--amber)">!</span>Audiencia clara: hombres</h4>
-      <p>Los hombres concentran casi todos los leads; el mejor segmento es <b id="iBestSeg">—</b> con CPL de <b id="iBestCpl">—</b>. Reasignar presupuesto a ese núcleo y reducir segmentos sin conversiones.</p></div>
-    <div class="ins"><h4><span class="ico" style="background:var(--orange)">◔</span>Espacio para escalar</h4>
-      <p>Gasto promedio de <b id="iSpendDay">—</b>/día. La entrega es estable; hay margen para subir presupuesto en la arte y segmentos ganadores sin deteriorar el CPL.</p></div>
   </div>
 
   <div class="footbar"></div>
@@ -199,23 +227,46 @@ const TIER={
   low:{suf:"Sin probar",status:"⚪ Sin conclusión",cls:"low",sCls:"s-low"}
 };
 const RES_LABELS=[["leads","Leads"],["pct","% del total"],["cpl","CPL"],["ctr","CTR"],["spend","Inversión"],["conversations","Conversaciones"]];
-let charts={};
+let charts={}, DATA=null, curMonth=null;
 const $=id=>document.getElementById(id);
 const set=(id,v)=>{const e=$(id);if(e)e.textContent=v;};
 
 async function load(){
-  let d;
-  try{ const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw 0; d=await r.json(); }
-  catch(e){ $('errBanner').style.display='block'; return null; }
+  try{ const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw 0; DATA=await r.json(); }
+  catch(e){ $('errBanner').style.display='block'; return false; }
   $('errBanner').style.display='none';
-  render(d); return d;
+  set('cuenta', DATA.account); set('updStamp', fDate(DATA.updatedAt));
+  renderMonths();
+  selectMonth(curMonth && DATA.months.some(m=>m.key===curMonth&&!m.locked) ? curMonth : DATA.defaultMonth);
+  return true;
 }
 
-function render(d){
-  const k=d.kpis;
-  set('periodo', fDay(d.periodFrom)+' – '+fDate(d.periodTo)+' ('+k.days+' días)');
-  set('cuenta', d.account);
-  set('updStamp', fDate(d.updatedAt));
+function renderMonths(){
+  const box=$('monthList'); box.innerHTML='';
+  DATA.months.forEach(m=>{
+    const b=document.createElement('button');
+    b.className='month-btn'+(m.locked?' locked':'')+(m.key===curMonth?' active':'');
+    b.innerHTML=`<span>${m.label}</span>${m.locked?'<span class="lock">🔒</span>':''}`;
+    if(m.locked){ b.title='Se desbloquea al iniciar '+m.label; }
+    else { b.onclick=()=>selectMonth(m.key); }
+    box.appendChild(b);
+  });
+}
+
+function selectMonth(key){
+  const m=DATA.months.find(x=>x.key===key);
+  if(!m||m.locked) return;
+  curMonth=key;
+  document.querySelectorAll('.month-btn').forEach((b,i)=>b.classList.toggle('active',DATA.months[i].key===key));
+  const empty=!m.data || !m.data.kpis || m.data.kpis.impressions===0;
+  $('emptyBanner').style.display=empty?'block':'none';
+  $('content').classList.toggle('dim',empty);
+  if(!empty) render(m.data);
+}
+
+function render(b){
+  const k=b.kpis;
+  set('periodo', fDay(b.periodFrom)+' – '+fDate(b.periodTo)+' ('+k.days+' días)');
   set('kLeads',k.leads); set('kLeadsDay',k.leadsPerDay);
   set('kCpl','$'+Number(k.cpl).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2}));
   set('kSpend',fmtMXN(k.spend)); set('kSpendDay',fmtMXN(k.spendPerDay));
@@ -223,20 +274,17 @@ function render(d){
   set('kImpr',Number(k.impressions).toLocaleString('es-MX')); set('kCpm',fmtMXN(k.cpm));
   set('kClicks',Number(k.linkClicks).toLocaleString('es-MX')); set('kCtr',k.ctr+'%'); set('kCpc',fmtMXN(k.cpc));
   set('kConvRate',k.convRate+'%'); set('kConv',k.conversations);
-  set('iLeads',k.leads); set('iCpl','$'+Number(k.cpl).toFixed(2)); set('iCtr',k.ctr+'%'); set('iConv',k.convRate+'%');
-  set('iSpendDay',fmtMXN(k.spendPerDay));
-  const win=d.artes.find(a=>a.tier==='win'); if(win) set('iWinPct',win.pct+'%');
-  const best=d.segments.find(s=>s.tier==='best')||d.segments[0];
+  set('iLeads',k.leads); set('iCpl','$'+Number(k.cpl).toFixed(2)); set('iCtr',k.ctr+'%'); set('iConv',k.convRate+'%'); set('iSpendDay',fmtMXN(k.spendPerDay));
+  const win=b.artes.find(a=>a.tier==='win'); set('iWinPct',win?win.pct+'%':'—');
+  const best=b.segments.find(s=>s.tier==='best')||b.segments[0];
   if(best){ set('iBestSeg',best.label); set('iBestCpl','$'+Number(best.cpl).toFixed(1)); }
-  renderArtes(d.artes);
-  renderSegments(d.segments);
-  renderCharts(d);
+  renderArtes(b.artes); renderSegments(b.segments); renderCharts(b);
 }
 
 function renderArtes(artes){
   const box=$('artesBox'); box.innerHTML='';
   artes.forEach(a=>{
-    const meta=ARTE_META[a.id]||{img:'',title:a.adName||a.id,desc:''};
+    const meta=ARTE_META[a.id]||{img:'',title:a.adName||a.id,desc:'Creativo sin descripción registrada.'};
     const t=TIER[a.tier]||TIER.mid;
     const vals={leads:a.leads,pct:a.pct+'%',cpl:'$'+Number(a.cpl).toFixed(2),ctr:a.ctr+'%',spend:fmtMXN(a.spend),conversations:a.conversations};
     const lis=RES_LABELS.map(([k,lbl])=>`<li>${lbl} <b>${vals[k]}</b></li>`).join('');
@@ -272,8 +320,8 @@ function renderCharts(d){
     options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
       plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+(c.dataset.yAxisID==='y'?fmtMXN(c.parsed.y):c.parsed.y+' leads')}}},
       scales:{y:{position:'left',ticks:{callback:v=>'$'+v},title:{display:true,text:'Gasto'}},y1:{position:'right',grid:{drawOnChartArea:false},title:{display:true,text:'Leads'},suggestedMax:12}}}});
-  charts.cpm=new Chart($('cCpm'),{type:'line',data:{labels:days,datasets:[{label:'CPM',data:d.daily.map(x=>x.cpm),borderColor:'#1e4aa0',backgroundColor:'rgba(30,74,160,.12)',fill:true,tension:.35,borderWidth:3,pointRadius:2}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'CPM: '+fmtMXN(c.parsed.y)}}},scales:{y:{ticks:{callback:v=>'$'+v}}}}});
+  charts.cpl=new Chart($('cCpl'),{type:'line',data:{labels:days,datasets:[{label:'CPL',data:d.daily.map(x=>x.cpl),borderColor:'#F2A81D',backgroundColor:'rgba(242,168,29,.15)',fill:true,tension:.35,borderWidth:3,pointRadius:2,spanGaps:true}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y==null?'Sin leads ese día':'CPL: $'+Number(c.parsed.y).toFixed(2)}}},scales:{y:{ticks:{callback:v=>'$'+v}}}}});
   charts.demo=new Chart($('cDemo'),{type:'bar',data:{labels:d.demo.ages,datasets:[
     {label:'Hombres',data:d.demo.male,backgroundColor:'#13316b',borderRadius:4},
     {label:'Mujeres',data:d.demo.female,backgroundColor:'#F47A1F',borderRadius:4}]},
@@ -287,9 +335,9 @@ function renderCharts(d){
 function showToast(msg,isErr){const t=$('toast');t.textContent=msg;t.className='toast show'+(isErr?' err':'');setTimeout(()=>t.className='toast',3000);}
 async function actualizarDatos(){
   const b=$('btnUpd'); b.classList.add('loading');
-  const d=await load();
+  const ok=await load();
   b.classList.remove('loading');
-  showToast(d?('Datos actualizados al '+fDate(d.updatedAt)):'No se pudo cargar data.json', !d);
+  showToast(ok?('Datos actualizados al '+fDate(DATA.updatedAt)):'No se pudo cargar data.json', !ok);
 }
 load();
 </script>
