@@ -28,8 +28,19 @@ function Sum($rows, $field) { ($rows | ForEach-Object { N $_.$field } | Measure-
 
 function Get-Windsor([string]$fields, [string]$from, [string]$to) {
   $url = "https://connectors.windsor.ai/facebook?api_key=$apiKey&date_from=$from&date_to=$to&fields=$fields"
-  $resp = Invoke-RestMethod -Uri $url -TimeoutSec 120
-  return @($resp.data | Where-Object { $_.account_id -eq $account })   # filtro de cuenta client-side
+  $attempt = 0
+  while ($true) {
+    $attempt++
+    try {
+      # 300s por intento: la 1a consulta del día Windsor sincroniza datos frescos (lento/cold)
+      $resp = Invoke-RestMethod -Uri $url -TimeoutSec 300
+      return @($resp.data | Where-Object { $_.account_id -eq $account })  # filtro de cuenta client-side
+    } catch {
+      if ($attempt -ge 4) { throw }
+      Write-Host "  Reintento $attempt (Windsor lento/cold): $($_.Exception.Message)"
+      Start-Sleep -Seconds 12
+    }
+  }
 }
 
 function Compute-Block([string]$from, [string]$to) {
