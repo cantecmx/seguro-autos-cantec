@@ -28,7 +28,20 @@ jobs:
           git add data.json
           if git diff --staged --quiet; then
             echo "Sin cambios en data.json."
-          else
-            git commit -m "chore: actualizar datos GNP [auto]"
-            git push
+            exit 0
           fi
+          git commit -m "chore: actualizar datos GNP [auto]"
+          # Push robusto: si el remoto avanzó, se resincroniza y reintenta (nuestro data.json gana)
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Push OK (intento $i)"; exit 0
+            fi
+            echo "Remoto avanzó; resincronizando (intento $i)..."
+            git fetch origin main
+            git reset --soft origin/main
+            if git diff --staged --quiet; then
+              echo "data.json ya estaba al día en el remoto."; exit 0
+            fi
+            git commit -m "chore: actualizar datos GNP [auto]"
+          done
+          echo "No se pudo hacer push tras varios intentos."; exit 1
