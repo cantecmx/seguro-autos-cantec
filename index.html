@@ -154,15 +154,15 @@
         <h2 class="sec">Resultados clave del periodo</h2>
         <div class="kpis">
           <div class="kpi lead"><div class="lbl">Leads generados</div><div class="val" id="kLeads">—</div><div class="note">Clientes potenciales · <b id="kLeadsDay">—</b>/día</div></div>
-          <div class="kpi cpl"><div class="lbl">Costo por lead (CPL)</div><div class="val" id="kCpl">—</div><div class="note">MXN por cliente potencial</div></div>
-          <div class="kpi spend"><div class="lbl">Inversión publicitaria</div><div class="val" id="kSpend">—</div><div class="note">MXN · <b id="kSpendDay">—</b>/día prom.</div></div>
+          <div class="kpi cpl"><div class="lbl">Costo por lead (CPL)</div><div class="val" id="kCpl">—</div><div class="note">MXN · solo campaña de formularios</div></div>
+          <div class="kpi spend"><div class="lbl">Inversión publicitaria</div><div class="val" id="kSpend">—</div><div class="note">form <b id="kLeadSpend">—</b> · conv <b id="kConvSpend">—</b></div></div>
           <div class="kpi cpm"><div class="lbl">Alcance</div><div class="val" id="kReach">—</div><div class="note">personas · frecuencia <b id="kFreq">—</b></div></div>
         </div>
         <div class="kpis" style="margin-top:16px">
           <div class="kpi"><div class="lbl">Impresiones</div><div class="val" id="kImpr">—</div><div class="note">CPM <b id="kCpm">—</b> MXN</div></div>
           <div class="kpi"><div class="lbl">Clics al enlace</div><div class="val" id="kClicks">—</div><div class="note">CTR <b id="kCtr">—</b> · CPC <span id="kCpc">—</span></div></div>
           <div class="kpi"><div class="lbl">Tasa de conversión</div><div class="val" id="kConvRate">—</div><div class="note">leads ÷ clics al enlace</div></div>
-          <div class="kpi"><div class="lbl">Conversaciones iniciadas</div><div class="val" id="kConv">—</div><div class="note">métrica secundaria (mensajes)</div></div>
+          <div class="kpi"><div class="lbl">Conversaciones iniciadas</div><div class="val" id="kConv">—</div><div class="note"><b id="kConvCost">—</b> por conversación</div></div>
         </div>
 
         <h2 class="sec">Análisis por arte (creativos en circulación)</h2>
@@ -275,10 +275,12 @@ function render(b){
   set('kLeads',k.leads); set('kLeadsDay',k.leadsPerDay);
   set('kCpl','$'+Number(k.cpl).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2}));
   set('kSpend',fmtMXN(k.spend)); set('kSpendDay',fmtMXN(k.spendPerDay));
+  set('kLeadSpend',fmtMXN(k.leadSpend)); set('kConvSpend',fmtMXN(k.convSpend));
   set('kReach',Number(k.reach).toLocaleString('es-MX')); set('kFreq',k.frequency);
   set('kImpr',Number(k.impressions).toLocaleString('es-MX')); set('kCpm',fmtMXN(k.cpm));
   set('kClicks',Number(k.linkClicks).toLocaleString('es-MX')); set('kCtr',k.ctr+'%'); set('kCpc',fmtMXN(k.cpc));
   set('kConvRate',k.convRate+'%'); set('kConv',k.conversations);
+  set('kConvCost', k.costPerConv!=null ? '$'+Number(k.costPerConv).toFixed(2) : '—');
   set('iLeads',k.leads); set('iCpl','$'+Number(k.cpl).toFixed(2)); set('iCtr',k.ctr+'%'); set('iConv',k.convRate+'%'); set('iSpendDay',fmtMXN(k.spendPerDay));
   const win=b.artes.find(a=>a.tier==='win'); set('iWinPct',win?win.pct+'%':'—');
   const best=b.segments.find(s=>s.tier==='best')||b.segments[0];

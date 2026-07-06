@@ -44,16 +44,25 @@ function Get-Windsor([string]$fields, [string]$from, [string]$to) {
 }
 
 function Compute-Block([string]$from, [string]$to) {
-  # 1) Totales
-  $tot = Get-Windsor "account_id,campaign,spend,impressions,reach,clicks,link_clicks,actions_lead,actions_onsite_conversion_messaging_conversation_started_7d" $from $to
+  # 1) Totales + split por objetivo (campañas de leads vs de conversaciones)
+  $tot = Get-Windsor "account_id,campaign,campaign_objective,spend,impressions,reach,clicks,link_clicks,actions_lead,actions_onsite_conversion_messaging_conversation_started_7d" $from $to
   $spend=Sum $tot "spend"; $impr=Sum $tot "impressions"; $reach=Sum $tot "reach"
   $clicks=Sum $tot "clicks"; $lclicks=Sum $tot "link_clicks"
   $leads=Sum $tot "actions_lead"; $msgs=Sum $tot "actions_onsite_conversion_messaging_conversation_started_7d"
   $days=([datetime]$to - [datetime]$from).Days + 1
+  # OUTCOME_LEADS = campañas de formulario; el resto (OUTCOME_ENGAGEMENT...) = conversaciones
+  $leadRows=@($tot|Where-Object{$_.campaign_objective -eq "OUTCOME_LEADS"})
+  $convRows=@($tot|Where-Object{$_.campaign_objective -ne "OUTCOME_LEADS"})
+  $leadSpend=Sum $leadRows "spend"; $convSpend=Sum $convRows "spend"
+  $convConv=[int](Sum $convRows "actions_onsite_conversion_messaging_conversation_started_7d")
 
   $kpis=[ordered]@{
     leads=[int]$leads
-    cpl= if($leads){[math]::Round($spend/$leads,2)}else{0}
+    cpl= if($leads){[math]::Round($leadSpend/$leads,2)}else{0}
+    costPerConv= if($convConv){[math]::Round($convSpend/$convConv,2)}else{$null}
+    leadSpend=[math]::Round($leadSpend,0)
+    convSpend=[math]::Round($convSpend,0)
+    convConversations=$convConv
     spend=[math]::Round($spend,0)
     reach=[int]$reach
     frequency= if($reach){[math]::Round($impr/$reach,2)}else{0}
