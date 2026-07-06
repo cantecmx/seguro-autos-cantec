@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-29",
+  "updatedAt": "2026-07-06",
   "account": "993894886753623",
-  "defaultMonth": "2026-06",
+  "defaultMonth": "2026-07",
   "months": [
     {
       "key": "2026-06",
@@ -9,12 +9,12 @@
       "locked": false,
       "data": {
         "periodFrom": "2026-05-21",
-        "periodTo": "2026-06-29",
+        "periodTo": "2026-06-30",
         "kpis": {
           "leads": 117,
           "cpl": 90.45,
           "spend": 10583.0,
-          "reach": 19602,
+          "reach": 19536,
           "frequency": 1.81,
           "impressions": 35411,
           "cpm": 299.0,
@@ -24,8 +24,8 @@
           "convRate": 25.2,
           "conversations": 91,
           "leadsPerDay": 2.9,
-          "spendPerDay": 265.0,
-          "days": 40
+          "spendPerDay": 258.0,
+          "days": 41
         },
         "daily": [
           {
@@ -468,8 +468,226 @@
     {
       "key": "2026-07",
       "label": "Julio",
-      "locked": true,
-      "data": null
+      "locked": false,
+      "data": {
+        "periodFrom": "2026-07-01",
+        "periodTo": "2026-07-06",
+        "kpis": {
+          "leads": 14,
+          "cpl": 259.42,
+          "spend": 3632.0,
+          "reach": 20573,
+          "frequency": 1.58,
+          "impressions": 32487,
+          "cpm": 112.0,
+          "linkClicks": 386,
+          "ctr": 2.03,
+          "cpc": 9.4,
+          "convRate": 3.6,
+          "conversations": 132,
+          "leadsPerDay": 2.3,
+          "spendPerDay": 605.0,
+          "days": 6
+        },
+        "daily": [
+          {
+            "date": "2026-07-01",
+            "spend": 0.0,
+            "leads": 0,
+            "cpm": 0,
+            "cpl": null
+          },
+          {
+            "date": "2026-07-02",
+            "spend": 724.18,
+            "leads": 2,
+            "cpm": 127.0,
+            "cpl": 362.09
+          },
+          {
+            "date": "2026-07-03",
+            "spend": 1017.52,
+            "leads": 8,
+            "cpm": 127.0,
+            "cpl": 127.19
+          },
+          {
+            "date": "2026-07-04",
+            "spend": 855.67,
+            "leads": 1,
+            "cpm": 135.0,
+            "cpl": 855.67
+          },
+          {
+            "date": "2026-07-05",
+            "spend": 772.97,
+            "leads": 3,
+            "cpm": 85.0,
+            "cpl": 257.66
+          },
+          {
+            "date": "2026-07-06",
+            "spend": 261.58,
+            "leads": 0,
+            "cpm": 77.0,
+            "cpl": null
+          }
+        ],
+        "demo": {
+          "ages": [
+            "18-24",
+            "25-34",
+            "35-44",
+            "45-54",
+            "55-64",
+            "65+"
+          ],
+          "male": [
+            1,
+            0,
+            1,
+            2,
+            4,
+            3
+          ],
+          "female": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            2
+          ]
+        },
+        "segments": [
+          {
+            "label": "Hombres 55-64",
+            "spend": 740.0,
+            "leads": 4,
+            "cpl": 184.9,
+            "tier": ""
+          },
+          {
+            "label": "Hombres 65+",
+            "spend": 917.0,
+            "leads": 3,
+            "cpl": 305.6,
+            "tier": ""
+          },
+          {
+            "label": "Mujeres (todas)",
+            "spend": 423.0,
+            "leads": 3,
+            "cpl": 141.1,
+            "tier": ""
+          },
+          {
+            "label": "Hombres 45-54",
+            "spend": 798.0,
+            "leads": 2,
+            "cpl": 399.0,
+            "tier": ""
+          },
+          {
+            "label": "Hombres 18-24",
+            "spend": 52.0,
+            "leads": 1,
+            "cpl": 52.0,
+            "tier": "best"
+          },
+          {
+            "label": "Hombres 35-44",
+            "spend": 415.0,
+            "leads": 1,
+            "cpl": 414.8,
+            "tier": ""
+          }
+        ],
+        "regions": [
+          {
+            "region": "State of Mexico",
+            "spend": 703.0
+          },
+          {
+            "region": "Distrito Federal",
+            "spend": 577.0
+          },
+          {
+            "region": "Jalisco",
+            "spend": 415.0
+          },
+          {
+            "region": "Nuevo León",
+            "spend": 262.0
+          },
+          {
+            "region": "Chihuahua",
+            "spend": 148.0
+          },
+          {
+            "region": "Veracruz",
+            "spend": 146.0
+          },
+          {
+            "region": "Puebla",
+            "spend": 146.0
+          },
+          {
+            "region": "__RESTO__",
+            "spend": 1234.0
+          }
+        ],
+        "artes": [
+          {
+            "id": "chocado1",
+            "adName": "Auto Chocado 1Prueba",
+            "leads": 13,
+            "spend": 1495.0,
+            "cpl": 114.98,
+            "ctr": 2.49,
+            "conversations": 9,
+            "pct": 93.0,
+            "rankNum": 1,
+            "tier": "win"
+          },
+          {
+            "id": "nuevo",
+            "adName": "Nuevo anuncio de Clientes potenciales",
+            "leads": 1,
+            "spend": 101.0,
+            "cpl": 100.53,
+            "ctr": 2.95,
+            "conversations": 0,
+            "pct": 7.0,
+            "rankNum": 2,
+            "tier": "low"
+          },
+          {
+            "id": "anuncioimpulsado01llaves",
+            "adName": "Anuncio Impulsado 01 Llaves",
+            "leads": 0,
+            "spend": 1262.0,
+            "cpl": 0,
+            "ctr": 1.44,
+            "conversations": 8,
+            "pct": 0.0,
+            "rankNum": 3,
+            "tier": "low"
+          },
+          {
+            "id": "anunciomotos",
+            "adName": "Anuncio Motos",
+            "leads": 0,
+            "spend": 776.0,
+            "cpl": 0,
+            "ctr": 2.25,
+            "conversations": 115,
+            "pct": 0.0,
+            "rankNum": 4,
+            "tier": "low"
+          }
+        ]
+      }
     },
     {
       "key": "2026-08",
