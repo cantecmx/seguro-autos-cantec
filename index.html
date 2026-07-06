@@ -291,9 +291,27 @@ function renderArtes(artes){
   artes.forEach(a=>{
     const meta=ARTE_META[a.id]||{img:'',title:a.adName||a.id,desc:'Creativo sin descripción registrada.'};
     const t=TIER[a.tier]||TIER.mid;
-    const noLead=a.leads===0;
-    const vals={leads:a.leads,pct:noLead?'—':a.pct+'%',cpl:noLead?'—':'$'+Number(a.cpl).toFixed(2),ctr:a.ctr+'%',spend:fmtMXN(a.spend),conversations:a.conversations};
-    const lis=RES_LABELS.map(([k,lbl])=>`<li>${lbl} <b>${vals[k]}</b></li>`).join('');
+    const isConv=a.tier==='conv';
+    let rows;
+    if(isConv){
+      rows=[
+        ['Conversaciones', a.conversations],
+        ['Costo/conversación', a.cpConv!=null?'$'+Number(a.cpConv).toFixed(2):'—'],
+        ['CTR', a.ctr+'%'],
+        ['Inversión', fmtMXN(a.spend)],
+        ['Leads de formulario', a.leads]
+      ];
+    } else {
+      rows=[
+        ['Leads', a.leads],
+        ['% del total', a.leads>0?a.pct+'%':'—'],
+        ['CPL', a.leads>0?'$'+Number(a.cpl).toFixed(2):'—'],
+        ['CTR', a.ctr+'%'],
+        ['Inversión', fmtMXN(a.spend)],
+        ['Conversaciones', a.conversations]
+      ];
+    }
+    const lis=rows.map(([lbl,val])=>`<li>${lbl} <b>${val}</b></li>`).join('');
     box.insertAdjacentHTML('beforeend',`
       <div class="arte ${t.cls}">
         <div class="thumb"><span class="badge-rank">#${a.rankNum} · ${t.suf}</span>${meta.img?`<img src="${meta.img}" alt="${meta.title}">`:''}</div>

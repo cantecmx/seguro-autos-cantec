@@ -120,6 +120,7 @@ function Compute-Block([string]$from, [string]$to) {
       id= if($adMap.ContainsKey($_.Name)){$adMap[$_.Name]}else{($_.Name -replace '\W','').ToLower()}
       adName=$_.Name; leads=$ld; spend=[math]::Round($sp,0)
       cpl= if($ld){[math]::Round($sp/$ld,2)}else{0}
+      cpConv= if($cv){[math]::Round($sp/$cv,2)}else{$null}
       ctr= if($im){[math]::Round($cl/$im*100,2)}else{0}
       conversations=$cv
       pct= if($leads){[math]::Round($ld/$leads*100,0)}else{0}
