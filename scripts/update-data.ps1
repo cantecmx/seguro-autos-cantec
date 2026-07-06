@@ -105,7 +105,13 @@ function Compute-Block([string]$from, [string]$to) {
   if($rest -gt 0){ $regions+=[ordered]@{region="__RESTO__";spend=[math]::Round($rest,0)} }
 
   # 5) Artes (por anuncio)
-  $adMap=@{ "Nuevo anuncio de Clientes potenciales"="nuevo"; "Auto Chocado 1Prueba"="chocado1"; "Auto Chocado 2Prueba"="chocado2" }
+  $adMap=@{
+    "Nuevo anuncio de Clientes potenciales"="nuevo"
+    "Auto Chocado 1Prueba"="chocado1"
+    "Auto Chocado 2Prueba"="chocado2"
+    "Anuncio Impulsado 01 Llaves"="llaves"
+    "Anuncio Motos"="motos"
+  }
   $ads = Get-Windsor "account_id,ad_name,spend,impressions,clicks,link_clicks,actions_lead,actions_onsite_conversion_messaging_conversation_started_7d" $from $to
   $artesRaw=@($ads|Group-Object ad_name|ForEach-Object{
     $sp=Sum $_.Group "spend"; $im=Sum $_.Group "impressions"; $cl=Sum $_.Group "clicks"
@@ -119,10 +125,14 @@ function Compute-Block([string]$from, [string]$to) {
       pct= if($leads){[math]::Round($ld/$leads*100,0)}else{0}
     }
   })
-  $artes=@($artesRaw|Sort-Object {$_.leads} -Descending)
+  $artes=@($artesRaw|Sort-Object -Property @{Expression={$_.leads};Descending=$true},@{Expression={$_.conversations};Descending=$true})
   for($i=0;$i -lt $artes.Count;$i++){
     $artes[$i].rankNum=$i+1
-    if($i -eq 0){$artes[$i].tier="win"} elseif($artes[$i].leads -le 2){$artes[$i].tier="low"} else{$artes[$i].tier="mid"}
+    if($artes[$i].leads -gt 0){
+      if($i -eq 0){$artes[$i].tier="win"} elseif($artes[$i].leads -le 2){$artes[$i].tier="low"} else{$artes[$i].tier="mid"}
+    } else {
+      if($artes[$i].conversations -gt 0){$artes[$i].tier="conv"} else{$artes[$i].tier="low"}
+    }
   }
 
   return [ordered]@{

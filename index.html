@@ -78,15 +78,15 @@
   .tag.best{background:#fdeede;color:var(--orange-d)}
   .artes{display:flex;flex-direction:column;gap:16px}
   .arte{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gray);border-radius:14px;padding:16px 18px;display:grid;grid-template-columns:220px 1fr;gap:20px;box-shadow:0 2px 8px rgba(11,37,69,.05)}
-  .arte.win{border-left-color:var(--green)} .arte.mid{border-left-color:var(--amber)} .arte.low{border-left-color:var(--gray)}
+  .arte.win{border-left-color:var(--green)} .arte.mid{border-left-color:var(--amber)} .arte.low{border-left-color:var(--gray)} .arte.conv{border-left-color:var(--blue2)}
   .thumb{position:relative;border-radius:10px;overflow:hidden;background:#eef1f6;min-height:160px;display:flex;align-items:center;justify-content:center}
   .thumb img{width:100%;height:100%;object-fit:cover;display:block}
   .badge-rank{position:absolute;top:8px;left:8px;background:var(--green);color:#fff;font-weight:800;font-size:12px;padding:3px 10px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.2)}
-  .arte.mid .badge-rank{background:var(--amber)} .arte.low .badge-rank{background:var(--gray)}
+  .arte.mid .badge-rank{background:var(--amber)} .arte.low .badge-rank{background:var(--gray)} .arte.conv .badge-rank{background:var(--blue2)}
   .arte-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
   .arte-head h4{font-size:15px}
   .status{font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
-  .status.s-win{background:#e6f6ec;color:var(--green)} .status.s-mid{background:#fbf0dc;color:#9a6a12} .status.s-low{background:#eef0f3;color:#5e6b85}
+  .status.s-win{background:#e6f6ec;color:var(--green)} .status.s-mid{background:#fbf0dc;color:#9a6a12} .status.s-low{background:#eef0f3;color:#5e6b85} .status.s-conv{background:#e7edfa;color:var(--blue2)}
   .arte-cols{display:grid;grid-template-columns:1fr 1.35fr;gap:14px}
   .box{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
   .box h5{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
@@ -219,11 +219,16 @@ const ARTE_META={
   chocado1:{img:"img/arte-chocado1.png",title:"Auto Chocado 1 — \"¿Solo fue un lleguecito?\"",
     desc:"El gancho de <b>daños a terceros</b> (\"protege tu patrimonio\") genera volumen, pero a un CPL <b>más alto</b> que la ganadora. Sirve para <b>diversificar</b> y no saturar a la audiencia con un solo mensaje. <b>Acción:</b> mantener con presupuesto acotado como creativo de apoyo."},
   chocado2:{img:"img/arte-chocado2.png",title:"Auto Chocado 2 — \"Un instante cambia todo\"",
-    desc:"Apenas recibió pauta, por lo que su dato <b>no es concluyente</b> (un CTR alto con muy pocas impresiones no es señal confiable). <b>Acción:</b> darle un presupuesto de prueba justo para evaluarla, o apagarla para no fragmentar la entrega del resto."}
+    desc:"Apenas recibió pauta, por lo que su dato <b>no es concluyente</b> (un CTR alto con muy pocas impresiones no es señal confiable). <b>Acción:</b> darle un presupuesto de prueba justo para evaluarla, o apagarla para no fragmentar la entrega del resto."},
+  llaves:{img:"img/arte-llaves.png",title:"Auto — \"Cuando tu auto falla, tu rutina también\"",
+    desc:"Ángulo emocional/estilo de vida centrado en coberturas (daños, robo, asistencia 24/7). Genera <b>conversaciones</b> pero <b>0 leads de formulario</b> y un CTR bajo. Está consumiendo presupuesto sin traer leads. <b>Acción:</b> revisar el llamado a la acción (si busca leads, no los está pidiendo con claridad) o medirla como pieza de mensajería."},
+  motos:{img:"img/arte-motos.png",title:"Moto (producto nuevo) — \"Lo barato sale caro\"",
+    desc:"Nuevo producto: <b>seguro de moto</b>. El comparativo \"sin seguro vs. con seguro GNP\" con CTA \"Cotiza ahora\" genera <b>muchas conversaciones a bajo costo</b> (~$7 por conversación), aunque <b>0 leads de formulario</b> — canaliza por mensaje, no por form. <b>Acción:</b> si esas conversaciones de moto convierten a venta, escalar; medir su calidad aparte de los leads de auto."}
 };
 const TIER={
   win:{suf:"Ganadora",status:"✅ Está pegando",cls:"win",sCls:"s-win"},
   mid:{suf:"Apoyo",status:"🟡 Funciona, más caro",cls:"mid",sCls:"s-mid"},
+  conv:{suf:"Conversaciones",status:"🔵 Trae conversaciones, no leads",cls:"conv",sCls:"s-conv"},
   low:{suf:"Sin probar",status:"⚪ Sin conclusión",cls:"low",sCls:"s-low"}
 };
 const RES_LABELS=[["leads","Leads"],["pct","% del total"],["cpl","CPL"],["ctr","CTR"],["spend","Inversión"],["conversations","Conversaciones"]];
@@ -286,7 +291,8 @@ function renderArtes(artes){
   artes.forEach(a=>{
     const meta=ARTE_META[a.id]||{img:'',title:a.adName||a.id,desc:'Creativo sin descripción registrada.'};
     const t=TIER[a.tier]||TIER.mid;
-    const vals={leads:a.leads,pct:a.pct+'%',cpl:'$'+Number(a.cpl).toFixed(2),ctr:a.ctr+'%',spend:fmtMXN(a.spend),conversations:a.conversations};
+    const noLead=a.leads===0;
+    const vals={leads:a.leads,pct:noLead?'—':a.pct+'%',cpl:noLead?'—':'$'+Number(a.cpl).toFixed(2),ctr:a.ctr+'%',spend:fmtMXN(a.spend),conversations:a.conversations};
     const lis=RES_LABELS.map(([k,lbl])=>`<li>${lbl} <b>${vals[k]}</b></li>`).join('');
     box.insertAdjacentHTML('beforeend',`
       <div class="arte ${t.cls}">

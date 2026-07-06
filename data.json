@@ -1,7 +1,7 @@
 {
-    "updatedAt":  "2026-06-26",
+    "updatedAt":  "2026-07-06",
     "account":  "993894886753623",
-    "defaultMonth":  "2026-06",
+    "defaultMonth":  "2026-07",
     "months":  [
                    {
                        "key":  "2026-06",
@@ -9,23 +9,23 @@
                        "locked":  false,
                        "data":  {
                                     "periodFrom":  "2026-05-21",
-                                    "periodTo":  "2026-06-26",
+                                    "periodTo":  "2026-06-30",
                                     "kpis":  {
-                                                 "leads":  113,
-                                                 "cpl":  87.54,
-                                                 "spend":  9892,
-                                                 "reach":  18080,
-                                                 "frequency":  1.83,
-                                                 "impressions":  33062,
+                                                 "leads":  117,
+                                                 "cpl":  90.45,
+                                                 "spend":  10583,
+                                                 "reach":  19536,
+                                                 "frequency":  1.81,
+                                                 "impressions":  35411,
                                                  "cpm":  299,
-                                                 "linkClicks":  434,
-                                                 "ctr":  2.38,
+                                                 "linkClicks":  465,
+                                                 "ctr":  2.37,
                                                  "cpc":  22.8,
-                                                 "convRate":  26,
-                                                 "conversations":  85,
-                                                 "leadsPerDay":  3.1,
-                                                 "spendPerDay":  267,
-                                                 "days":  37
+                                                 "convRate":  25.2,
+                                                 "conversations":  91,
+                                                 "leadsPerDay":  2.9,
+                                                 "spendPerDay":  258,
+                                                 "days":  41
                                              },
                                     "daily":  [
                                                   {
@@ -275,16 +275,30 @@
                                                   },
                                                   {
                                                       "date":  "2026-06-25",
-                                                      "spend":  439.68,
+                                                      "spend":  453.81,
                                                       "leads":  3,
-                                                      "cpm":  261,
-                                                      "cpl":  146.56
+                                                      "cpm":  269,
+                                                      "cpl":  151.27
                                                   },
                                                   {
                                                       "date":  "2026-06-26",
-                                                      "spend":  212,
+                                                      "spend":  387.42,
                                                       "leads":  0,
-                                                      "cpm":  299,
+                                                      "cpm":  306,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-06-27",
+                                                      "spend":  294.56,
+                                                      "leads":  4,
+                                                      "cpm":  258,
+                                                      "cpl":  73.64
+                                                  },
+                                                  {
+                                                      "date":  "2026-06-28",
+                                                      "spend":  207.44,
+                                                      "leads":  0,
+                                                      "cpm":  321,
                                                       "cpl":  null
                                                   }
                                               ],
@@ -300,10 +314,10 @@
                                                  "male":  [
                                                               3,
                                                               6,
-                                                              9,
+                                                              11,
                                                               25,
-                                                              23,
-                                                              34
+                                                              24,
+                                                              35
                                                           ],
                                                  "female":  [
                                                                 0,
@@ -317,86 +331,86 @@
                                     "segments":  [
                                                      {
                                                          "label":  "Hombres 65+",
-                                                         "spend":  2350,
-                                                         "leads":  34,
-                                                         "cpl":  69.1,
+                                                         "spend":  2508,
+                                                         "leads":  35,
+                                                         "cpl":  71.7,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 45-54",
-                                                         "spend":  2025,
+                                                         "spend":  2126,
                                                          "leads":  25,
-                                                         "cpl":  81,
+                                                         "cpl":  85.1,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 55-64",
-                                                         "spend":  2481,
-                                                         "leads":  23,
-                                                         "cpl":  107.9,
+                                                         "spend":  2683,
+                                                         "leads":  24,
+                                                         "cpl":  111.8,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Mujeres (todas)",
-                                                         "spend":  1236,
+                                                         "spend":  1341,
                                                          "leads":  12,
-                                                         "cpl":  103,
+                                                         "cpl":  111.8,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 35-44",
-                                                         "spend":  1020,
-                                                         "leads":  9,
-                                                         "cpl":  113.3,
+                                                         "spend":  1093,
+                                                         "leads":  11,
+                                                         "cpl":  99.4,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 25-34",
-                                                         "spend":  531,
+                                                         "spend":  573,
                                                          "leads":  6,
-                                                         "cpl":  88.5,
+                                                         "cpl":  95.5,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 18-24",
-                                                         "spend":  142,
+                                                         "spend":  145,
                                                          "leads":  3,
-                                                         "cpl":  47.4,
+                                                         "cpl":  48.4,
                                                          "tier":  "best"
                                                      }
                                                  ],
                                     "regions":  [
                                                     {
                                                         "region":  "Distrito Federal",
-                                                        "spend":  2077
+                                                        "spend":  2191
                                                     },
                                                     {
                                                         "region":  "State of Mexico",
-                                                        "spend":  1693
+                                                        "spend":  1844
                                                     },
                                                     {
                                                         "region":  "Jalisco",
-                                                        "spend":  817
+                                                        "spend":  880
                                                     },
                                                     {
                                                         "region":  "Nuevo León",
-                                                        "spend":  769
+                                                        "spend":  830
                                                     },
                                                     {
                                                         "region":  "Chihuahua",
-                                                        "spend":  444
+                                                        "spend":  470
                                                     },
                                                     {
                                                         "region":  "Puebla",
-                                                        "spend":  384
+                                                        "spend":  411
                                                     },
                                                     {
                                                         "region":  "Veracruz",
-                                                        "spend":  362
+                                                        "spend":  393
                                                     },
                                                     {
                                                         "region":  "__RESTO__",
-                                                        "spend":  3346
+                                                        "spend":  3563
                                                     }
                                                 ],
                                     "artes":  [
@@ -404,23 +418,23 @@
                                                       "id":  "nuevo",
                                                       "adName":  "Nuevo anuncio de Clientes potenciales",
                                                       "leads":  59,
-                                                      "spend":  3646,
-                                                      "cpl":  61.8,
+                                                      "spend":  3736,
+                                                      "cpl":  63.32,
                                                       "ctr":  2.45,
                                                       "conversations":  41,
-                                                      "pct":  52,
+                                                      "pct":  50,
                                                       "rankNum":  1,
                                                       "tier":  "win"
                                                   },
                                                   {
                                                       "id":  "chocado1",
                                                       "adName":  "Auto Chocado 1Prueba",
-                                                      "leads":  53,
-                                                      "spend":  5250,
-                                                      "cpl":  99.07,
-                                                      "ctr":  2.54,
-                                                      "conversations":  34,
-                                                      "pct":  47,
+                                                      "leads":  57,
+                                                      "spend":  5542,
+                                                      "cpl":  97.22,
+                                                      "ctr":  2.58,
+                                                      "conversations":  38,
+                                                      "pct":  49,
                                                       "rankNum":  2,
                                                       "tier":  "mid"
                                                   },
@@ -437,16 +451,16 @@
                                                       "tier":  "low"
                                                   },
                                                   {
-                                                      "id":  "anuncioimpulsado01llaves",
+                                                      "id":  "llaves",
                                                       "adName":  "Anuncio Impulsado 01 Llaves",
                                                       "leads":  0,
-                                                      "spend":  846,
+                                                      "spend":  1155,
                                                       "cpl":  0,
                                                       "ctr":  1.64,
-                                                      "conversations":  10,
+                                                      "conversations":  12,
                                                       "pct":  0,
                                                       "rankNum":  4,
-                                                      "tier":  "low"
+                                                      "tier":  "conv"
                                                   }
                                               ]
                                 }
@@ -454,8 +468,226 @@
                    {
                        "key":  "2026-07",
                        "label":  "Julio",
-                       "locked":  true,
-                       "data":  null
+                       "locked":  false,
+                       "data":  {
+                                    "periodFrom":  "2026-07-01",
+                                    "periodTo":  "2026-07-06",
+                                    "kpis":  {
+                                                 "leads":  15,
+                                                 "cpl":  257.42,
+                                                 "spend":  3861,
+                                                 "reach":  22847,
+                                                 "frequency":  1.58,
+                                                 "impressions":  36025,
+                                                 "cpm":  107,
+                                                 "linkClicks":  418,
+                                                 "ctr":  1.99,
+                                                 "cpc":  9.2,
+                                                 "convRate":  3.6,
+                                                 "conversations":  151,
+                                                 "leadsPerDay":  2.5,
+                                                 "spendPerDay":  644,
+                                                 "days":  6
+                                             },
+                                    "daily":  [
+                                                  {
+                                                      "date":  "2026-07-01",
+                                                      "spend":  0,
+                                                      "leads":  0,
+                                                      "cpm":  0,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-02",
+                                                      "spend":  724.18,
+                                                      "leads":  2,
+                                                      "cpm":  127,
+                                                      "cpl":  362.09
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-03",
+                                                      "spend":  1017.52,
+                                                      "leads":  8,
+                                                      "cpm":  127,
+                                                      "cpl":  127.19
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-04",
+                                                      "spend":  855.67,
+                                                      "leads":  1,
+                                                      "cpm":  135,
+                                                      "cpl":  855.67
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-05",
+                                                      "spend":  776.56,
+                                                      "leads":  3,
+                                                      "cpm":  86,
+                                                      "cpl":  258.85
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-06",
+                                                      "spend":  487.42,
+                                                      "leads":  1,
+                                                      "cpm":  70,
+                                                      "cpl":  487.42
+                                                  }
+                                              ],
+                                    "demo":  {
+                                                 "ages":  [
+                                                              "18-24",
+                                                              "25-34",
+                                                              "35-44",
+                                                              "45-54",
+                                                              "55-64",
+                                                              "65+"
+                                                          ],
+                                                 "male":  [
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              2,
+                                                              4,
+                                                              3
+                                                          ],
+                                                 "female":  [
+                                                                0,
+                                                                0,
+                                                                0,
+                                                                1,
+                                                                0,
+                                                                2
+                                                            ]
+                                             },
+                                    "segments":  [
+                                                     {
+                                                         "label":  "Hombres 55-64",
+                                                         "spend":  775,
+                                                         "leads":  4,
+                                                         "cpl":  193.6,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Mujeres (todas)",
+                                                         "spend":  452,
+                                                         "leads":  3,
+                                                         "cpl":  150.7,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 65+",
+                                                         "spend":  952,
+                                                         "leads":  3,
+                                                         "cpl":  317.3,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 45-54",
+                                                         "spend":  827,
+                                                         "leads":  2,
+                                                         "cpl":  413.6,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 18-24",
+                                                         "spend":  60,
+                                                         "leads":  1,
+                                                         "cpl":  59.6,
+                                                         "tier":  "best"
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 35-44",
+                                                         "spend":  459,
+                                                         "leads":  1,
+                                                         "cpl":  459.3,
+                                                         "tier":  ""
+                                                     }
+                                                 ],
+                                    "regions":  [
+                                                    {
+                                                        "region":  "State of Mexico",
+                                                        "spend":  747
+                                                    },
+                                                    {
+                                                        "region":  "Distrito Federal",
+                                                        "spend":  623
+                                                    },
+                                                    {
+                                                        "region":  "Jalisco",
+                                                        "spend":  437
+                                                    },
+                                                    {
+                                                        "region":  "Nuevo León",
+                                                        "spend":  281
+                                                    },
+                                                    {
+                                                        "region":  "Puebla",
+                                                        "spend":  165
+                                                    },
+                                                    {
+                                                        "region":  "Veracruz",
+                                                        "spend":  159
+                                                    },
+                                                    {
+                                                        "region":  "Chihuahua",
+                                                        "spend":  158
+                                                    },
+                                                    {
+                                                        "region":  "__RESTO__",
+                                                        "spend":  1294
+                                                    }
+                                                ],
+                                    "artes":  [
+                                                  {
+                                                      "id":  "chocado1",
+                                                      "adName":  "Auto Chocado 1Prueba",
+                                                      "leads":  13,
+                                                      "spend":  1495,
+                                                      "cpl":  114.98,
+                                                      "ctr":  2.49,
+                                                      "conversations":  9,
+                                                      "pct":  87,
+                                                      "rankNum":  1,
+                                                      "tier":  "win"
+                                                  },
+                                                  {
+                                                      "id":  "nuevo",
+                                                      "adName":  "Nuevo anuncio de Clientes potenciales",
+                                                      "leads":  1,
+                                                      "spend":  101,
+                                                      "cpl":  100.53,
+                                                      "ctr":  2.95,
+                                                      "conversations":  0,
+                                                      "pct":  7,
+                                                      "rankNum":  2,
+                                                      "tier":  "low"
+                                                  },
+                                                  {
+                                                      "id":  "motos",
+                                                      "adName":  "Anuncio Motos",
+                                                      "leads":  0,
+                                                      "spend":  776,
+                                                      "cpl":  0,
+                                                      "ctr":  2.25,
+                                                      "conversations":  115,
+                                                      "pct":  0,
+                                                      "rankNum":  3,
+                                                      "tier":  "conv"
+                                                  },
+                                                  {
+                                                      "id":  "llaves",
+                                                      "adName":  "Anuncio Impulsado 01 Llaves",
+                                                      "leads":  0,
+                                                      "spend":  1262,
+                                                      "cpl":  0,
+                                                      "ctr":  1.44,
+                                                      "conversations":  8,
+                                                      "pct":  0,
+                                                      "rankNum":  4,
+                                                      "tier":  "conv"
+                                                  }
+                                              ]
+                                }
                    },
                    {
                        "key":  "2026-08",
