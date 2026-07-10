@@ -363,7 +363,7 @@ async function actualizarDatos(){
   const b=$('btnUpd'); b.classList.add('loading');
   const ok=await load();
   b.classList.remove('loading');
-  showToast(ok?('Datos actualizados al '+fDate(DATA.updatedAt)):'No se pudo cargar data.json', !ok);
+  showToast(ok?('Datos al '+fDate(DATA.updatedAt)+' · se actualizan solos a diario'):'No se pudo cargar data.json', !ok);
 }
 load();
 </script>
