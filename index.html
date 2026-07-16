@@ -363,9 +363,23 @@ function renderCharts(d){
 function showToast(msg,isErr){const t=$('toast');t.textContent=msg;t.className='toast show'+(isErr?' err':'');setTimeout(()=>t.className='toast',3000);}
 async function actualizarDatos(){
   const b=$('btnUpd'); b.classList.add('loading');
-  const ok=await load();
-  b.classList.remove('loading');
-  showToast(ok?('Datos al '+fDate(DATA.updatedAt)+' · se actualizan solos a diario'):'No se pudo cargar data.json', !ok);
+  showToast('Consultando Windsor en vivo…');
+  try{
+    const key = curMonth || (DATA && DATA.defaultMonth) || '';
+    const r = await fetch('/.netlify/functions/data?month='+key+'&t='+Date.now(), {cache:'no-store'});
+    if(!r.ok) throw new Error('fn '+r.status);
+    const resp = await r.json();
+    if(resp.error) throw new Error(resp.error);
+    const m = DATA.months.find(x=>x.key===resp.key);
+    if(m){ m.data = resp.data; m.locked = false; }
+    DATA.updatedAt = resp.updatedAt; set('updStamp', fDate(DATA.updatedAt));
+    renderMonths(); selectMonth(resp.key);
+    showToast('Datos actualizados EN VIVO desde Windsor · '+(resp.label||''));
+  }catch(e){
+    const ok = await load();  // respaldo: recarga el data.json publicado
+    showToast(ok ? ('Windsor en vivo no disponible; se recargó el último guardado ('+fDate(DATA.updatedAt)+')')
+                 : 'No se pudo actualizar', true);
+  }finally{ b.classList.remove('loading'); }
 }
 load();
 </script>
