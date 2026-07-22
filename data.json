@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21",
+  "updatedAt": "2026-07-22",
   "account": "993894886753623",
   "defaultMonth": "2026-07",
   "months": [
@@ -479,27 +479,27 @@
       "locked": false,
       "data": {
         "periodFrom": "2026-07-01",
-        "periodTo": "2026-07-21",
+        "periodTo": "2026-07-22",
         "kpis": {
-          "leads": 61,
-          "cpl": 87.94,
-          "costPerConv": 15.89,
-          "leadSpend": 5364.0,
-          "convSpend": 6324.0,
-          "convConversations": 398,
-          "spend": 11688.0,
-          "reach": 46143,
+          "leads": 62,
+          "cpl": 87.64,
+          "costPerConv": 16.05,
+          "leadSpend": 5434.0,
+          "convSpend": 6484.0,
+          "convConversations": 404,
+          "spend": 11918.0,
+          "reach": 46598,
           "frequency": 1.94,
-          "impressions": 89315,
-          "cpm": 131.0,
-          "linkClicks": 1126,
-          "ctr": 2.27,
+          "impressions": 90490,
+          "cpm": 132.0,
+          "linkClicks": 1142,
+          "ctr": 2.26,
           "cpc": 10.4,
           "convRate": 5.4,
-          "conversations": 437,
-          "leadsPerDay": 2.9,
-          "spendPerDay": 557.0,
-          "days": 21
+          "conversations": 444,
+          "leadsPerDay": 2.8,
+          "spendPerDay": 542.0,
+          "days": 22
         },
         "daily": [
           {
@@ -637,17 +637,24 @@
           },
           {
             "date": "2026-07-20",
-            "spend": 588.18,
+            "spend": 589.14,
             "leads": 5,
-            "cpm": 288.0,
-            "cpl": 117.64
+            "cpm": 287.0,
+            "cpl": 117.83
           },
           {
             "date": "2026-07-21",
-            "spend": 128.13,
-            "leads": 1,
-            "cpm": 224.0,
-            "cpl": 128.13
+            "spend": 341.38,
+            "leads": 2,
+            "cpm": 214.0,
+            "cpl": 170.69
+          },
+          {
+            "date": "2026-07-22",
+            "spend": 15.1,
+            "leads": 0,
+            "cpm": 103.0,
+            "cpl": null
           }
         ],
         "demo": {
@@ -668,7 +675,7 @@
             17
           ],
           "female": [
-            0,
+            1,
             0,
             1,
             1,
@@ -679,98 +686,98 @@
         "segments": [
           {
             "label": "Hombres 65+",
-            "spend": 2586.0,
+            "spend": 2608.0,
             "leads": 17,
-            "cpl": 152.1,
-            "tier": ""
-          },
-          {
-            "label": "Hombres 55-64",
-            "spend": 2416.0,
-            "leads": 16,
-            "cpl": 151.0,
+            "cpl": 153.4,
             "tier": "best"
           },
           {
+            "label": "Hombres 55-64",
+            "spend": 2456.0,
+            "leads": 16,
+            "cpl": 153.5,
+            "tier": ""
+          },
+          {
             "label": "Hombres 45-54",
-            "spend": 2182.0,
+            "spend": 2235.0,
             "leads": 10,
-            "cpl": 218.2,
+            "cpl": 223.5,
             "tier": ""
           },
           {
             "label": "Hombres 35-44",
-            "spend": 1539.0,
+            "spend": 1584.0,
             "leads": 6,
-            "cpl": 256.5,
-            "tier": ""
-          },
-          {
-            "label": "Hombres 25-34",
-            "spend": 938.0,
-            "leads": 5,
-            "cpl": 187.5,
+            "cpl": 264.0,
             "tier": ""
           },
           {
             "label": "Mujeres (todas)",
-            "spend": 1695.0,
+            "spend": 1737.0,
+            "leads": 6,
+            "cpl": 289.6,
+            "tier": ""
+          },
+          {
+            "label": "Hombres 25-34",
+            "spend": 962.0,
             "leads": 5,
-            "cpl": 339.0,
+            "cpl": 192.4,
             "tier": ""
           },
           {
             "label": "Hombres 18-24",
-            "spend": 227.0,
+            "spend": 228.0,
             "leads": 1,
-            "cpl": 226.6,
+            "cpl": 227.7,
             "tier": ""
           }
         ],
         "regions": [
           {
             "region": "State of Mexico",
-            "spend": 2128.0
+            "spend": 2172.0
           },
           {
             "region": "Distrito Federal",
-            "spend": 2105.0
+            "spend": 2153.0
           },
           {
             "region": "Jalisco",
-            "spend": 1159.0
+            "spend": 1170.0
           },
           {
             "region": "Nuevo León",
-            "spend": 1033.0
+            "spend": 1050.0
           },
           {
             "region": "Puebla",
-            "spend": 478.0
+            "spend": 484.0
           },
           {
             "region": "Chihuahua",
-            "spend": 460.0
+            "spend": 478.0
           },
           {
             "region": "Veracruz",
-            "spend": 395.0
+            "spend": 403.0
           },
           {
             "region": "__RESTO__",
-            "spend": 3930.0
+            "spend": 4009.0
           }
         ],
         "artes": [
           {
             "id": "nuevo",
             "adName": "Nuevo anuncio de Clientes potenciales",
-            "leads": 45,
-            "spend": 3592.0,
-            "cpl": 79.82,
-            "cpConv": 133.03,
-            "ctr": 3.11,
-            "conversations": 27,
+            "leads": 46,
+            "spend": 3661.0,
+            "cpl": 79.59,
+            "cpConv": 130.75,
+            "ctr": 3.12,
+            "conversations": 28,
             "pct": 74.0,
             "rankNum": 1,
             "tier": "win"
@@ -779,9 +786,9 @@
             "id": "chocado1",
             "adName": "Auto Chocado 1Prueba",
             "leads": 16,
-            "spend": 1772.0,
+            "spend": 1773.0,
             "cpl": 110.78,
-            "cpConv": 147.7,
+            "cpConv": 147.71,
             "ctr": 2.68,
             "conversations": 12,
             "pct": 26.0,
@@ -805,10 +812,10 @@
             "id": "llaves",
             "adName": "Anuncio Impulsado 01 Llaves",
             "leads": 0,
-            "spend": 4152.0,
+            "spend": 4165.0,
             "cpl": 0,
-            "cpConv": 94.36,
-            "ctr": 1.66,
+            "cpConv": 94.65,
+            "ctr": 1.65,
             "conversations": 44,
             "pct": 0.0,
             "rankNum": 4,
@@ -818,11 +825,11 @@
             "id": "anuncioimpulsadoofertahastael22",
             "adName": "Anuncio Impulsado Oferta hasta el 22",
             "leads": 0,
-            "spend": 153.0,
+            "spend": 300.0,
             "cpl": 0,
-            "cpConv": 51.16,
-            "ctr": 1.77,
-            "conversations": 3,
+            "cpConv": 33.33,
+            "ctr": 1.85,
+            "conversations": 9,
             "pct": 0.0,
             "rankNum": 5,
             "tier": "conv"
