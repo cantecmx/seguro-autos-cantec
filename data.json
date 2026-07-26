@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-25",
+  "updatedAt": "2026-07-26",
   "account": "993894886753623",
   "defaultMonth": "2026-07",
   "months": [
@@ -479,27 +479,27 @@
       "locked": false,
       "data": {
         "periodFrom": "2026-07-01",
-        "periodTo": "2026-07-25",
+        "periodTo": "2026-07-26",
         "kpis": {
           "leads": 62,
           "cpl": 87.64,
-          "costPerConv": 16.89,
+          "costPerConv": 17.06,
           "leadSpend": 5434.0,
-          "convSpend": 7059.0,
-          "convConversations": 418,
-          "spend": 12493.0,
-          "reach": 49430,
-          "frequency": 1.93,
-          "impressions": 95271,
+          "convSpend": 7164.0,
+          "convConversations": 420,
+          "spend": 12598.0,
+          "reach": 50189,
+          "frequency": 1.92,
+          "impressions": 96250,
           "cpm": 131.0,
-          "linkClicks": 1179,
-          "ctr": 2.27,
+          "linkClicks": 1183,
+          "ctr": 2.26,
           "cpc": 10.6,
-          "convRate": 5.3,
-          "conversations": 458,
-          "leadsPerDay": 2.5,
-          "spendPerDay": 500.0,
-          "days": 25
+          "convRate": 5.2,
+          "conversations": 460,
+          "leadsPerDay": 2.4,
+          "spendPerDay": 485.0,
+          "days": 26
         },
         "daily": [
           {
@@ -665,16 +665,23 @@
           },
           {
             "date": "2026-07-24",
-            "spend": 153.28,
+            "spend": 153.61,
             "leads": 0,
             "cpm": 104.0,
             "cpl": null
           },
           {
             "date": "2026-07-25",
-            "spend": 15.89,
+            "spend": 108.28,
             "leads": 0,
-            "cpm": 61.0,
+            "cpm": 100.0,
+            "cpl": null
+          },
+          {
+            "date": "2026-07-26",
+            "spend": 11.69,
+            "leads": 0,
+            "cpm": 74.0,
             "cpl": null
           }
         ],
@@ -707,86 +714,86 @@
         "segments": [
           {
             "label": "Hombres 65+",
-            "spend": 2647.0,
+            "spend": 2661.0,
             "leads": 17,
-            "cpl": 155.7,
+            "cpl": 156.5,
             "tier": "best"
           },
           {
             "label": "Hombres 55-64",
-            "spend": 2552.0,
+            "spend": 2573.0,
             "leads": 16,
-            "cpl": 159.5,
+            "cpl": 160.8,
             "tier": ""
           },
           {
             "label": "Hombres 45-54",
-            "spend": 2366.0,
+            "spend": 2382.0,
             "leads": 10,
-            "cpl": 236.6,
+            "cpl": 238.2,
             "tier": ""
           },
           {
             "label": "Hombres 35-44",
-            "spend": 1693.0,
+            "spend": 1712.0,
             "leads": 6,
-            "cpl": 282.1,
+            "cpl": 285.3,
             "tier": ""
           },
           {
             "label": "Mujeres (todas)",
-            "spend": 1872.0,
+            "spend": 1896.0,
             "leads": 6,
-            "cpl": 312.0,
+            "cpl": 316.0,
             "tier": ""
           },
           {
             "label": "Hombres 25-34",
-            "spend": 1016.0,
+            "spend": 1024.0,
             "leads": 5,
-            "cpl": 203.3,
+            "cpl": 204.7,
             "tier": ""
           },
           {
             "label": "Hombres 18-24",
-            "spend": 234.0,
+            "spend": 238.0,
             "leads": 1,
-            "cpl": 234.3,
+            "cpl": 238.5,
             "tier": ""
           }
         ],
         "regions": [
           {
             "region": "State of Mexico",
-            "spend": 2289.0
+            "spend": 2310.0
           },
           {
             "region": "Distrito Federal",
-            "spend": 2262.0
+            "spend": 2278.0
           },
           {
             "region": "Jalisco",
-            "spend": 1214.0
+            "spend": 1220.0
           },
           {
             "region": "Nuevo León",
-            "spend": 1104.0
+            "spend": 1113.0
           },
           {
             "region": "Puebla",
-            "spend": 510.0
+            "spend": 512.0
           },
           {
             "region": "Chihuahua",
-            "spend": 493.0
+            "spend": 497.0
           },
           {
             "region": "Veracruz",
-            "spend": 415.0
+            "spend": 421.0
           },
           {
             "region": "__RESTO__",
-            "spend": 4207.0
+            "spend": 4245.0
           }
         ],
         "artes": [
@@ -846,11 +853,11 @@
             "id": "anuncioimpulsadoofertahastael22",
             "adName": "Anuncio Impulsado Oferta hasta el 22",
             "leads": 0,
-            "spend": 873.0,
+            "spend": 977.0,
             "cpl": 0,
-            "cpConv": 37.95,
-            "ctr": 2.28,
-            "conversations": 23,
+            "cpConv": 39.09,
+            "ctr": 2.17,
+            "conversations": 25,
             "pct": 0.0,
             "rankNum": 5,
             "tier": "conv"
