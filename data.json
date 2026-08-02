@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01",
+  "updatedAt": "2026-08-02",
   "account": "993894886753623",
   "defaultMonth": "2026-08",
   "months": [
@@ -485,14 +485,14 @@
           "cpl": 87.64,
           "costPerConv": 18.64,
           "leadSpend": 5434.0,
-          "convSpend": 8389.0,
+          "convSpend": 8390.0,
           "convConversations": 450,
           "spend": 13823.0,
           "reach": 53318,
           "frequency": 1.93,
-          "impressions": 102764,
+          "impressions": 102770,
           "cpm": 135.0,
-          "linkClicks": 1247,
+          "linkClicks": 1248,
           "ctr": 2.27,
           "cpc": 11.1,
           "convRate": 5.0,
@@ -714,9 +714,9 @@
           },
           {
             "date": "2026-07-31",
-            "spend": 220.9,
+            "spend": 221.43,
             "leads": 0,
-            "cpm": 216.0,
+            "cpm": 215.0,
             "cpl": null
           }
         ],
@@ -772,7 +772,7 @@
             "label": "Hombres 35-44",
             "spend": 1920.0,
             "leads": 6,
-            "cpl": 320.0,
+            "cpl": 320.1,
             "tier": ""
           },
           {
@@ -786,7 +786,7 @@
             "label": "Hombres 25-34",
             "spend": 1124.0,
             "leads": 5,
-            "cpl": 224.7,
+            "cpl": 224.8,
             "tier": ""
           },
           {
@@ -800,11 +800,11 @@
         "regions": [
           {
             "region": "State of Mexico",
-            "spend": 2519.0
+            "spend": 2520.0
           },
           {
             "region": "Distrito Federal",
-            "spend": 2497.0
+            "spend": 2498.0
           },
           {
             "region": "Jalisco",
@@ -875,9 +875,9 @@
             "id": "llaves",
             "adName": "Anuncio Impulsado 01 Llaves",
             "leads": 0,
-            "spend": 4673.0,
+            "spend": 4674.0,
             "cpl": 0,
-            "cpConv": 83.45,
+            "cpConv": 83.46,
             "ctr": 1.7,
             "conversations": 56,
             "pct": 0.0,
@@ -906,34 +906,41 @@
       "locked": false,
       "data": {
         "periodFrom": "2026-08-01",
-        "periodTo": "2026-08-01",
+        "periodTo": "2026-08-02",
         "kpis": {
           "leads": 0,
           "cpl": 0,
-          "costPerConv": null,
+          "costPerConv": 92.08,
           "leadSpend": 0.0,
-          "convSpend": 12.0,
-          "convConversations": 0,
-          "spend": 12.0,
-          "reach": 115,
-          "frequency": 1.1,
-          "impressions": 126,
-          "cpm": 96.0,
-          "linkClicks": 0,
-          "ctr": 0.0,
-          "cpc": 0,
-          "convRate": 0,
-          "conversations": 0,
+          "convSpend": 184.0,
+          "convConversations": 2,
+          "spend": 184.0,
+          "reach": 1088,
+          "frequency": 1.22,
+          "impressions": 1328,
+          "cpm": 139.0,
+          "linkClicks": 8,
+          "ctr": 1.96,
+          "cpc": 23.0,
+          "convRate": 0.0,
+          "conversations": 2,
           "leadsPerDay": 0.0,
-          "spendPerDay": 12.0,
-          "days": 1
+          "spendPerDay": 92.0,
+          "days": 2
         },
         "daily": [
           {
             "date": "2026-08-01",
-            "spend": 12.1,
+            "spend": 154.76,
             "leads": 0,
-            "cpm": 96.0,
+            "cpm": 143.0,
+            "cpl": null
+          },
+          {
+            "date": "2026-08-02",
+            "spend": 29.4,
+            "leads": 0,
+            "cpm": 120.0,
             "cpl": null
           }
         ],
@@ -966,36 +973,36 @@
         "segments": [],
         "regions": [
           {
-            "region": "Durango",
-            "spend": 3.0
-          },
-          {
             "region": "State of Mexico",
-            "spend": 2.0
+            "spend": 31.0
           },
           {
             "region": "Nuevo León",
-            "spend": 1.0
+            "spend": 29.0
           },
           {
-            "region": "Chihuahua",
-            "spend": 1.0
-          },
-          {
-            "region": "Quintana Roo",
-            "spend": 1.0
+            "region": "Distrito Federal",
+            "spend": 23.0
           },
           {
             "region": "Jalisco",
-            "spend": 1.0
+            "spend": 21.0
           },
           {
-            "region": "Morelos",
-            "spend": 1.0
+            "region": "Veracruz",
+            "spend": 11.0
+          },
+          {
+            "region": "Guanajuato",
+            "spend": 8.0
+          },
+          {
+            "region": "Chihuahua",
+            "spend": 6.0
           },
           {
             "region": "__RESTO__",
-            "spend": 1.0
+            "spend": 54.0
           }
         ],
         "artes": [
@@ -1003,14 +1010,14 @@
             "id": "llaves",
             "adName": "Anuncio Impulsado 01 Llaves",
             "leads": 0,
-            "spend": 12.0,
+            "spend": 184.0,
             "cpl": 0,
-            "cpConv": null,
-            "ctr": 0.0,
-            "conversations": 0,
+            "cpConv": 92.08,
+            "ctr": 1.96,
+            "conversations": 2,
             "pct": 0,
             "rankNum": 1,
-            "tier": "low"
+            "tier": "conv"
           }
         ]
       }
