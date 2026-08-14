@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13",
+  "updatedAt": "2026-08-14",
   "account": "993894886753623",
   "defaultMonth": "2026-08",
   "months": [
@@ -906,27 +906,27 @@
       "locked": false,
       "data": {
         "periodFrom": "2026-08-01",
-        "periodTo": "2026-08-13",
+        "periodTo": "2026-08-14",
         "kpis": {
           "leads": 0,
           "cpl": 0,
-          "costPerConv": 50.09,
+          "costPerConv": 52.67,
           "leadSpend": 0.0,
-          "convSpend": 3156.0,
-          "convConversations": 63,
-          "spend": 3156.0,
-          "reach": 12647,
-          "frequency": 1.45,
-          "impressions": 18360,
+          "convSpend": 3371.0,
+          "convConversations": 64,
+          "spend": 3371.0,
+          "reach": 13455,
+          "frequency": 1.46,
+          "impressions": 19591,
           "cpm": 172.0,
-          "linkClicks": 156,
+          "linkClicks": 163,
           "ctr": 1.99,
-          "cpc": 20.2,
+          "cpc": 20.7,
           "convRate": 0.0,
-          "conversations": 63,
+          "conversations": 64,
           "leadsPerDay": 0.0,
-          "spendPerDay": 243.0,
-          "days": 13
+          "spendPerDay": 241.0,
+          "days": 14
         },
         "daily": [
           {
@@ -1008,16 +1008,23 @@
           },
           {
             "date": "2026-08-12",
-            "spend": 280.15,
+            "spend": 281.72,
             "leads": 0,
-            "cpm": 169.0,
+            "cpm": 170.0,
             "cpl": null
           },
           {
             "date": "2026-08-13",
-            "spend": 32.24,
+            "spend": 227.92,
             "leads": 0,
-            "cpm": 110.0,
+            "cpm": 163.0,
+            "cpl": null
+          },
+          {
+            "date": "2026-08-14",
+            "spend": 17.95,
+            "leads": 0,
+            "cpm": 156.0,
             "cpl": null
           }
         ],
@@ -1051,35 +1058,35 @@
         "regions": [
           {
             "region": "Nuevo León",
-            "spend": 553.0
+            "spend": 607.0
           },
           {
             "region": "Distrito Federal",
-            "spend": 515.0
+            "spend": 549.0
           },
           {
             "region": "State of Mexico",
-            "spend": 485.0
+            "spend": 506.0
           },
           {
             "region": "Jalisco",
-            "spend": 389.0
-          },
-          {
-            "region": "Puebla",
-            "spend": 106.0
+            "spend": 416.0
           },
           {
             "region": "Veracruz",
-            "spend": 105.0
+            "spend": 111.0
+          },
+          {
+            "region": "Puebla",
+            "spend": 108.0
           },
           {
             "region": "Chihuahua",
-            "spend": 98.0
+            "spend": 105.0
           },
           {
             "region": "__RESTO__",
-            "spend": 903.0
+            "spend": 969.0
           }
         ],
         "artes": [
@@ -1087,9 +1094,9 @@
             "id": "llaves",
             "adName": "Anuncio Impulsado 01 Llaves",
             "leads": 0,
-            "spend": 2542.0,
+            "spend": 2674.0,
             "cpl": 0,
-            "cpConv": 54.08,
+            "cpConv": 56.9,
             "ctr": 2.12,
             "conversations": 47,
             "pct": 0,
@@ -1100,11 +1107,11 @@
             "id": "nuevoanunciodeinteracción",
             "adName": "Nuevo anuncio de Interacción",
             "leads": 0,
-            "spend": 614.0,
+            "spend": 697.0,
             "cpl": 0,
-            "cpConv": 38.38,
-            "ctr": 1.72,
-            "conversations": 16,
+            "cpConv": 40.99,
+            "ctr": 1.73,
+            "conversations": 17,
             "pct": 0,
             "rankNum": 2,
             "tier": "conv"
