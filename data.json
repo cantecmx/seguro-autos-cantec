@@ -1,7 +1,7 @@
 {
-    "updatedAt":  "2026-07-10",
+    "updatedAt":  "2026-08-20",
     "account":  "993894886753623",
-    "defaultMonth":  "2026-07",
+    "defaultMonth":  "2026-08",
     "months":  [
                    {
                        "key":  "2026-06",
@@ -479,27 +479,27 @@
                        "locked":  false,
                        "data":  {
                                     "periodFrom":  "2026-07-01",
-                                    "periodTo":  "2026-07-10",
+                                    "periodTo":  "2026-07-31",
                                     "kpis":  {
-                                                 "leads":  28,
-                                                 "cpl":  95.01,
-                                                 "costPerConv":  13.89,
-                                                 "leadSpend":  2660,
-                                                 "convSpend":  3485,
-                                                 "convConversations":  251,
-                                                 "spend":  6146,
-                                                 "reach":  30804,
-                                                 "frequency":  1.74,
-                                                 "impressions":  53586,
-                                                 "cpm":  115,
-                                                 "linkClicks":  667,
-                                                 "ctr":  2.19,
-                                                 "cpc":  9.2,
-                                                 "convRate":  4.2,
-                                                 "conversations":  270,
-                                                 "leadsPerDay":  2.8,
-                                                 "spendPerDay":  615,
-                                                 "days":  10
+                                                 "leads":  62,
+                                                 "cpl":  87.64,
+                                                 "costPerConv":  18.64,
+                                                 "leadSpend":  5434,
+                                                 "convSpend":  8390,
+                                                 "convConversations":  450,
+                                                 "spend":  13823,
+                                                 "reach":  53318,
+                                                 "frequency":  1.93,
+                                                 "impressions":  102770,
+                                                 "cpm":  135,
+                                                 "linkClicks":  1248,
+                                                 "ctr":  2.27,
+                                                 "cpc":  11.1,
+                                                 "convRate":  5,
+                                                 "conversations":  490,
+                                                 "leadsPerDay":  2,
+                                                 "spendPerDay":  446,
+                                                 "days":  31
                                              },
                                     "daily":  [
                                                   {
@@ -560,17 +560,164 @@
                                                   },
                                                   {
                                                       "date":  "2026-07-09",
-                                                      "spend":  467.11,
+                                                      "spend":  468.18,
                                                       "leads":  4,
                                                       "cpm":  144,
-                                                      "cpl":  116.78
+                                                      "cpl":  117.04
                                                   },
                                                   {
                                                       "date":  "2026-07-10",
-                                                      "spend":  207.27,
+                                                      "spend":  528.9,
+                                                      "leads":  8,
+                                                      "cpm":  142,
+                                                      "cpl":  66.11
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-11",
+                                                      "spend":  356.2,
+                                                      "leads":  1,
+                                                      "cpm":  87,
+                                                      "cpl":  356.2
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-12",
+                                                      "spend":  693.65,
                                                       "leads":  5,
-                                                      "cpm":  136,
-                                                      "cpl":  41.45
+                                                      "cpm":  169,
+                                                      "cpl":  138.73
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-13",
+                                                      "spend":  640.53,
+                                                      "leads":  3,
+                                                      "cpm":  122,
+                                                      "cpl":  213.51
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-14",
+                                                      "spend":  610.07,
+                                                      "leads":  3,
+                                                      "cpm":  115,
+                                                      "cpl":  203.36
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-15",
+                                                      "spend":  529.96,
+                                                      "leads":  2,
+                                                      "cpm":  143,
+                                                      "cpl":  264.98
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-16",
+                                                      "spend":  470.27,
+                                                      "leads":  3,
+                                                      "cpm":  130,
+                                                      "cpl":  156.76
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-17",
+                                                      "spend":  443.45,
+                                                      "leads":  1,
+                                                      "cpm":  278,
+                                                      "cpl":  443.45
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-18",
+                                                      "spend":  226.88,
+                                                      "leads":  0,
+                                                      "cpm":  194,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-19",
+                                                      "spend":  532.69,
+                                                      "leads":  6,
+                                                      "cpm":  256,
+                                                      "cpl":  88.78
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-20",
+                                                      "spend":  589.28,
+                                                      "leads":  5,
+                                                      "cpm":  287,
+                                                      "cpl":  117.86
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-21",
+                                                      "spend":  341.61,
+                                                      "leads":  2,
+                                                      "cpm":  214,
+                                                      "cpl":  170.8
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-22",
+                                                      "spend":  204.06,
+                                                      "leads":  0,
+                                                      "cpm":  137,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-23",
+                                                      "spend":  216.99,
+                                                      "leads":  0,
+                                                      "cpm":  127,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-24",
+                                                      "spend":  153.61,
+                                                      "leads":  0,
+                                                      "cpm":  104,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-25",
+                                                      "spend":  108.28,
+                                                      "leads":  0,
+                                                      "cpm":  100,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-26",
+                                                      "spend":  130.45,
+                                                      "leads":  0,
+                                                      "cpm":  102,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-27",
+                                                      "spend":  292.14,
+                                                      "leads":  0,
+                                                      "cpm":  219,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-28",
+                                                      "spend":  251.42,
+                                                      "leads":  0,
+                                                      "cpm":  216,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-29",
+                                                      "spend":  137.81,
+                                                      "leads":  0,
+                                                      "cpm":  149,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-30",
+                                                      "spend":  204.18,
+                                                      "leads":  0,
+                                                      "cpm":  215,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-07-31",
+                                                      "spend":  221.43,
+                                                      "leads":  0,
+                                                      "cpm":  215,
+                                                      "cpl":  null
                                                   }
                                               ],
                                     "demo":  {
@@ -584,130 +731,130 @@
                                                           ],
                                                  "male":  [
                                                               1,
-                                                              1,
-                                                              1,
-                                                              4,
+                                                              5,
+                                                              6,
                                                               10,
-                                                              6
+                                                              16,
+                                                              17
                                                           ],
                                                  "female":  [
-                                                                0,
+                                                                1,
                                                                 0,
                                                                 1,
                                                                 1,
                                                                 0,
-                                                                2
+                                                                3
                                                             ]
                                              },
                                     "segments":  [
                                                      {
-                                                         "label":  "Hombres 55-64",
-                                                         "spend":  1187,
-                                                         "leads":  10,
-                                                         "cpl":  118.7,
+                                                         "label":  "Hombres 65+",
+                                                         "spend":  2775,
+                                                         "leads":  17,
+                                                         "cpl":  163.2,
                                                          "tier":  "best"
                                                      },
                                                      {
-                                                         "label":  "Hombres 65+",
-                                                         "spend":  1390,
-                                                         "leads":  6,
-                                                         "cpl":  231.7,
-                                                         "tier":  ""
-                                                     },
-                                                     {
-                                                         "label":  "Mujeres (todas)",
-                                                         "spend":  848,
-                                                         "leads":  4,
-                                                         "cpl":  212,
+                                                         "label":  "Hombres 55-64",
+                                                         "spend":  2769,
+                                                         "leads":  16,
+                                                         "cpl":  173,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 45-54",
-                                                         "spend":  1202,
-                                                         "leads":  4,
-                                                         "cpl":  300.5,
+                                                         "spend":  2651,
+                                                         "leads":  10,
+                                                         "cpl":  265.1,
                                                          "tier":  ""
                                                      },
                                                      {
-                                                         "label":  "Hombres 18-24",
-                                                         "spend":  121,
-                                                         "leads":  1,
-                                                         "cpl":  121.2,
+                                                         "label":  "Mujeres (todas)",
+                                                         "spend":  2210,
+                                                         "leads":  6,
+                                                         "cpl":  368.3,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 35-44",
-                                                         "spend":  807,
-                                                         "leads":  1,
-                                                         "cpl":  806.6,
+                                                         "spend":  1920,
+                                                         "leads":  6,
+                                                         "cpl":  320.1,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 25-34",
-                                                         "spend":  544,
+                                                         "spend":  1124,
+                                                         "leads":  5,
+                                                         "cpl":  224.8,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 18-24",
+                                                         "spend":  259,
                                                          "leads":  1,
-                                                         "cpl":  543.9,
+                                                         "cpl":  258.7,
                                                          "tier":  ""
                                                      }
                                                  ],
                                     "regions":  [
                                                     {
                                                         "region":  "State of Mexico",
-                                                        "spend":  1147
+                                                        "spend":  2520
                                                     },
                                                     {
                                                         "region":  "Distrito Federal",
-                                                        "spend":  1070
+                                                        "spend":  2498
                                                     },
                                                     {
                                                         "region":  "Jalisco",
-                                                        "spend":  688
+                                                        "spend":  1354
                                                     },
                                                     {
                                                         "region":  "Nuevo León",
-                                                        "spend":  510
+                                                        "spend":  1239
                                                     },
                                                     {
                                                         "region":  "Puebla",
-                                                        "spend":  254
+                                                        "spend":  548
                                                     },
                                                     {
                                                         "region":  "Chihuahua",
-                                                        "spend":  235
+                                                        "spend":  534
                                                     },
                                                     {
                                                         "region":  "Veracruz",
-                                                        "spend":  226
+                                                        "spend":  470
                                                     },
                                                     {
                                                         "region":  "__RESTO__",
-                                                        "spend":  2020
+                                                        "spend":  4661
                                                     }
                                                 ],
                                     "artes":  [
                                                   {
-                                                      "id":  "chocado1",
-                                                      "adName":  "Auto Chocado 1Prueba",
-                                                      "leads":  15,
-                                                      "spend":  1692,
-                                                      "cpl":  112.81,
-                                                      "cpConv":  153.84,
-                                                      "ctr":  2.61,
-                                                      "conversations":  11,
-                                                      "pct":  54,
+                                                      "id":  "nuevo",
+                                                      "adName":  "Nuevo anuncio de Clientes potenciales",
+                                                      "leads":  46,
+                                                      "spend":  3661,
+                                                      "cpl":  79.59,
+                                                      "cpConv":  130.76,
+                                                      "ctr":  3.12,
+                                                      "conversations":  28,
+                                                      "pct":  74,
                                                       "rankNum":  1,
                                                       "tier":  "win"
                                                   },
                                                   {
-                                                      "id":  "nuevo",
-                                                      "adName":  "Nuevo anuncio de Clientes potenciales",
-                                                      "leads":  13,
-                                                      "spend":  968,
-                                                      "cpl":  74.46,
-                                                      "cpConv":  120.99,
-                                                      "ctr":  2.77,
-                                                      "conversations":  8,
-                                                      "pct":  46,
+                                                      "id":  "chocado1",
+                                                      "adName":  "Auto Chocado 1Prueba",
+                                                      "leads":  16,
+                                                      "spend":  1773,
+                                                      "cpl":  110.78,
+                                                      "cpConv":  147.71,
+                                                      "ctr":  2.68,
+                                                      "conversations":  12,
+                                                      "pct":  26,
                                                       "rankNum":  2,
                                                       "tier":  "mid"
                                                   },
@@ -715,11 +862,11 @@
                                                       "id":  "motos",
                                                       "adName":  "Anuncio Motos",
                                                       "leads":  0,
-                                                      "spend":  1384,
+                                                      "spend":  2020,
                                                       "cpl":  0,
-                                                      "cpConv":  6.02,
-                                                      "ctr":  2.38,
-                                                      "conversations":  230,
+                                                      "cpConv":  5.75,
+                                                      "ctr":  2.4,
+                                                      "conversations":  351,
                                                       "pct":  0,
                                                       "rankNum":  3,
                                                       "tier":  "conv"
@@ -728,13 +875,26 @@
                                                       "id":  "llaves",
                                                       "adName":  "Anuncio Impulsado 01 Llaves",
                                                       "leads":  0,
-                                                      "spend":  2101,
+                                                      "spend":  4674,
                                                       "cpl":  0,
-                                                      "cpConv":  105.07,
-                                                      "ctr":  1.53,
-                                                      "conversations":  20,
+                                                      "cpConv":  83.46,
+                                                      "ctr":  1.7,
+                                                      "conversations":  56,
                                                       "pct":  0,
                                                       "rankNum":  4,
+                                                      "tier":  "conv"
+                                                  },
+                                                  {
+                                                      "id":  "anuncioimpulsadoofertahastael22",
+                                                      "adName":  "Anuncio Impulsado Oferta hasta el 22",
+                                                      "leads":  0,
+                                                      "spend":  1696,
+                                                      "cpl":  0,
+                                                      "cpConv":  39.45,
+                                                      "ctr":  2.31,
+                                                      "conversations":  43,
+                                                      "pct":  0,
+                                                      "rankNum":  5,
                                                       "tier":  "conv"
                                                   }
                                               ]
@@ -743,8 +903,291 @@
                    {
                        "key":  "2026-08",
                        "label":  "Agosto",
-                       "locked":  true,
-                       "data":  null
+                       "locked":  false,
+                       "data":  {
+                                    "periodFrom":  "2026-08-01",
+                                    "periodTo":  "2026-08-20",
+                                    "kpis":  {
+                                                 "leads":  0,
+                                                 "cpl":  0,
+                                                 "costPerConv":  53.96,
+                                                 "leadSpend":  0,
+                                                 "convSpend":  5666,
+                                                 "convConversations":  105,
+                                                 "spend":  5666,
+                                                 "reach":  22697,
+                                                 "frequency":  1.52,
+                                                 "impressions":  34540,
+                                                 "cpm":  164,
+                                                 "linkClicks":  272,
+                                                 "ctr":  1.91,
+                                                 "cpc":  20.8,
+                                                 "convRate":  0,
+                                                 "conversations":  105,
+                                                 "leadsPerDay":  0,
+                                                 "spendPerDay":  283,
+                                                 "days":  20
+                                             },
+                                    "daily":  [
+                                                  {
+                                                      "date":  "2026-08-01",
+                                                      "spend":  154.81,
+                                                      "leads":  0,
+                                                      "cpm":  143,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-02",
+                                                      "spend":  199.81,
+                                                      "leads":  0,
+                                                      "cpm":  142,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-03",
+                                                      "spend":  235.92,
+                                                      "leads":  0,
+                                                      "cpm":  183,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-04",
+                                                      "spend":  184.6,
+                                                      "leads":  0,
+                                                      "cpm":  137,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-05",
+                                                      "spend":  249.94,
+                                                      "leads":  0,
+                                                      "cpm":  198,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-06",
+                                                      "spend":  208.84,
+                                                      "leads":  0,
+                                                      "cpm":  238,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-07",
+                                                      "spend":  227.9,
+                                                      "leads":  0,
+                                                      "cpm":  168,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-08",
+                                                      "spend":  236.89,
+                                                      "leads":  0,
+                                                      "cpm":  198,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-09",
+                                                      "spend":  345.92,
+                                                      "leads":  0,
+                                                      "cpm":  164,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-10",
+                                                      "spend":  426.83,
+                                                      "leads":  0,
+                                                      "cpm":  172,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-11",
+                                                      "spend":  371.95,
+                                                      "leads":  0,
+                                                      "cpm":  185,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-12",
+                                                      "spend":  281.72,
+                                                      "leads":  0,
+                                                      "cpm":  170,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-13",
+                                                      "spend":  227.99,
+                                                      "leads":  0,
+                                                      "cpm":  163,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-14",
+                                                      "spend":  186.99,
+                                                      "leads":  0,
+                                                      "cpm":  212,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-15",
+                                                      "spend":  234.83,
+                                                      "leads":  0,
+                                                      "cpm":  177,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-16",
+                                                      "spend":  370.16,
+                                                      "leads":  0,
+                                                      "cpm":  212,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-17",
+                                                      "spend":  283.93,
+                                                      "leads":  0,
+                                                      "cpm":  243,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-18",
+                                                      "spend":  431.61,
+                                                      "leads":  0,
+                                                      "cpm":  135,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-19",
+                                                      "spend":  489.13,
+                                                      "leads":  0,
+                                                      "cpm":  106,
+                                                      "cpl":  null
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-20",
+                                                      "spend":  316.08,
+                                                      "leads":  0,
+                                                      "cpm":  149,
+                                                      "cpl":  null
+                                                  }
+                                              ],
+                                    "demo":  {
+                                                 "ages":  [
+                                                              "18-24",
+                                                              "25-34",
+                                                              "35-44",
+                                                              "45-54",
+                                                              "55-64",
+                                                              "65+"
+                                                          ],
+                                                 "male":  [
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              0
+                                                          ],
+                                                 "female":  [
+                                                                0,
+                                                                0,
+                                                                0,
+                                                                0,
+                                                                0,
+                                                                0
+                                                            ]
+                                             },
+                                    "segments":  [
+
+                                                 ],
+                                    "regions":  [
+                                                    {
+                                                        "region":  "Nuevo León",
+                                                        "spend":  1137
+                                                    },
+                                                    {
+                                                        "region":  "Distrito Federal",
+                                                        "spend":  949
+                                                    },
+                                                    {
+                                                        "region":  "State of Mexico",
+                                                        "spend":  852
+                                                    },
+                                                    {
+                                                        "region":  "Jalisco",
+                                                        "spend":  725
+                                                    },
+                                                    {
+                                                        "region":  "Veracruz",
+                                                        "spend":  178
+                                                    },
+                                                    {
+                                                        "region":  "Chihuahua",
+                                                        "spend":  150
+                                                    },
+                                                    {
+                                                        "region":  "Puebla",
+                                                        "spend":  129
+                                                    },
+                                                    {
+                                                        "region":  "__RESTO__",
+                                                        "spend":  1546
+                                                    }
+                                                ],
+                                    "artes":  [
+                                                  {
+                                                      "id":  "llaves",
+                                                      "adName":  "Anuncio Impulsado 01 Llaves",
+                                                      "leads":  0,
+                                                      "spend":  4020,
+                                                      "cpl":  0,
+                                                      "cpConv":  63.81,
+                                                      "ctr":  2.13,
+                                                      "conversations":  63,
+                                                      "pct":  0,
+                                                      "rankNum":  1,
+                                                      "tier":  "conv"
+                                                  },
+                                                  {
+                                                      "id":  "nuevoanunciodeinteracción",
+                                                      "adName":  "Nuevo anuncio de Interacción",
+                                                      "leads":  0,
+                                                      "spend":  1361,
+                                                      "cpl":  0,
+                                                      "cpConv":  36.8,
+                                                      "ctr":  1.66,
+                                                      "conversations":  37,
+                                                      "pct":  0,
+                                                      "rankNum":  2,
+                                                      "tier":  "conv"
+                                                  },
+                                                  {
+                                                      "id":  "anuncioagosto",
+                                                      "adName":  "Anuncio Agosto",
+                                                      "leads":  0,
+                                                      "spend":  286,
+                                                      "cpl":  0,
+                                                      "cpConv":  57.22,
+                                                      "ctr":  1.73,
+                                                      "conversations":  5,
+                                                      "pct":  0,
+                                                      "rankNum":  3,
+                                                      "tier":  "conv"
+                                                  },
+                                                  {
+                                                      "id":  "anuncioimpulsadoofertahastael22",
+                                                      "adName":  "Anuncio Impulsado Oferta hasta el 22",
+                                                      "leads":  0,
+                                                      "spend":  0,
+                                                      "cpl":  0,
+                                                      "cpConv":  null,
+                                                      "ctr":  0,
+                                                      "conversations":  0,
+                                                      "pct":  0,
+                                                      "rankNum":  4,
+                                                      "tier":  "low"
+                                                  }
+                                              ]
+                                }
                    },
                    {
                        "key":  "2026-09",

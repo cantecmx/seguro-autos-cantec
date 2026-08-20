@@ -99,6 +99,12 @@
   .ins h4{font-size:13.5px;margin-bottom:5px;display:flex;align-items:center;gap:7px}
   .ins p{font-size:13px;color:#3f5570;line-height:1.5}
   .ico{width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;color:#fff;flex:none}
+  .barrow{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:13px}
+  .barrow .bl{width:160px;flex:none;color:#3f5570}
+  .barrow .bt{flex:1;background:#eef1f6;border-radius:6px;height:16px;overflow:hidden;min-width:40px}
+  .barrow .bf{height:100%;border-radius:6px;min-width:2px}
+  .barrow .bn{width:78px;flex:none;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:var(--blue)}
+  @media(max-width:600px){.barrow .bl{width:110px}}
   .footbar{height:5px;border-radius:999px;background:linear-gradient(90deg,var(--orange),var(--gold) 40%,var(--blue2) 100%);margin:26px 0 10px}
   #content.dim{opacity:.4;pointer-events:none}
   @media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.insights{grid-template-columns:1fr}.arte{grid-template-columns:1fr}.arte-cols{grid-template-columns:1fr}.hr{align-items:flex-start;text-align:left}}
@@ -164,6 +170,21 @@
           <div class="kpi"><div class="lbl">Tasa de conversión</div><div class="val" id="kConvRate">—</div><div class="note">leads ÷ clics al enlace</div></div>
           <div class="kpi"><div class="lbl">Leads de formulario</div><div class="val" id="kLeadsForm">—</div><div class="note">clientes potenciales · CPL <b id="kCplForm">—</b></div></div>
         </div>
+
+        <h2 class="sec">Seguimiento operativo · ventas y gestión</h2>
+        <div id="segWrap">
+          <div class="kpis">
+            <div class="kpi lead"><div class="lbl">Contactos gestionados</div><div class="val" id="sgTotal">—</div><div class="note">registrados por operaciones</div></div>
+            <div class="kpi cpl"><div class="lbl">Ventas cerradas</div><div class="val" id="sgVenta">—</div><div class="note">tasa de cierre <b id="sgCierre">—</b></div></div>
+            <div class="kpi spend"><div class="lbl">Gestionables</div><div class="val" id="sgGest">—</div><div class="note">en proceso + faltan datos</div></div>
+            <div class="kpi cpm"><div class="lbl">Cotizaciones</div><div class="val" id="sgCot">—</div><div class="note"><b id="sgCotPct">—</b> de los contactos</div></div>
+          </div>
+          <div class="grid2" style="margin-top:16px">
+            <div class="card"><h3>Estado de los contactos (tipificación)</h3><div class="csub">Cómo está la base que trae la pauta</div><div id="sgTip" style="margin-top:8px"></div></div>
+            <div class="card"><h3>Motivos de no-venta</h3><div class="csub">Por qué no se cerró — para mejorar segmentación y seguimiento</div><div id="sgMot" style="margin-top:8px"></div></div>
+          </div>
+        </div>
+        <div class="emptybar" id="segEmpty" style="display:none">Aún no hay registros de seguimiento de operaciones para este mes.</div>
 
         <h2 class="sec">Análisis por arte (creativos en circulación)</h2>
         <div class="artes" id="artesBox"></div>
@@ -232,7 +253,9 @@ const TIER={
   low:{suf:"Sin probar",status:"⚪ Sin conclusión",cls:"low",sCls:"s-low"}
 };
 const RES_LABELS=[["leads","Leads"],["pct","% del total"],["cpl","CPL"],["ctr","CTR"],["spend","Inversión"],["conversations","Conversaciones"]];
-let charts={}, DATA=null, curMonth=null;
+let charts={}, DATA=null, curMonth=null, SEG=null;
+const TIP_COLORS={'VENTA':'#2e9e5b','EN PROCESO':'#1e4aa0','Falta de datos':'#e0a32e','No contesta':'#9C9C9C','ADQUIRIO OTRO SEGURO':'#d4564b'};
+const MOT_COLORS={'Faltan datos / no contesta':'#e0a32e','Cotizó pero no responde':'#1e4aa0','Contrató otro / GNP directo':'#d4564b','Vehículo no asegurable':'#9C9C9C','En proceso / otro':'#5a7fc0'};
 const $=id=>document.getElementById(id);
 const set=(id,v)=>{const e=$(id);if(e)e.textContent=v;};
 
@@ -240,6 +263,7 @@ async function load(){
   try{ const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw 0; DATA=await r.json(); }
   catch(e){ $('errBanner').style.display='block'; return false; }
   $('errBanner').style.display='none';
+  try{ const rs=await fetch('seguimiento.json?t='+Date.now(),{cache:'no-store'}); SEG = rs.ok ? await rs.json() : null; }catch(e){ SEG=null; }
   set('cuenta', DATA.account); set('updStamp', fDate(DATA.updatedAt));
   renderMonths();
   selectMonth(curMonth && DATA.months.some(m=>m.key===curMonth&&!m.locked) ? curMonth : DATA.defaultMonth);
@@ -267,6 +291,7 @@ function selectMonth(key){
   $('emptyBanner').style.display=empty?'block':'none';
   $('content').classList.toggle('dim',empty);
   if(!empty) render(m.data);
+  renderSeguimiento(key);
 }
 
 function render(b){
@@ -360,6 +385,32 @@ function renderCharts(d){
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.x.toLocaleString('es-MX')}}},scales:{x:{type:'logarithmic',ticks:{callback:v=>Number(v).toLocaleString('es-MX')}}}}});
 }
 
+function renderBars(id, arr, total, colors){
+  const el=$(id); if(!el) return; el.innerHTML='';
+  if(!arr || !arr.length){ el.innerHTML='<div class="csub">Sin datos</div>'; return; }
+  const max=Math.max.apply(null, arr.map(x=>x.count).concat([1]));
+  arr.forEach(x=>{
+    const pct = total ? Math.round(x.count/total*100) : 0;
+    const w = Math.round(x.count/max*100);
+    const col = (colors && colors[x.label]) || '#F47A1F';
+    el.insertAdjacentHTML('beforeend',
+      `<div class="barrow"><span class="bl">${x.label}</span><span class="bt"><span class="bf" style="width:${w}%;background:${col}"></span></span><span class="bn">${x.count} · ${pct}%</span></div>`);
+  });
+}
+function renderSeguimiento(key){
+  const s = SEG && SEG.months && SEG.months[key];
+  const wrap=$('segWrap'), empty=$('segEmpty');
+  if(!s){ if(wrap) wrap.style.display='none'; if(empty) empty.style.display='block'; return; }
+  if(wrap) wrap.style.display=''; if(empty) empty.style.display='none';
+  set('sgTotal', s.total);
+  set('sgVenta', s.venta);
+  set('sgCierre', s.total ? (s.venta/s.total*100).toFixed(1)+'%' : '—');
+  set('sgGest', s.gestionables);
+  set('sgCot', s.cotizaciones);
+  set('sgCotPct', s.total ? Math.round(s.cotizaciones/s.total*100)+'%' : '—');
+  renderBars('sgTip', s.tipificacion, s.total, TIP_COLORS);
+  renderBars('sgMot', s.motivos, s.total, MOT_COLORS);
+}
 function showToast(msg,isErr){const t=$('toast');t.textContent=msg;t.className='toast show'+(isErr?' err':'');setTimeout(()=>t.className='toast',3000);}
 async function actualizarDatos(){
   const b=$('btnUpd'); b.classList.add('loading');

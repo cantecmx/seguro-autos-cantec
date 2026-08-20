@@ -1,0 +1,99 @@
+{
+    "updatedAt":  "2026-08-20",
+    "months":  {
+                   "2026-07":  {
+                                   "total":  26,
+                                   "venta":  1,
+                                   "gestionables":  6,
+                                   "noGestionables":  19,
+                                   "cotizaciones":  22,
+                                   "tipificacion":  [
+                                                        {
+                                                            "label":  "No contesta",
+                                                            "count":  16
+                                                        },
+                                                        {
+                                                            "label":  "EN PROCESO",
+                                                            "count":  6
+                                                        },
+                                                        {
+                                                            "label":  "ADQUIRIO OTRO SEGURO",
+                                                            "count":  3
+                                                        },
+                                                        {
+                                                            "label":  "VENTA",
+                                                            "count":  1
+                                                        }
+                                                    ],
+                                   "motivos":  [
+                                                   {
+                                                       "label":  "Cotizó pero no responde",
+                                                       "count":  15
+                                                   },
+                                                   {
+                                                       "label":  "En proceso / otro",
+                                                       "count":  5
+                                                   },
+                                                   {
+                                                       "label":  "Contrató otro / GNP directo",
+                                                       "count":  3
+                                                   },
+                                                   {
+                                                       "label":  "Faltan datos / no contesta",
+                                                       "count":  2
+                                                   }
+                                               ]
+                               },
+                   "2026-08":  {
+                                   "total":  60,
+                                   "venta":  13,
+                                   "gestionables":  36,
+                                   "noGestionables":  11,
+                                   "cotizaciones":  42,
+                                   "tipificacion":  [
+                                                        {
+                                                            "label":  "EN PROCESO",
+                                                            "count":  24
+                                                        },
+                                                        {
+                                                            "label":  "VENTA",
+                                                            "count":  13
+                                                        },
+                                                        {
+                                                            "label":  "Falta de datos",
+                                                            "count":  12
+                                                        },
+                                                        {
+                                                            "label":  "No contesta",
+                                                            "count":  9
+                                                        },
+                                                        {
+                                                            "label":  "ADQUIRIO OTRO SEGURO",
+                                                            "count":  2
+                                                        }
+                                                    ],
+                                   "motivos":  [
+                                                   {
+                                                       "label":  "En proceso / otro",
+                                                       "count":  21
+                                                   },
+                                                   {
+                                                       "label":  "Faltan datos / no contesta",
+                                                       "count":  13
+                                                   },
+                                                   {
+                                                       "label":  "Cotizó pero no responde",
+                                                       "count":  9
+                                                   },
+                                                   {
+                                                       "label":  "Vehículo no asegurable",
+                                                       "count":  2
+                                                   },
+                                                   {
+                                                       "label":  "Contrató otro / GNP directo",
+                                                       "count":  2
+                                                   }
+                                               ]
+                               }
+               }
+}
