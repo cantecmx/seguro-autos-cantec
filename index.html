@@ -105,6 +105,13 @@
   .barrow .bf{height:100%;border-radius:6px;min-width:2px}
   .barrow .bn{width:78px;flex:none;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:var(--blue)}
   @media(max-width:600px){.barrow .bl{width:110px}}
+  .sec-details{margin:26px 0 0}
+  .sec-details>summary{list-style:none;cursor:pointer;font-size:14px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);font-weight:700;border-left:4px solid var(--orange);padding:6px 10px;display:flex;align-items:center;gap:8px;user-select:none}
+  .sec-details>summary::-webkit-details-marker{display:none}
+  .sec-details>summary::before{content:"\25B8";color:var(--orange);font-size:15px;transition:transform .15s}
+  .sec-details[open]>summary::before{transform:rotate(90deg)}
+  .sec-details>summary:hover{color:var(--blue)}
+  .sec-details .grid2:first-of-type{margin-top:14px}
   .footbar{height:5px;border-radius:999px;background:linear-gradient(90deg,var(--orange),var(--gold) 40%,var(--blue2) 100%);margin:26px 0 10px}
   #content.dim{opacity:.4;pointer-events:none}
   @media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.insights{grid-template-columns:1fr}.arte{grid-template-columns:1fr}.arte-cols{grid-template-columns:1fr}.hr{align-items:flex-start;text-align:left}}
@@ -195,30 +202,19 @@
           <div class="card"><h3>Costo por Lead (CPL) diario</h3><div class="csub">MXN por lead, día a día — tendencia a la baja = mejor</div><div class="chartbox"><canvas id="cCpl"></canvas></div></div>
         </div>
 
-        <h2 class="sec">¿Quién y dónde convierte?</h2>
-        <div class="grid2">
-          <div class="card"><h3>Leads por edad y género</h3><div class="csub">El núcleo de conversión son hombres de mediana edad y mayores</div><div class="chartbox sm"><canvas id="cDemo"></canvas></div></div>
-          <div class="card"><h3>Rendimiento por segmento</h3><div class="csub">Costo por lead según edad/género (segmentos con conversiones)</div>
-            <table><thead><tr><th>Segmento</th><th class="num">Inversión</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead><tbody id="segBody"></tbody></table>
+        <details class="sec-details" id="detConvierte">
+          <summary>¿Quién y dónde convierte?</summary>
+          <div class="grid2">
+            <div class="card"><h3>Leads por edad y género</h3><div class="csub">El núcleo de conversión son hombres de mediana edad y mayores</div><div class="chartbox sm"><canvas id="cDemo"></canvas></div></div>
+            <div class="card"><h3>Rendimiento por segmento</h3><div class="csub">Costo por lead según edad/género (segmentos con conversiones)</div>
+              <table><thead><tr><th>Segmento</th><th class="num">Inversión</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead><tbody id="segBody"></tbody></table>
+            </div>
           </div>
-        </div>
-
-        <div class="grid2" style="margin-top:16px">
-          <div class="card"><h3>Distribución de inversión por estado</h3><div class="csub">Top estados por gasto · campaña nacional</div><div class="chartbox sm"><canvas id="cRegion"></canvas></div></div>
-          <div class="card"><h3>Resumen de embudo</h3><div class="csub">Del impacto al prospecto</div><div class="chartbox sm"><canvas id="cFunnel"></canvas></div></div>
-        </div>
-
-        <h2 class="sec">Lectura para dirección</h2>
-        <div class="insights">
-          <div class="ins good"><h4><span class="ico" style="background:var(--green)">✓</span>Campaña sana y entregando</h4>
-            <p><b id="iLeads">—</b> prospectos a un <b>CPL de <span id="iCpl">—</span></b>, con CTR de <b id="iCtr">—</b>. La tasa de conversión clic→lead de <b id="iConv">—</b> indica que la oferta resuena con quien hace clic.</p></div>
-          <div class="ins act"><h4><span class="ico" style="background:var(--blue2)">◎</span>Una arte carga el resultado</h4>
-            <p>La arte ganadora trae el <b id="iWinPct">—</b> de los leads y al costo más bajo. Riesgo: dependemos de un solo creativo. <b>Acción:</b> producir variantes de esa línea antes de que se desgaste.</p></div>
-          <div class="ins watch"><h4><span class="ico" style="background:var(--amber)">!</span>Audiencia clara: hombres</h4>
-            <p>Los hombres concentran casi todos los leads; el mejor segmento es <b id="iBestSeg">—</b> con CPL de <b id="iBestCpl">—</b>. Reasignar presupuesto a ese núcleo y reducir segmentos sin conversiones.</p></div>
-          <div class="ins"><h4><span class="ico" style="background:var(--orange)">◔</span>Espacio para escalar</h4>
-            <p>Gasto promedio de <b id="iSpendDay">—</b>/día. La entrega es estable; hay margen para subir presupuesto en la arte y segmentos ganadores sin deteriorar el CPL.</p></div>
-        </div>
+          <div class="grid2" style="margin-top:16px">
+            <div class="card"><h3>Distribución de inversión por estado</h3><div class="csub">Top estados por gasto · campaña nacional</div><div class="chartbox sm"><canvas id="cRegion"></canvas></div></div>
+            <div class="card"><h3>Resumen de embudo</h3><div class="csub">Del impacto al prospecto</div><div class="chartbox sm"><canvas id="cFunnel"></canvas></div></div>
+          </div>
+        </details>
       </div>
     </div>
   </div>
@@ -432,6 +428,8 @@ async function actualizarDatos(){
                  : 'No se pudo actualizar', true);
   }finally{ b.classList.remove('loading'); }
 }
+const _det=$('detConvierte');
+if(_det) _det.addEventListener('toggle',()=>{ if(_det.open){ setTimeout(()=>['demo','region','funnel'].forEach(k=>{ try{ charts[k] && charts[k].resize(); }catch(e){} }),50); } });
 load();
 </script>
 </body>
