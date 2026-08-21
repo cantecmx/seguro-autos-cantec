@@ -50,7 +50,7 @@ function groupBy(rows, key) {
 async function computeBlock(from, to) {
   const [tot, daily, ag, reg, ads] = await Promise.all([
     getW("account_id,campaign,campaign_objective,spend,impressions,reach,clicks,link_clicks,actions_lead," + CONVF, from, to),
-    getW("account_id,date,spend,impressions,actions_lead", from, to),
+    getW("account_id,date,spend,impressions,actions_lead," + CONVF, from, to),
     getW("account_id,age,gender,spend,link_clicks,actions_lead", from, to),
     getW("account_id,region,spend", from, to),
     getW("account_id,ad_name,spend,impressions,clicks,link_clicks,actions_lead," + CONVF, from, to),
@@ -85,8 +85,8 @@ async function computeBlock(from, to) {
   };
 
   const dailyArr = [...groupBy(daily,"date").entries()].sort((a,b)=> a[0] < b[0] ? -1 : 1).map(([date,g]) => {
-    const sp = sum(g,"spend"), im = sum(g,"impressions"), ld = Math.round(sum(g,"actions_lead"));
-    return { date, spend: round(sp,2), leads: ld, cpm: im ? round(sp/im*1000) : 0, cpl: ld ? round(sp/ld,2) : null };
+    const sp = sum(g,"spend"), im = sum(g,"impressions"), ld = Math.round(sum(g,"actions_lead")), cv = Math.round(sum(g,CONVF));
+    return { date, spend: round(sp,2), leads: ld, conversations: cv, cpm: im ? round(sp/im*1000) : 0, cpl: ld ? round(sp/ld,2) : null, cpConv: cv ? round(sp/cv,2) : null };
   });
 
   const male = AGES.map(a => Math.round(sum(ag.filter(r => r.age===a && r.gender==="male"), "actions_lead")));

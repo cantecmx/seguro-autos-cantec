@@ -79,13 +79,15 @@ function Compute-Block([string]$from, [string]$to) {
   }
 
   # 2) Serie diaria (con CPL y CPM)
-  $daily = Get-Windsor "account_id,date,spend,impressions,actions_lead" $from $to
+  $daily = Get-Windsor "account_id,date,spend,impressions,actions_lead,actions_onsite_conversion_messaging_conversation_started_7d" $from $to
   $dailyArr = @($daily | Group-Object date | Sort-Object Name | ForEach-Object {
     $sp=Sum $_.Group "spend"; $im=Sum $_.Group "impressions"; $ld=[int](Sum $_.Group "actions_lead")
+    $cv=[int](Sum $_.Group "actions_onsite_conversion_messaging_conversation_started_7d")
     [ordered]@{
-      date=$_.Name; spend=[math]::Round($sp,2); leads=$ld
+      date=$_.Name; spend=[math]::Round($sp,2); leads=$ld; conversations=$cv
       cpm= if($im){[math]::Round($sp/$im*1000,0)}else{0}
       cpl= if($ld){[math]::Round($sp/$ld,2)}else{$null}
+      cpConv= if($cv){[math]::Round($sp/$cv,2)}else{$null}
     }
   })
 

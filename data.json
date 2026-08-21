@@ -1,5 +1,5 @@
 {
-    "updatedAt":  "2026-08-20",
+    "updatedAt":  "2026-08-21",
     "account":  "993894886753623",
     "defaultMonth":  "2026-08",
     "months":  [
@@ -36,274 +36,352 @@
                                                       "date":  "2026-05-21",
                                                       "spend":  109.58,
                                                       "leads":  0,
+                                                      "conversations":  0,
                                                       "cpm":  299,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  null
                                                   },
                                                   {
                                                       "date":  "2026-05-22",
                                                       "spend":  237.18,
                                                       "leads":  5,
+                                                      "conversations":  4,
                                                       "cpm":  406,
-                                                      "cpl":  47.44
+                                                      "cpl":  47.44,
+                                                      "cpConv":  59.3
                                                   },
                                                   {
                                                       "date":  "2026-05-23",
                                                       "spend":  223.38,
                                                       "leads":  3,
+                                                      "conversations":  2,
                                                       "cpm":  301,
-                                                      "cpl":  74.46
+                                                      "cpl":  74.46,
+                                                      "cpConv":  111.69
                                                   },
                                                   {
                                                       "date":  "2026-05-24",
                                                       "spend":  325.09,
                                                       "leads":  7,
+                                                      "conversations":  6,
                                                       "cpm":  298,
-                                                      "cpl":  46.44
+                                                      "cpl":  46.44,
+                                                      "cpConv":  54.18
                                                   },
                                                   {
                                                       "date":  "2026-05-25",
                                                       "spend":  278.57,
                                                       "leads":  8,
+                                                      "conversations":  4,
                                                       "cpm":  269,
-                                                      "cpl":  34.82
+                                                      "cpl":  34.82,
+                                                      "cpConv":  69.64
                                                   },
                                                   {
                                                       "date":  "2026-05-26",
                                                       "spend":  226.86,
                                                       "leads":  1,
+                                                      "conversations":  1,
                                                       "cpm":  307,
-                                                      "cpl":  226.86
+                                                      "cpl":  226.86,
+                                                      "cpConv":  226.86
                                                   },
                                                   {
                                                       "date":  "2026-05-27",
                                                       "spend":  218.78,
                                                       "leads":  2,
+                                                      "conversations":  0,
                                                       "cpm":  351,
-                                                      "cpl":  109.39
+                                                      "cpl":  109.39,
+                                                      "cpConv":  null
                                                   },
                                                   {
                                                       "date":  "2026-05-28",
                                                       "spend":  270.68,
                                                       "leads":  5,
+                                                      "conversations":  4,
                                                       "cpm":  367,
-                                                      "cpl":  54.14
+                                                      "cpl":  54.14,
+                                                      "cpConv":  67.67
                                                   },
                                                   {
                                                       "date":  "2026-05-29",
                                                       "spend":  240,
                                                       "leads":  1,
+                                                      "conversations":  0,
                                                       "cpm":  330,
-                                                      "cpl":  240
+                                                      "cpl":  240,
+                                                      "cpConv":  null
                                                   },
                                                   {
                                                       "date":  "2026-05-30",
                                                       "spend":  186.21,
                                                       "leads":  1,
+                                                      "conversations":  0,
                                                       "cpm":  422,
-                                                      "cpl":  186.21
+                                                      "cpl":  186.21,
+                                                      "cpConv":  null
                                                   },
                                                   {
                                                       "date":  "2026-05-31",
                                                       "spend":  317.01,
                                                       "leads":  2,
+                                                      "conversations":  0,
                                                       "cpm":  372,
-                                                      "cpl":  158.5
+                                                      "cpl":  158.5,
+                                                      "cpConv":  null
                                                   },
                                                   {
                                                       "date":  "2026-06-01",
                                                       "spend":  278.47,
                                                       "leads":  7,
+                                                      "conversations":  6,
                                                       "cpm":  341,
-                                                      "cpl":  39.78
+                                                      "cpl":  39.78,
+                                                      "cpConv":  46.41
                                                   },
                                                   {
                                                       "date":  "2026-06-02",
                                                       "spend":  273.68,
                                                       "leads":  10,
+                                                      "conversations":  9,
                                                       "cpm":  276,
-                                                      "cpl":  27.37
+                                                      "cpl":  27.37,
+                                                      "cpConv":  30.41
                                                   },
                                                   {
                                                       "date":  "2026-06-03",
                                                       "spend":  258.48,
                                                       "leads":  3,
+                                                      "conversations":  2,
                                                       "cpm":  225,
-                                                      "cpl":  86.16
+                                                      "cpl":  86.16,
+                                                      "cpConv":  129.24
                                                   },
                                                   {
                                                       "date":  "2026-06-04",
                                                       "spend":  238.85,
                                                       "leads":  2,
+                                                      "conversations":  2,
                                                       "cpm":  341,
-                                                      "cpl":  119.42
+                                                      "cpl":  119.42,
+                                                      "cpConv":  119.42
                                                   },
                                                   {
                                                       "date":  "2026-06-05",
                                                       "spend":  183.35,
                                                       "leads":  2,
+                                                      "conversations":  0,
                                                       "cpm":  320,
-                                                      "cpl":  91.68
+                                                      "cpl":  91.68,
+                                                      "cpConv":  null
                                                   },
                                                   {
                                                       "date":  "2026-06-06",
                                                       "spend":  195.31,
                                                       "leads":  6,
+                                                      "conversations":  2,
                                                       "cpm":  239,
-                                                      "cpl":  32.55
+                                                      "cpl":  32.55,
+                                                      "cpConv":  97.66
                                                   },
                                                   {
                                                       "date":  "2026-06-07",
                                                       "spend":  286.29,
                                                       "leads":  3,
+                                                      "conversations":  1,
                                                       "cpm":  251,
-                                                      "cpl":  95.43
+                                                      "cpl":  95.43,
+                                                      "cpConv":  286.29
                                                   },
                                                   {
                                                       "date":  "2026-06-08",
                                                       "spend":  278.71,
                                                       "leads":  5,
+                                                      "conversations":  4,
                                                       "cpm":  222,
-                                                      "cpl":  55.74
+                                                      "cpl":  55.74,
+                                                      "cpConv":  69.68
                                                   },
                                                   {
                                                       "date":  "2026-06-09",
                                                       "spend":  214.27,
                                                       "leads":  3,
+                                                      "conversations":  2,
                                                       "cpm":  198,
-                                                      "cpl":  71.42
+                                                      "cpl":  71.42,
+                                                      "cpConv":  107.14
                                                   },
                                                   {
                                                       "date":  "2026-06-10",
                                                       "spend":  240.06,
                                                       "leads":  2,
+                                                      "conversations":  1,
                                                       "cpm":  218,
-                                                      "cpl":  120.03
+                                                      "cpl":  120.03,
+                                                      "cpConv":  240.06
                                                   },
                                                   {
                                                       "date":  "2026-06-11",
                                                       "spend":  240.99,
                                                       "leads":  5,
+                                                      "conversations":  3,
                                                       "cpm":  268,
-                                                      "cpl":  48.2
+                                                      "cpl":  48.2,
+                                                      "cpConv":  80.33
                                                   },
                                                   {
                                                       "date":  "2026-06-12",
                                                       "spend":  252.2,
                                                       "leads":  1,
+                                                      "conversations":  2,
                                                       "cpm":  216,
-                                                      "cpl":  252.2
+                                                      "cpl":  252.2,
+                                                      "cpConv":  126.1
                                                   },
                                                   {
                                                       "date":  "2026-06-13",
                                                       "spend":  231.37,
                                                       "leads":  1,
+                                                      "conversations":  1,
                                                       "cpm":  268,
-                                                      "cpl":  231.37
+                                                      "cpl":  231.37,
+                                                      "cpConv":  231.37
                                                   },
                                                   {
                                                       "date":  "2026-06-14",
                                                       "spend":  317.61,
                                                       "leads":  4,
+                                                      "conversations":  4,
                                                       "cpm":  262,
-                                                      "cpl":  79.4
+                                                      "cpl":  79.4,
+                                                      "cpConv":  79.4
                                                   },
                                                   {
                                                       "date":  "2026-06-15",
                                                       "spend":  269.63,
                                                       "leads":  0,
+                                                      "conversations":  0,
                                                       "cpm":  391,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  null
                                                   },
                                                   {
                                                       "date":  "2026-06-16",
                                                       "spend":  259.81,
                                                       "leads":  3,
+                                                      "conversations":  3,
                                                       "cpm":  449,
-                                                      "cpl":  86.6
+                                                      "cpl":  86.6,
+                                                      "cpConv":  86.6
                                                   },
                                                   {
                                                       "date":  "2026-06-17",
                                                       "spend":  246.12,
                                                       "leads":  3,
+                                                      "conversations":  2,
                                                       "cpm":  473,
-                                                      "cpl":  82.04
+                                                      "cpl":  82.04,
+                                                      "cpConv":  123.06
                                                   },
                                                   {
                                                       "date":  "2026-06-18",
                                                       "spend":  246.55,
                                                       "leads":  3,
+                                                      "conversations":  2,
                                                       "cpm":  385,
-                                                      "cpl":  82.18
+                                                      "cpl":  82.18,
+                                                      "cpConv":  123.28
                                                   },
                                                   {
                                                       "date":  "2026-06-19",
                                                       "spend":  195.19,
                                                       "leads":  1,
+                                                      "conversations":  1,
                                                       "cpm":  391,
-                                                      "cpl":  195.19
+                                                      "cpl":  195.19,
+                                                      "cpConv":  195.19
                                                   },
                                                   {
                                                       "date":  "2026-06-20",
                                                       "spend":  208.25,
                                                       "leads":  3,
+                                                      "conversations":  1,
                                                       "cpm":  483,
-                                                      "cpl":  69.42
+                                                      "cpl":  69.42,
+                                                      "cpConv":  208.25
                                                   },
                                                   {
                                                       "date":  "2026-06-21",
                                                       "spend":  321.78,
                                                       "leads":  4,
+                                                      "conversations":  3,
                                                       "cpm":  534,
-                                                      "cpl":  80.44
+                                                      "cpl":  80.44,
+                                                      "cpConv":  107.26
                                                   },
                                                   {
                                                       "date":  "2026-06-22",
                                                       "spend":  413.38,
                                                       "leads":  3,
+                                                      "conversations":  3,
                                                       "cpm":  271,
-                                                      "cpl":  137.79
+                                                      "cpl":  137.79,
+                                                      "cpConv":  137.79
                                                   },
                                                   {
                                                       "date":  "2026-06-23",
                                                       "spend":  533.33,
                                                       "leads":  1,
+                                                      "conversations":  3,
                                                       "cpm":  310,
-                                                      "cpl":  533.33
+                                                      "cpl":  533.33,
+                                                      "cpConv":  177.78
                                                   },
                                                   {
                                                       "date":  "2026-06-24",
                                                       "spend":  422.91,
                                                       "leads":  0,
+                                                      "conversations":  3,
                                                       "cpm":  242,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  140.97
                                                   },
                                                   {
                                                       "date":  "2026-06-25",
                                                       "spend":  453.81,
                                                       "leads":  3,
+                                                      "conversations":  3,
                                                       "cpm":  269,
-                                                      "cpl":  151.27
+                                                      "cpl":  151.27,
+                                                      "cpConv":  151.27
                                                   },
                                                   {
                                                       "date":  "2026-06-26",
                                                       "spend":  387.42,
                                                       "leads":  0,
+                                                      "conversations":  1,
                                                       "cpm":  306,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  387.42
                                                   },
                                                   {
                                                       "date":  "2026-06-27",
                                                       "spend":  294.56,
                                                       "leads":  4,
+                                                      "conversations":  5,
                                                       "cpm":  258,
-                                                      "cpl":  73.64
+                                                      "cpl":  73.64,
+                                                      "cpConv":  58.91
                                                   },
                                                   {
                                                       "date":  "2026-06-28",
                                                       "spend":  207.44,
                                                       "leads":  0,
+                                                      "conversations":  1,
                                                       "cpm":  321,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  207.44
                                                   }
                                               ],
                                     "demo":  {
@@ -506,218 +584,280 @@
                                                       "date":  "2026-07-01",
                                                       "spend":  0,
                                                       "leads":  0,
+                                                      "conversations":  0,
                                                       "cpm":  0,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  null
                                                   },
                                                   {
                                                       "date":  "2026-07-02",
                                                       "spend":  724.18,
                                                       "leads":  2,
+                                                      "conversations":  11,
                                                       "cpm":  127,
-                                                      "cpl":  362.09
+                                                      "cpl":  362.09,
+                                                      "cpConv":  65.83
                                                   },
                                                   {
                                                       "date":  "2026-07-03",
                                                       "spend":  1017.52,
                                                       "leads":  8,
+                                                      "conversations":  40,
                                                       "cpm":  127,
-                                                      "cpl":  127.19
+                                                      "cpl":  127.19,
+                                                      "cpConv":  25.44
                                                   },
                                                   {
                                                       "date":  "2026-07-04",
                                                       "spend":  855.67,
                                                       "leads":  1,
+                                                      "conversations":  20,
                                                       "cpm":  135,
-                                                      "cpl":  855.67
+                                                      "cpl":  855.67,
+                                                      "cpConv":  42.78
                                                   },
                                                   {
                                                       "date":  "2026-07-05",
                                                       "spend":  776.86,
                                                       "leads":  3,
+                                                      "conversations":  41,
                                                       "cpm":  86,
-                                                      "cpl":  258.95
+                                                      "cpl":  258.95,
+                                                      "cpConv":  18.95
                                                   },
                                                   {
                                                       "date":  "2026-07-06",
                                                       "spend":  817.17,
                                                       "leads":  2,
+                                                      "conversations":  56,
                                                       "cpm":  83,
-                                                      "cpl":  408.58
+                                                      "cpl":  408.58,
+                                                      "cpConv":  14.59
                                                   },
                                                   {
                                                       "date":  "2026-07-07",
                                                       "spend":  726.65,
                                                       "leads":  3,
+                                                      "conversations":  40,
                                                       "cpm":  125,
-                                                      "cpl":  242.22
+                                                      "cpl":  242.22,
+                                                      "cpConv":  18.17
                                                   },
                                                   {
                                                       "date":  "2026-07-08",
                                                       "spend":  553.19,
                                                       "leads":  0,
+                                                      "conversations":  28,
                                                       "cpm":  136,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  19.76
                                                   },
                                                   {
                                                       "date":  "2026-07-09",
                                                       "spend":  468.18,
                                                       "leads":  4,
+                                                      "conversations":  20,
                                                       "cpm":  144,
-                                                      "cpl":  117.04
+                                                      "cpl":  117.04,
+                                                      "cpConv":  23.41
                                                   },
                                                   {
                                                       "date":  "2026-07-10",
                                                       "spend":  528.9,
                                                       "leads":  8,
+                                                      "conversations":  22,
                                                       "cpm":  142,
-                                                      "cpl":  66.11
+                                                      "cpl":  66.11,
+                                                      "cpConv":  24.04
                                                   },
                                                   {
                                                       "date":  "2026-07-11",
                                                       "spend":  356.2,
                                                       "leads":  1,
+                                                      "conversations":  16,
                                                       "cpm":  87,
-                                                      "cpl":  356.2
+                                                      "cpl":  356.2,
+                                                      "cpConv":  22.26
                                                   },
                                                   {
                                                       "date":  "2026-07-12",
                                                       "spend":  693.65,
                                                       "leads":  5,
+                                                      "conversations":  27,
                                                       "cpm":  169,
-                                                      "cpl":  138.73
+                                                      "cpl":  138.73,
+                                                      "cpConv":  25.69
                                                   },
                                                   {
                                                       "date":  "2026-07-13",
                                                       "spend":  640.53,
                                                       "leads":  3,
+                                                      "conversations":  39,
                                                       "cpm":  122,
-                                                      "cpl":  213.51
+                                                      "cpl":  213.51,
+                                                      "cpConv":  16.42
                                                   },
                                                   {
                                                       "date":  "2026-07-14",
                                                       "spend":  610.07,
                                                       "leads":  3,
+                                                      "conversations":  20,
                                                       "cpm":  115,
-                                                      "cpl":  203.36
+                                                      "cpl":  203.36,
+                                                      "cpConv":  30.5
                                                   },
                                                   {
                                                       "date":  "2026-07-15",
                                                       "spend":  529.96,
                                                       "leads":  2,
+                                                      "conversations":  23,
                                                       "cpm":  143,
-                                                      "cpl":  264.98
+                                                      "cpl":  264.98,
+                                                      "cpConv":  23.04
                                                   },
                                                   {
                                                       "date":  "2026-07-16",
                                                       "spend":  470.27,
                                                       "leads":  3,
+                                                      "conversations":  13,
                                                       "cpm":  130,
-                                                      "cpl":  156.76
+                                                      "cpl":  156.76,
+                                                      "cpConv":  36.17
                                                   },
                                                   {
                                                       "date":  "2026-07-17",
                                                       "spend":  443.45,
                                                       "leads":  1,
+                                                      "conversations":  3,
                                                       "cpm":  278,
-                                                      "cpl":  443.45
+                                                      "cpl":  443.45,
+                                                      "cpConv":  147.82
                                                   },
                                                   {
                                                       "date":  "2026-07-18",
                                                       "spend":  226.88,
                                                       "leads":  0,
+                                                      "conversations":  1,
                                                       "cpm":  194,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  226.88
                                                   },
                                                   {
                                                       "date":  "2026-07-19",
                                                       "spend":  532.69,
                                                       "leads":  6,
+                                                      "conversations":  7,
                                                       "cpm":  256,
-                                                      "cpl":  88.78
+                                                      "cpl":  88.78,
+                                                      "cpConv":  76.1
                                                   },
                                                   {
                                                       "date":  "2026-07-20",
                                                       "spend":  589.28,
                                                       "leads":  5,
+                                                      "conversations":  10,
                                                       "cpm":  287,
-                                                      "cpl":  117.86
+                                                      "cpl":  117.86,
+                                                      "cpConv":  58.93
                                                   },
                                                   {
                                                       "date":  "2026-07-21",
                                                       "spend":  341.61,
                                                       "leads":  2,
+                                                      "conversations":  4,
                                                       "cpm":  214,
-                                                      "cpl":  170.8
+                                                      "cpl":  170.8,
+                                                      "cpConv":  85.4
                                                   },
                                                   {
                                                       "date":  "2026-07-22",
                                                       "spend":  204.06,
                                                       "leads":  0,
+                                                      "conversations":  7,
                                                       "cpm":  137,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  29.15
                                                   },
                                                   {
                                                       "date":  "2026-07-23",
                                                       "spend":  216.99,
                                                       "leads":  0,
+                                                      "conversations":  6,
                                                       "cpm":  127,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  36.16
                                                   },
                                                   {
                                                       "date":  "2026-07-24",
                                                       "spend":  153.61,
                                                       "leads":  0,
+                                                      "conversations":  4,
                                                       "cpm":  104,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  38.4
                                                   },
                                                   {
                                                       "date":  "2026-07-25",
                                                       "spend":  108.28,
                                                       "leads":  0,
+                                                      "conversations":  2,
                                                       "cpm":  100,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  54.14
                                                   },
                                                   {
                                                       "date":  "2026-07-26",
                                                       "spend":  130.45,
                                                       "leads":  0,
+                                                      "conversations":  3,
                                                       "cpm":  102,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  43.48
                                                   },
                                                   {
                                                       "date":  "2026-07-27",
                                                       "spend":  292.14,
                                                       "leads":  0,
+                                                      "conversations":  6,
                                                       "cpm":  219,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  48.69
                                                   },
                                                   {
                                                       "date":  "2026-07-28",
                                                       "spend":  251.42,
                                                       "leads":  0,
+                                                      "conversations":  8,
                                                       "cpm":  216,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  31.43
                                                   },
                                                   {
                                                       "date":  "2026-07-29",
                                                       "spend":  137.81,
                                                       "leads":  0,
+                                                      "conversations":  2,
                                                       "cpm":  149,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  68.9
                                                   },
                                                   {
                                                       "date":  "2026-07-30",
                                                       "spend":  204.18,
                                                       "leads":  0,
+                                                      "conversations":  4,
                                                       "cpm":  215,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  51.04
                                                   },
                                                   {
                                                       "date":  "2026-07-31",
                                                       "spend":  221.43,
                                                       "leads":  0,
+                                                      "conversations":  7,
                                                       "cpm":  215,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  31.63
                                                   }
                                               ],
                                     "demo":  {
@@ -906,168 +1046,217 @@
                        "locked":  false,
                        "data":  {
                                     "periodFrom":  "2026-08-01",
-                                    "periodTo":  "2026-08-20",
+                                    "periodTo":  "2026-08-21",
                                     "kpis":  {
                                                  "leads":  0,
                                                  "cpl":  0,
-                                                 "costPerConv":  53.96,
+                                                 "costPerConv":  53.03,
                                                  "leadSpend":  0,
-                                                 "convSpend":  5666,
-                                                 "convConversations":  105,
-                                                 "spend":  5666,
-                                                 "reach":  22697,
-                                                 "frequency":  1.52,
-                                                 "impressions":  34540,
-                                                 "cpm":  164,
-                                                 "linkClicks":  272,
+                                                 "convSpend":  5834,
+                                                 "convConversations":  110,
+                                                 "spend":  5834,
+                                                 "reach":  23467,
+                                                 "frequency":  1.53,
+                                                 "impressions":  35942,
+                                                 "cpm":  162,
+                                                 "linkClicks":  285,
                                                  "ctr":  1.91,
-                                                 "cpc":  20.8,
+                                                 "cpc":  20.5,
                                                  "convRate":  0,
-                                                 "conversations":  105,
+                                                 "conversations":  110,
                                                  "leadsPerDay":  0,
-                                                 "spendPerDay":  283,
-                                                 "days":  20
+                                                 "spendPerDay":  278,
+                                                 "days":  21
                                              },
                                     "daily":  [
                                                   {
                                                       "date":  "2026-08-01",
                                                       "spend":  154.81,
                                                       "leads":  0,
+                                                      "conversations":  1,
                                                       "cpm":  143,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  154.81
                                                   },
                                                   {
                                                       "date":  "2026-08-02",
                                                       "spend":  199.81,
                                                       "leads":  0,
+                                                      "conversations":  3,
                                                       "cpm":  142,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  66.6
                                                   },
                                                   {
                                                       "date":  "2026-08-03",
                                                       "spend":  235.92,
                                                       "leads":  0,
+                                                      "conversations":  5,
                                                       "cpm":  183,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  47.18
                                                   },
                                                   {
                                                       "date":  "2026-08-04",
                                                       "spend":  184.6,
                                                       "leads":  0,
+                                                      "conversations":  4,
                                                       "cpm":  137,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  46.15
                                                   },
                                                   {
                                                       "date":  "2026-08-05",
                                                       "spend":  249.94,
                                                       "leads":  0,
+                                                      "conversations":  10,
                                                       "cpm":  198,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  24.99
                                                   },
                                                   {
                                                       "date":  "2026-08-06",
                                                       "spend":  208.84,
                                                       "leads":  0,
+                                                      "conversations":  2,
                                                       "cpm":  238,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  104.42
                                                   },
                                                   {
                                                       "date":  "2026-08-07",
                                                       "spend":  227.9,
                                                       "leads":  0,
+                                                      "conversations":  4,
                                                       "cpm":  168,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  56.98
                                                   },
                                                   {
                                                       "date":  "2026-08-08",
                                                       "spend":  236.89,
                                                       "leads":  0,
+                                                      "conversations":  7,
                                                       "cpm":  198,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  33.84
                                                   },
                                                   {
                                                       "date":  "2026-08-09",
                                                       "spend":  345.92,
                                                       "leads":  0,
+                                                      "conversations":  4,
                                                       "cpm":  164,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  86.48
                                                   },
                                                   {
                                                       "date":  "2026-08-10",
                                                       "spend":  426.83,
                                                       "leads":  0,
+                                                      "conversations":  9,
                                                       "cpm":  172,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  47.43
                                                   },
                                                   {
                                                       "date":  "2026-08-11",
                                                       "spend":  371.95,
                                                       "leads":  0,
+                                                      "conversations":  7,
                                                       "cpm":  185,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  53.14
                                                   },
                                                   {
                                                       "date":  "2026-08-12",
                                                       "spend":  281.72,
                                                       "leads":  0,
+                                                      "conversations":  7,
                                                       "cpm":  170,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  40.25
                                                   },
                                                   {
                                                       "date":  "2026-08-13",
                                                       "spend":  227.99,
                                                       "leads":  0,
+                                                      "conversations":  1,
                                                       "cpm":  163,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  227.99
                                                   },
                                                   {
                                                       "date":  "2026-08-14",
                                                       "spend":  186.99,
                                                       "leads":  0,
+                                                      "conversations":  4,
                                                       "cpm":  212,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  46.75
                                                   },
                                                   {
                                                       "date":  "2026-08-15",
                                                       "spend":  234.83,
                                                       "leads":  0,
+                                                      "conversations":  6,
                                                       "cpm":  177,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  39.14
                                                   },
                                                   {
                                                       "date":  "2026-08-16",
                                                       "spend":  370.16,
                                                       "leads":  0,
+                                                      "conversations":  2,
                                                       "cpm":  212,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  185.08
                                                   },
                                                   {
                                                       "date":  "2026-08-17",
                                                       "spend":  283.93,
                                                       "leads":  0,
+                                                      "conversations":  6,
                                                       "cpm":  243,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  47.32
                                                   },
                                                   {
                                                       "date":  "2026-08-18",
                                                       "spend":  431.61,
                                                       "leads":  0,
+                                                      "conversations":  11,
                                                       "cpm":  135,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  39.24
                                                   },
                                                   {
                                                       "date":  "2026-08-19",
-                                                      "spend":  489.13,
+                                                      "spend":  489.2,
                                                       "leads":  0,
+                                                      "conversations":  7,
                                                       "cpm":  106,
-                                                      "cpl":  null
+                                                      "cpl":  null,
+                                                      "cpConv":  69.89
                                                   },
                                                   {
                                                       "date":  "2026-08-20",
-                                                      "spend":  316.08,
+                                                      "spend":  442.31,
                                                       "leads":  0,
-                                                      "cpm":  149,
-                                                      "cpl":  null
+                                                      "conversations":  9,
+                                                      "cpm":  140,
+                                                      "cpl":  null,
+                                                      "cpConv":  49.15
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-21",
+                                                      "spend":  166.48,
+                                                      "leads":  0,
+                                                      "conversations":  4,
+                                                      "cpm":  84,
+                                                      "cpl":  null,
+                                                      "cpConv":  41.62
                                                   }
                                               ],
                                     "demo":  {
@@ -1102,23 +1291,23 @@
                                     "regions":  [
                                                     {
                                                         "region":  "Nuevo León",
-                                                        "spend":  1137
+                                                        "spend":  1183
                                                     },
                                                     {
                                                         "region":  "Distrito Federal",
-                                                        "spend":  949
+                                                        "spend":  978
                                                     },
                                                     {
                                                         "region":  "State of Mexico",
-                                                        "spend":  852
+                                                        "spend":  884
                                                     },
                                                     {
                                                         "region":  "Jalisco",
-                                                        "spend":  725
+                                                        "spend":  740
                                                     },
                                                     {
                                                         "region":  "Veracruz",
-                                                        "spend":  178
+                                                        "spend":  184
                                                     },
                                                     {
                                                         "region":  "Chihuahua",
@@ -1126,11 +1315,11 @@
                                                     },
                                                     {
                                                         "region":  "Puebla",
-                                                        "spend":  129
+                                                        "spend":  133
                                                     },
                                                     {
                                                         "region":  "__RESTO__",
-                                                        "spend":  1546
+                                                        "spend":  1580
                                                     }
                                                 ],
                                     "artes":  [
@@ -1138,11 +1327,11 @@
                                                       "id":  "llaves",
                                                       "adName":  "Anuncio Impulsado 01 Llaves",
                                                       "leads":  0,
-                                                      "spend":  4020,
+                                                      "spend":  4077,
                                                       "cpl":  0,
-                                                      "cpConv":  63.81,
-                                                      "ctr":  2.13,
-                                                      "conversations":  63,
+                                                      "cpConv":  63.7,
+                                                      "ctr":  2.12,
+                                                      "conversations":  64,
                                                       "pct":  0,
                                                       "rankNum":  1,
                                                       "tier":  "conv"
@@ -1151,11 +1340,11 @@
                                                       "id":  "nuevoanunciodeinteracción",
                                                       "adName":  "Nuevo anuncio de Interacción",
                                                       "leads":  0,
-                                                      "spend":  1361,
+                                                      "spend":  1389,
                                                       "cpl":  0,
-                                                      "cpConv":  36.8,
-                                                      "ctr":  1.66,
-                                                      "conversations":  37,
+                                                      "cpConv":  36.56,
+                                                      "ctr":  1.69,
+                                                      "conversations":  38,
                                                       "pct":  0,
                                                       "rankNum":  2,
                                                       "tier":  "conv"
@@ -1164,11 +1353,11 @@
                                                       "id":  "anuncioagosto",
                                                       "adName":  "Anuncio Agosto",
                                                       "leads":  0,
-                                                      "spend":  286,
+                                                      "spend":  368,
                                                       "cpl":  0,
-                                                      "cpConv":  57.22,
-                                                      "ctr":  1.73,
-                                                      "conversations":  5,
+                                                      "cpConv":  45.97,
+                                                      "ctr":  1.59,
+                                                      "conversations":  8,
                                                       "pct":  0,
                                                       "rankNum":  3,
                                                       "tier":  "conv"

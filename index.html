@@ -180,8 +180,8 @@
 
         <h2 class="sec">Evolución diaria</h2>
         <div class="grid2">
-          <div class="card"><h3>Inversión vs. Leads por día</h3><div class="csub">Barras = gasto diario (MXN) · Línea = clientes potenciales</div><div class="chartbox"><canvas id="cTrend"></canvas></div></div>
-          <div class="card"><h3>Costo por Lead (CPL) diario</h3><div class="csub">MXN por lead, día a día — tendencia a la baja = mejor</div><div class="chartbox"><canvas id="cCpl"></canvas></div></div>
+          <div class="card"><h3>Inversión vs. Conversaciones por día</h3><div class="csub">Barras = gasto diario (MXN) · Línea = conversaciones iniciadas</div><div class="chartbox"><canvas id="cTrend"></canvas></div></div>
+          <div class="card"><h3>Costo por Conversación diario</h3><div class="csub">MXN por conversación, día a día — tendencia a la baja = mejor</div><div class="chartbox"><canvas id="cCpl"></canvas></div></div>
         </div>
 
         <h2 class="sec">Seguimiento operativo · ventas y gestión</h2>
@@ -365,12 +365,12 @@ function renderCharts(d){
   const days=d.daily.map(x=>fDay(x.date));
   charts.trend=new Chart($('cTrend'),{data:{labels:days,datasets:[
     {type:'bar',label:'Inversión (MXN)',data:d.daily.map(x=>x.spend),backgroundColor:'rgba(19,49,107,.82)',yAxisID:'y',borderRadius:4,order:2},
-    {type:'line',label:'Leads',data:d.daily.map(x=>x.leads),borderColor:'#F47A1F',backgroundColor:'#F47A1F',yAxisID:'y1',tension:.35,borderWidth:3,pointRadius:2,order:1}]},
+    {type:'line',label:'Conversaciones',data:d.daily.map(x=>x.conversations),borderColor:'#F47A1F',backgroundColor:'#F47A1F',yAxisID:'y1',tension:.35,borderWidth:3,pointRadius:2,order:1}]},
     options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-      plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+(c.dataset.yAxisID==='y'?fmtMXN(c.parsed.y):c.parsed.y+' leads')}}},
-      scales:{y:{position:'left',ticks:{callback:v=>'$'+v},title:{display:true,text:'Gasto'}},y1:{position:'right',grid:{drawOnChartArea:false},title:{display:true,text:'Leads'},suggestedMax:12}}}});
-  charts.cpl=new Chart($('cCpl'),{type:'line',data:{labels:days,datasets:[{label:'CPL',data:d.daily.map(x=>x.cpl),borderColor:'#F2A81D',backgroundColor:'rgba(242,168,29,.15)',fill:true,tension:.35,borderWidth:3,pointRadius:2,spanGaps:true}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y==null?'Sin leads ese día':'CPL: $'+Number(c.parsed.y).toFixed(2)}}},scales:{y:{ticks:{callback:v=>'$'+v}}}}});
+      plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+(c.dataset.yAxisID==='y'?fmtMXN(c.parsed.y):c.parsed.y+' conversaciones')}}},
+      scales:{y:{position:'left',ticks:{callback:v=>'$'+v},title:{display:true,text:'Gasto'}},y1:{position:'right',grid:{drawOnChartArea:false},title:{display:true,text:'Conversaciones'}}}}});
+  charts.cpl=new Chart($('cCpl'),{type:'line',data:{labels:days,datasets:[{label:'Costo/conversación',data:d.daily.map(x=>x.cpConv),borderColor:'#F2A81D',backgroundColor:'rgba(242,168,29,.15)',fill:true,tension:.35,borderWidth:3,pointRadius:2,spanGaps:true}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y==null?'Sin conversaciones ese día':'Costo/conv: $'+Number(c.parsed.y).toFixed(2)}}},scales:{y:{ticks:{callback:v=>'$'+v}}}}});
   charts.demo=new Chart($('cDemo'),{type:'bar',data:{labels:d.demo.ages,datasets:[
     {label:'Hombres',data:d.demo.male,backgroundColor:'#13316b',borderRadius:4},
     {label:'Mujeres',data:d.demo.female,backgroundColor:'#F47A1F',borderRadius:4}]},
