@@ -220,13 +220,16 @@
           </div>
         </details>
 
-        <h2 class="sec">Evolución diaria</h2>
-        <div class="grid2">
-          <div class="card"><h3>Inversión vs. Conversaciones por día</h3><div class="csub">Barras = gasto diario (MXN) · Línea = conversaciones iniciadas</div><div class="chartbox"><canvas id="cTrend"></canvas></div></div>
-          <div class="card"><h3>Costo por Conversación diario</h3><div class="csub">MXN por conversación, día a día — tendencia a la baja = mejor</div><div class="chartbox"><canvas id="cCpl"></canvas></div></div>
-        </div>
+        <details class="sec-details" id="detEvol" open>
+          <summary>Evolución diaria</summary>
+          <div class="grid2">
+            <div class="card"><h3>Inversión vs. Conversaciones por día</h3><div class="csub">Barras = gasto diario (MXN) · Línea = conversaciones iniciadas</div><div class="chartbox"><canvas id="cTrend"></canvas></div></div>
+            <div class="card"><h3>Costo por Conversación diario</h3><div class="csub">MXN por conversación, día a día — tendencia a la baja = mejor</div><div class="chartbox"><canvas id="cCpl"></canvas></div></div>
+          </div>
+        </details>
 
-        <h2 class="sec">Seguimiento operativo · ventas y gestión</h2>
+        <details class="sec-details" id="detSeg" open>
+          <summary>Seguimiento operativo · ventas y gestión</summary>
         <div id="segWrap">
           <div class="kpis" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
             <div class="kpi lead"><div class="lbl">Contactos gestionados</div><div class="val" id="sgTotal">—</div><div class="note">registrados por operaciones</div></div>
@@ -249,6 +252,7 @@
             <div class="card"><h3>Escalamiento (acumulado del mes)</h3><div class="csub">Total corrido — cómo se va sumando el mes</div><div class="chartbox"><canvas id="cAcum"></canvas></div></div>
           </div>
           <div class="emptybar" id="avanceEmpty" style="display:none">Sin datos de seguimiento diario para este mes.</div>
+        </details>
         </details>
 
       </div>
@@ -557,7 +561,7 @@ async function actualizarDatos(){
                  : 'No se pudo actualizar', true);
   }finally{ b.classList.remove('loading'); }
 }
-['detConvierte','detArte','detAvance'].forEach(id=>{
+['detConvierte','detArte','detAvance','detEvol','detSeg'].forEach(id=>{
   const el=$(id);
   if(el) el.addEventListener('toggle',()=>{ if(el.open){ setTimeout(()=>{
     Object.values(charts).forEach(c=>{try{c&&c.resize()}catch(e){}});
