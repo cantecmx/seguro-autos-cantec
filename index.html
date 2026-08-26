@@ -265,7 +265,7 @@
         <div class="kpi cpl"><div class="lbl">Costo por conversación</div><div class="val" id="shCostConv">—</div><div class="note">MXN por conversación</div></div>
         <div class="kpi spend"><div class="lbl">Inversión publicitaria</div><div class="val" id="shSpend">—</div><div class="note">MXN en el mes</div></div>
       </div>
-      <div class="seclbl">Embudo · leads → conversión</div>
+      <div class="seclbl">Conversaciones iniciadas (pauta) vs Conversión · Cotizaciones (operación)</div>
       <div class="card"><div class="chartbox sm"><canvas id="cShare"></canvas></div></div>
       <div class="seclbl">Operación (ventas y gestión)</div>
       <div class="kpis">
@@ -484,9 +484,9 @@ function openShare(){
 function closeShare(){ $('shareModal').classList.remove('open'); if(shareChart){shareChart.destroy();shareChart=null;} }
 function renderShareChart(k,s){
   if(shareChart){shareChart.destroy();shareChart=null;}
-  const labels=['Conversaciones','Contactos gestionados','Cotizaciones','Ventas'];
-  const vals=[k.conversations, s?s.total:0, s?s.cotizaciones:0, s?s.venta:0];
-  shareChart=new Chart($('cShare'),{type:'bar',data:{labels,datasets:[{label:'Volumen',data:vals,backgroundColor:['#13316b','#1e4aa0','#F2A81D','#2e9e5b'],borderRadius:5}]},
+  const labels=['Conversaciones iniciadas','Cotizaciones'];
+  const vals=[k.conversations, s?s.cotizaciones:0];
+  shareChart=new Chart($('cShare'),{type:'bar',data:{labels,datasets:[{label:'Volumen',data:vals,backgroundColor:['#1e4aa0','#F2A81D'],borderRadius:6}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>Number(c.parsed.x).toLocaleString('es-MX')}}},scales:{x:{beginAtZero:true,ticks:{precision:0}}}}});
 }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeShare(); });
