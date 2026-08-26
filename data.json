@@ -1025,7 +1025,7 @@
                                                       "tier":  "conv"
                                                   },
                                                   {
-                                                      "id":  "anuncioimpulsadoofertahastael22",
+                                                      "id":  "oferta22",
                                                       "adName":  "Anuncio Impulsado Oferta hasta el 22",
                                                       "leads":  0,
                                                       "spend":  1696,
@@ -1382,7 +1382,7 @@
                                                       "tier":  "conv"
                                                   },
                                                   {
-                                                      "id":  "nuevoanunciodeinteracción",
+                                                      "id":  "interaccion",
                                                       "adName":  "Nuevo anuncio de Interacción",
                                                       "leads":  0,
                                                       "spend":  2673,
@@ -1395,7 +1395,7 @@
                                                       "tier":  "conv"
                                                   },
                                                   {
-                                                      "id":  "anuncioagosto",
+                                                      "id":  "agosto",
                                                       "adName":  "Anuncio Agosto",
                                                       "leads":  0,
                                                       "spend":  1440,
@@ -1408,7 +1408,7 @@
                                                       "tier":  "conv"
                                                   },
                                                   {
-                                                      "id":  "anuncioimpulsadoofertahastael22",
+                                                      "id":  "oferta22",
                                                       "adName":  "Anuncio Impulsado Oferta hasta el 22",
                                                       "leads":  0,
                                                       "spend":  0,

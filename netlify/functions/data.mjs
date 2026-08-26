@@ -11,6 +11,9 @@ const AD_MAP = {
   "Auto Chocado 2Prueba": "chocado2",
   "Anuncio Impulsado 01 Llaves": "llaves",
   "Anuncio Motos": "motos",
+  "Nuevo anuncio de Interacción": "interaccion",
+  "Anuncio Agosto": "agosto",
+  "Anuncio Impulsado Oferta hasta el 22": "oferta22",
 };
 const AGES = ["18-24","25-34","35-44","45-54","55-64","65+"];
 const MONTHS = [

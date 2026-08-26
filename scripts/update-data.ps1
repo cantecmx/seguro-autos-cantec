@@ -1,4 +1,4 @@
-<#
+﻿<#
   update-data.ps1
   Consulta la API REST de Windsor.ai para la cuenta GNP (Aseguradora Intermediario CANTEC)
   y genera data.json (estructura por meses) que consume el dashboard.
@@ -122,6 +122,9 @@ function Compute-Block([string]$from, [string]$to) {
     "Auto Chocado 2Prueba"="chocado2"
     "Anuncio Impulsado 01 Llaves"="llaves"
     "Anuncio Motos"="motos"
+    "Nuevo anuncio de Interacción"="interaccion"
+    "Anuncio Agosto"="agosto"
+    "Anuncio Impulsado Oferta hasta el 22"="oferta22"
   }
   $ads = Get-Windsor "account_id,ad_name,spend,impressions,clicks,link_clicks,actions_lead,actions_onsite_conversion_messaging_conversation_started_7d" $from $to
   $artesRaw=@($ads|Group-Object ad_name|ForEach-Object{
