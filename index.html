@@ -265,7 +265,7 @@
         <div class="kpi cpl"><div class="lbl">Costo por conversación</div><div class="val" id="shCostConv">—</div><div class="note">MXN por conversación</div></div>
         <div class="kpi spend"><div class="lbl">Inversión publicitaria</div><div class="val" id="shSpend">—</div><div class="note">MXN en el mes</div></div>
       </div>
-      <div class="seclbl">Conversaciones iniciadas (pauta) vs Conversión · Cotizaciones (operación)</div>
+      <div class="seclbl">Conversaciones iniciadas vs Cotizaciones · día a día</div>
       <div class="card"><div class="chartbox sm"><canvas id="cShare"></canvas></div></div>
       <div class="seclbl">Operación (ventas y gestión)</div>
       <div class="kpis">
@@ -479,15 +479,23 @@ function openShare(){
   set('shCot', s?s.cotizaciones:'—');
   set('shCierre', (s&&s.total)?(s.venta/s.total*100).toFixed(1)+'%':'—');
   $('shareModal').classList.add('open');
-  setTimeout(()=>renderShareChart(k,s),70);
+  setTimeout(()=>renderShareChart(m.data,s),70);
 }
 function closeShare(){ $('shareModal').classList.remove('open'); if(shareChart){shareChart.destroy();shareChart=null;} }
-function renderShareChart(k,s){
+function renderShareChart(blk,s){
   if(shareChart){shareChart.destroy();shareChart=null;}
-  const labels=['Conversaciones iniciadas','Cotizaciones'];
-  const vals=[k.conversations, s?s.cotizaciones:0];
-  shareChart=new Chart($('cShare'),{type:'bar',data:{labels,datasets:[{label:'Volumen',data:vals,backgroundColor:['#1e4aa0','#F2A81D'],borderRadius:6}]},
-    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>Number(c.parsed.x).toLocaleString('es-MX')}}},scales:{x:{beginAtZero:true,ticks:{precision:0}}}}});
+  const daily = (blk && blk.daily) || [];
+  const labels = daily.map(x=>fDay(x.date));
+  const conv = daily.map(x=>x.conversations);
+  const cotMap = {}; ((s&&s.daily)||[]).forEach(d=>{ cotMap[d.date]=d.cotizaciones; });
+  const cot = daily.map(x=> cotMap[x.date]!=null ? cotMap[x.date] : 0 );
+  shareChart=new Chart($('cShare'),{type:'line',data:{labels,datasets:[
+    {label:'Conversaciones iniciadas',data:conv,borderColor:'#1e4aa0',backgroundColor:'rgba(30,74,160,.12)',tension:.35,borderWidth:3,pointRadius:2,fill:true},
+    {label:'Cotizaciones',data:cot,borderColor:'#F2A81D',backgroundColor:'rgba(242,168,29,.18)',tension:.35,borderWidth:3,pointRadius:2,fill:true}
+  ]},
+    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+      plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}}},
+      scales:{y:{beginAtZero:true,ticks:{precision:0}}}}});
 }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeShare(); });
 function showToast(msg,isErr){const t=$('toast');t.textContent=msg;t.className='toast show'+(isErr?' err':'');setTimeout(()=>t.className='toast',3000);}
