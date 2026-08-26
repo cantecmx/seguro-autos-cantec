@@ -188,7 +188,7 @@
       <div class="emptybar" id="emptyBanner">Este mes aún no tiene datos de campaña.</div>
 
       <div id="content">
-        <h2 class="sec">Resultados clave del periodo</h2>
+        <h2 class="sec">Resultados de Marketing</h2>
         <div class="kpis">
           <div class="kpi lead"><div class="lbl">Conversaciones iniciadas</div><div class="val" id="kConvHero">—</div><div class="note">leads potenciales · <b id="kConvDay">—</b>/día</div></div>
           <div class="kpi cpl"><div class="lbl">Costo por conversación</div><div class="val" id="kCostConv">—</div><div class="note">MXN por conversación iniciada</div></div>
@@ -198,9 +198,27 @@
         <div class="kpis" style="margin-top:16px">
           <div class="kpi"><div class="lbl">Impresiones</div><div class="val" id="kImpr">—</div><div class="note">CPM <b id="kCpm">—</b> MXN</div></div>
           <div class="kpi"><div class="lbl">Clics al enlace</div><div class="val" id="kClicks">—</div><div class="note">CTR <b id="kCtr">—</b> · CPC <span id="kCpc">—</span></div></div>
-          <div class="kpi"><div class="lbl">Tasa de conversión</div><div class="val" id="kConvRate">—</div><div class="note">leads ÷ clics al enlace</div></div>
           <div class="kpi"><div class="lbl">Leads de formulario</div><div class="val" id="kLeadsForm">—</div><div class="note">clientes potenciales · CPL <b id="kCplForm">—</b></div></div>
         </div>
+
+        <details class="sec-details" id="detArte">
+          <summary>Análisis por arte (creativos en circulación)</summary>
+          <div class="artes" id="artesBox"></div>
+        </details>
+
+        <details class="sec-details" id="detConvierte">
+          <summary>¿Quién y dónde convierte?</summary>
+          <div class="grid2">
+            <div class="card"><h3>Conversaciones por edad y género</h3><div class="csub">El núcleo de conversión son hombres de mediana edad y mayores</div><div class="chartbox sm"><canvas id="cDemo"></canvas></div></div>
+            <div class="card"><h3>Rendimiento por segmento</h3><div class="csub">Costo por conversación según edad/género</div>
+              <table><thead><tr><th>Segmento</th><th class="num">Inversión</th><th class="num">Conversaciones</th><th class="num">Costo/conv</th></tr></thead><tbody id="segBody"></tbody></table>
+            </div>
+          </div>
+          <div class="grid2" style="margin-top:16px">
+            <div class="card"><h3>Distribución de inversión por estado</h3><div class="csub">Top estados por gasto · campaña nacional</div><div class="chartbox sm"><canvas id="cRegion"></canvas></div></div>
+            <div class="card"><h3>Resumen de embudo</h3><div class="csub">Del impacto al prospecto</div><div class="chartbox sm"><canvas id="cFunnel"></canvas></div></div>
+          </div>
+        </details>
 
         <h2 class="sec">Evolución diaria</h2>
         <div class="grid2">
@@ -224,22 +242,6 @@
         </div>
         <div class="emptybar" id="segEmpty" style="display:none">Aún no hay registros de seguimiento de operaciones para este mes.</div>
 
-        <h2 class="sec">Análisis por arte (creativos en circulación)</h2>
-        <div class="artes" id="artesBox"></div>
-
-        <details class="sec-details" id="detConvierte">
-          <summary>¿Quién y dónde convierte?</summary>
-          <div class="grid2">
-            <div class="card"><h3>Conversaciones por edad y género</h3><div class="csub">El núcleo de conversión son hombres de mediana edad y mayores</div><div class="chartbox sm"><canvas id="cDemo"></canvas></div></div>
-            <div class="card"><h3>Rendimiento por segmento</h3><div class="csub">Costo por conversación según edad/género</div>
-              <table><thead><tr><th>Segmento</th><th class="num">Inversión</th><th class="num">Conversaciones</th><th class="num">Costo/conv</th></tr></thead><tbody id="segBody"></tbody></table>
-            </div>
-          </div>
-          <div class="grid2" style="margin-top:16px">
-            <div class="card"><h3>Distribución de inversión por estado</h3><div class="csub">Top estados por gasto · campaña nacional</div><div class="chartbox sm"><canvas id="cRegion"></canvas></div></div>
-            <div class="card"><h3>Resumen de embudo</h3><div class="csub">Del impacto al prospecto</div><div class="chartbox sm"><canvas id="cFunnel"></canvas></div></div>
-          </div>
-        </details>
       </div>
     </div>
   </div>
