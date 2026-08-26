@@ -229,9 +229,9 @@
         <details class="sec-details" id="detConvierte">
           <summary>¿Quién y dónde convierte?</summary>
           <div class="grid2">
-            <div class="card"><h3>Leads por edad y género</h3><div class="csub">El núcleo de conversión son hombres de mediana edad y mayores</div><div class="chartbox sm"><canvas id="cDemo"></canvas></div></div>
-            <div class="card"><h3>Rendimiento por segmento</h3><div class="csub">Costo por lead según edad/género (segmentos con conversiones)</div>
-              <table><thead><tr><th>Segmento</th><th class="num">Inversión</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead><tbody id="segBody"></tbody></table>
+            <div class="card"><h3>Conversaciones por edad y género</h3><div class="csub">El núcleo de conversión son hombres de mediana edad y mayores</div><div class="chartbox sm"><canvas id="cDemo"></canvas></div></div>
+            <div class="card"><h3>Rendimiento por segmento</h3><div class="csub">Costo por conversación según edad/género</div>
+              <table><thead><tr><th>Segmento</th><th class="num">Inversión</th><th class="num">Conversaciones</th><th class="num">Costo/conv</th></tr></thead><tbody id="segBody"></tbody></table>
             </div>
           </div>
           <div class="grid2" style="margin-top:16px">
@@ -366,10 +366,6 @@ function render(b){
   set('kImpr',Number(k.impressions).toLocaleString('es-MX')); set('kCpm',fmtMXN(k.cpm));
   set('kClicks',Number(k.linkClicks).toLocaleString('es-MX')); set('kCtr',k.ctr+'%'); set('kCpc',fmtMXN(k.cpc));
   set('kConvRate',k.convRate+'%');
-  set('iLeads',k.leads); set('iCpl','$'+Number(k.cpl).toFixed(2)); set('iCtr',k.ctr+'%'); set('iConv',k.convRate+'%'); set('iSpendDay',fmtMXN(k.spendPerDay));
-  const win=b.artes.find(a=>a.tier==='win'); set('iWinPct',win?win.pct+'%':'—');
-  const best=b.segments.find(s=>s.tier==='best')||b.segments[0];
-  if(best){ set('iBestSeg',best.label); set('iBestCpl','$'+Number(best.cpl).toFixed(1)); }
   renderArtes(b.artes); renderSegments(b.segments); renderCharts(b);
 }
 
@@ -416,8 +412,8 @@ function renderArtes(artes){
 function renderSegments(segs){
   const tb=$('segBody'); tb.innerHTML='';
   segs.forEach(s=>{
-    const cpl=s.tier==='best'?`<span class="tag best">$${Number(s.cpl).toFixed(1)}</span>`:`$${Number(s.cpl).toFixed(1)}`;
-    tb.insertAdjacentHTML('beforeend',`<tr><td>${s.label}</td><td class="num">${fmtMXN(s.spend)}</td><td class="num">${s.leads}</td><td class="num">${cpl}</td></tr>`);
+    const cc=s.tier==='best'?`<span class="tag best">$${Number(s.cpConv).toFixed(2)}</span>`:`$${Number(s.cpConv).toFixed(2)}`;
+    tb.insertAdjacentHTML('beforeend',`<tr><td>${s.label}</td><td class="num">${fmtMXN(s.spend)}</td><td class="num">${s.conv}</td><td class="num">${cc}</td></tr>`);
   });
 }
 
@@ -436,7 +432,7 @@ function renderCharts(d){
   charts.demo=new Chart($('cDemo'),{type:'bar',data:{labels:d.demo.ages,datasets:[
     {label:'Hombres',data:d.demo.male,backgroundColor:'#13316b',borderRadius:4},
     {label:'Mujeres',data:d.demo.female,backgroundColor:'#F47A1F',borderRadius:4}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}}},scales:{y:{title:{display:true,text:'Leads'}}}}});
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}}},scales:{y:{title:{display:true,text:'Conversaciones'}}}}});
   charts.region=new Chart($('cRegion'),{type:'bar',data:{labels:d.regions.map(r=>REGION_LABELS[r.region]||r.region),datasets:[{label:'Inversión',data:d.regions.map(r=>r.spend),backgroundColor:'#F47A1F',borderRadius:4}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>fmtMXN(c.parsed.x)}}},scales:{x:{ticks:{callback:v=>'$'+(v/1000)+'k'}}}}});
   charts.funnel=new Chart($('cFunnel'),{type:'bar',data:{labels:["Alcance","Impresiones","Clics al enlace","Leads"],datasets:[{label:'Volumen',data:[d.kpis.reach,d.kpis.impressions,d.kpis.linkClicks,d.kpis.leads],backgroundColor:['#13316b','#1e4aa0','#5a7fc0','#F47A1F'],borderRadius:5}]},

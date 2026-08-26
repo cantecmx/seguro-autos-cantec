@@ -394,70 +394,70 @@
                                                               "65+"
                                                           ],
                                                  "male":  [
-                                                              3,
+                                                              2,
+                                                              4,
                                                               6,
-                                                              11,
-                                                              25,
+                                                              19,
                                                               24,
-                                                              35
+                                                              28
                                                           ],
                                                  "female":  [
                                                                 0,
                                                                 0,
-                                                                3,
                                                                 2,
+                                                                1,
                                                                 2,
-                                                                5
+                                                                2
                                                             ]
                                              },
                                     "segments":  [
                                                      {
                                                          "label":  "Hombres 65+",
                                                          "spend":  2508,
-                                                         "leads":  35,
-                                                         "cpl":  71.7,
-                                                         "tier":  ""
-                                                     },
-                                                     {
-                                                         "label":  "Hombres 45-54",
-                                                         "spend":  2126,
-                                                         "leads":  25,
-                                                         "cpl":  85.1,
+                                                         "conv":  28,
+                                                         "cpConv":  89.58,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 55-64",
                                                          "spend":  2683,
-                                                         "leads":  24,
-                                                         "cpl":  111.8,
+                                                         "conv":  24,
+                                                         "cpConv":  111.81,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 45-54",
+                                                         "spend":  2126,
+                                                         "conv":  19,
+                                                         "cpConv":  111.92,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Mujeres (todas)",
                                                          "spend":  1341,
-                                                         "leads":  12,
-                                                         "cpl":  111.8,
+                                                         "conv":  7,
+                                                         "cpConv":  191.6,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 35-44",
                                                          "spend":  1093,
-                                                         "leads":  11,
-                                                         "cpl":  99.4,
+                                                         "conv":  6,
+                                                         "cpConv":  182.19,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 25-34",
                                                          "spend":  573,
-                                                         "leads":  6,
-                                                         "cpl":  95.5,
+                                                         "conv":  4,
+                                                         "cpConv":  143.22,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 18-24",
                                                          "spend":  145,
-                                                         "leads":  3,
-                                                         "cpl":  48.4,
+                                                         "conv":  2,
+                                                         "cpConv":  72.53,
                                                          "tier":  "best"
                                                      }
                                                  ],
@@ -870,71 +870,71 @@
                                                               "65+"
                                                           ],
                                                  "male":  [
-                                                              1,
-                                                              5,
-                                                              6,
-                                                              10,
-                                                              16,
-                                                              17
+                                                              29,
+                                                              126,
+                                                              114,
+                                                              82,
+                                                              42,
+                                                              37
                                                           ],
                                                  "female":  [
-                                                                1,
-                                                                0,
-                                                                1,
-                                                                1,
-                                                                0,
-                                                                3
+                                                                3,
+                                                                13,
+                                                                19,
+                                                                10,
+                                                                5,
+                                                                5
                                                             ]
                                              },
                                     "segments":  [
                                                      {
-                                                         "label":  "Hombres 65+",
-                                                         "spend":  2775,
-                                                         "leads":  17,
-                                                         "cpl":  163.2,
-                                                         "tier":  "best"
-                                                     },
-                                                     {
-                                                         "label":  "Hombres 55-64",
-                                                         "spend":  2769,
-                                                         "leads":  16,
-                                                         "cpl":  173,
-                                                         "tier":  ""
-                                                     },
-                                                     {
-                                                         "label":  "Hombres 45-54",
-                                                         "spend":  2651,
-                                                         "leads":  10,
-                                                         "cpl":  265.1,
-                                                         "tier":  ""
-                                                     },
-                                                     {
-                                                         "label":  "Mujeres (todas)",
-                                                         "spend":  2210,
-                                                         "leads":  6,
-                                                         "cpl":  368.3,
+                                                         "label":  "Hombres 25-34",
+                                                         "spend":  1124,
+                                                         "conv":  126,
+                                                         "cpConv":  8.92,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 35-44",
                                                          "spend":  1920,
-                                                         "leads":  6,
-                                                         "cpl":  320.1,
+                                                         "conv":  114,
+                                                         "cpConv":  16.85,
                                                          "tier":  ""
                                                      },
                                                      {
-                                                         "label":  "Hombres 25-34",
-                                                         "spend":  1124,
-                                                         "leads":  5,
-                                                         "cpl":  224.8,
+                                                         "label":  "Hombres 45-54",
+                                                         "spend":  2651,
+                                                         "conv":  82,
+                                                         "cpConv":  32.34,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Mujeres (todas)",
+                                                         "spend":  2210,
+                                                         "conv":  55,
+                                                         "cpConv":  40.18,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 55-64",
+                                                         "spend":  2769,
+                                                         "conv":  42,
+                                                         "cpConv":  65.92,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 65+",
+                                                         "spend":  2775,
+                                                         "conv":  37,
+                                                         "cpConv":  75.01,
                                                          "tier":  ""
                                                      },
                                                      {
                                                          "label":  "Hombres 18-24",
                                                          "spend":  259,
-                                                         "leads":  1,
-                                                         "cpl":  258.7,
-                                                         "tier":  ""
+                                                         "conv":  29,
+                                                         "cpConv":  8.92,
+                                                         "tier":  "best"
                                                      }
                                                  ],
                                     "regions":  [
@@ -1050,22 +1050,22 @@
                                     "kpis":  {
                                                  "leads":  0,
                                                  "cpl":  0,
-                                                 "costPerConv":  49.96,
+                                                 "costPerConv":  48.92,
                                                  "leadSpend":  0,
-                                                 "convSpend":  9192,
-                                                 "convConversations":  184,
-                                                 "spend":  9192,
-                                                 "reach":  40745,
+                                                 "convSpend":  9393,
+                                                 "convConversations":  192,
+                                                 "spend":  9393,
+                                                 "reach":  41754,
                                                  "frequency":  1.6,
-                                                 "impressions":  65330,
-                                                 "cpm":  141,
-                                                 "linkClicks":  494,
-                                                 "ctr":  1.82,
-                                                 "cpc":  18.6,
+                                                 "impressions":  66985,
+                                                 "cpm":  140,
+                                                 "linkClicks":  510,
+                                                 "ctr":  1.83,
+                                                 "cpc":  18.4,
                                                  "convRate":  0,
-                                                 "conversations":  184,
+                                                 "conversations":  192,
                                                  "leadsPerDay":  0,
-                                                 "spendPerDay":  354,
+                                                 "spendPerDay":  361,
                                                  "days":  26
                                              },
                                     "daily":  [
@@ -1287,21 +1287,21 @@
                                                   },
                                                   {
                                                       "date":  "2026-08-25",
-                                                      "spend":  813.79,
+                                                      "spend":  818.45,
                                                       "leads":  0,
                                                       "conversations":  13,
                                                       "cpm":  120,
                                                       "cpl":  null,
-                                                      "cpConv":  62.6
+                                                      "cpConv":  62.96
                                                   },
                                                   {
                                                       "date":  "2026-08-26",
-                                                      "spend":  49.56,
+                                                      "spend":  246.37,
                                                       "leads":  0,
-                                                      "conversations":  1,
-                                                      "cpm":  116,
+                                                      "conversations":  9,
+                                                      "cpm":  119,
                                                       "cpl":  null,
-                                                      "cpConv":  49.56
+                                                      "cpConv":  27.37
                                                   }
                                               ],
                                     "demo":  {
@@ -1314,57 +1314,105 @@
                                                               "65+"
                                                           ],
                                                  "male":  [
-                                                              0,
-                                                              0,
-                                                              0,
-                                                              0,
-                                                              0,
-                                                              0
+                                                              10,
+                                                              21,
+                                                              35,
+                                                              35,
+                                                              20,
+                                                              11
                                                           ],
                                                  "female":  [
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0
+                                                                3,
+                                                                14,
+                                                                18,
+                                                                13,
+                                                                7,
+                                                                4
                                                             ]
                                              },
                                     "segments":  [
-
+                                                     {
+                                                         "label":  "Mujeres (todas)",
+                                                         "spend":  2812,
+                                                         "conv":  59,
+                                                         "cpConv":  47.66,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 45-54",
+                                                         "spend":  1611,
+                                                         "conv":  35,
+                                                         "cpConv":  46.03,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 35-44",
+                                                         "spend":  1663,
+                                                         "conv":  35,
+                                                         "cpConv":  47.52,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 25-34",
+                                                         "spend":  1291,
+                                                         "conv":  21,
+                                                         "cpConv":  61.49,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 55-64",
+                                                         "spend":  1047,
+                                                         "conv":  20,
+                                                         "cpConv":  52.36,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 65+",
+                                                         "spend":  628,
+                                                         "conv":  11,
+                                                         "cpConv":  57.08,
+                                                         "tier":  ""
+                                                     },
+                                                     {
+                                                         "label":  "Hombres 18-24",
+                                                         "spend":  295,
+                                                         "conv":  10,
+                                                         "cpConv":  29.48,
+                                                         "tier":  "best"
+                                                     }
                                                  ],
                                     "regions":  [
                                                     {
                                                         "region":  "Nuevo León",
-                                                        "spend":  2378
+                                                        "spend":  2449
                                                     },
                                                     {
                                                         "region":  "Distrito Federal",
-                                                        "spend":  1495
+                                                        "spend":  1526
                                                     },
                                                     {
                                                         "region":  "State of Mexico",
-                                                        "spend":  1326
+                                                        "spend":  1356
                                                     },
                                                     {
                                                         "region":  "Jalisco",
-                                                        "spend":  1174
+                                                        "spend":  1194
                                                     },
                                                     {
                                                         "region":  "Veracruz",
-                                                        "spend":  285
+                                                        "spend":  291
                                                     },
                                                     {
                                                         "region":  "Puebla",
-                                                        "spend":  194
+                                                        "spend":  198
                                                     },
                                                     {
                                                         "region":  "Chihuahua",
-                                                        "spend":  191
+                                                        "spend":  196
                                                     },
                                                     {
                                                         "region":  "__RESTO__",
-                                                        "spend":  2150
+                                                        "spend":  2179
                                                     }
                                                 ],
                                     "artes":  [
@@ -1372,10 +1420,10 @@
                                                       "id":  "llaves",
                                                       "adName":  "Anuncio Impulsado 01 Llaves",
                                                       "leads":  0,
-                                                      "spend":  5079,
+                                                      "spend":  5143,
                                                       "cpl":  0,
-                                                      "cpConv":  67.72,
-                                                      "ctr":  2.14,
+                                                      "cpConv":  68.57,
+                                                      "ctr":  2.12,
                                                       "conversations":  75,
                                                       "pct":  0,
                                                       "rankNum":  1,
@@ -1385,11 +1433,11 @@
                                                       "id":  "interaccion",
                                                       "adName":  "Nuevo anuncio de Interacción",
                                                       "leads":  0,
-                                                      "spend":  2673,
+                                                      "spend":  2734,
                                                       "cpl":  0,
-                                                      "cpConv":  39.89,
-                                                      "ctr":  1.6,
-                                                      "conversations":  67,
+                                                      "cpConv":  38.51,
+                                                      "ctr":  1.62,
+                                                      "conversations":  71,
                                                       "pct":  0,
                                                       "rankNum":  2,
                                                       "tier":  "conv"
@@ -1398,11 +1446,11 @@
                                                       "id":  "agosto",
                                                       "adName":  "Anuncio Agosto",
                                                       "leads":  0,
-                                                      "spend":  1440,
+                                                      "spend":  1517,
                                                       "cpl":  0,
-                                                      "cpConv":  34.29,
-                                                      "ctr":  1.71,
-                                                      "conversations":  42,
+                                                      "cpConv":  32.98,
+                                                      "ctr":  1.74,
+                                                      "conversations":  46,
                                                       "pct":  0,
                                                       "rankNum":  3,
                                                       "tier":  "conv"

@@ -92,20 +92,21 @@ function Compute-Block([string]$from, [string]$to) {
   })
 
   # 3) Edad / género
-  $ag = Get-Windsor "account_id,age,gender,spend,link_clicks,actions_lead" $from $to
+  $CF = "actions_onsite_conversion_messaging_conversation_started_7d"
+  $ag = Get-Windsor "account_id,age,gender,spend,$CF" $from $to
   $ages=@("18-24","25-34","35-44","45-54","55-64","65+")
-  $male  =@($ages|ForEach-Object{$a=$_;[int](Sum (@($ag|Where-Object{$_.age -eq $a -and $_.gender -eq "male"})) "actions_lead")})
-  $female=@($ages|ForEach-Object{$a=$_;[int](Sum (@($ag|Where-Object{$_.age -eq $a -and $_.gender -eq "female"})) "actions_lead")})
+  $male  =@($ages|ForEach-Object{$a=$_;[int](Sum (@($ag|Where-Object{$_.age -eq $a -and $_.gender -eq "male"})) $CF)})
+  $female=@($ages|ForEach-Object{$a=$_;[int](Sum (@($ag|Where-Object{$_.age -eq $a -and $_.gender -eq "female"})) $CF)})
   $segments=@()
   foreach($a in $ages){
     $g=@($ag|Where-Object{$_.age -eq $a -and $_.gender -eq "male"})
-    $sl=[int](Sum $g "actions_lead"); $ss=Sum $g "spend"
-    if($sl -gt 0){ $segments+=[ordered]@{label="Hombres $a";spend=[math]::Round($ss,0);leads=$sl;cpl=[math]::Round($ss/$sl,1)} }
+    $sc=[int](Sum $g $CF); $ss=Sum $g "spend"
+    if($sc -gt 0){ $segments+=[ordered]@{label="Hombres $a";spend=[math]::Round($ss,0);conv=$sc;cpConv=[math]::Round($ss/$sc,2)} }
   }
-  $fem=@($ag|Where-Object{$_.gender -eq "female"}); $fl=[int](Sum $fem "actions_lead"); $fs=Sum $fem "spend"
-  if($fl -gt 0){ $segments+=[ordered]@{label="Mujeres (todas)";spend=[math]::Round($fs,0);leads=$fl;cpl=[math]::Round($fs/$fl,1)} }
-  $segments=@($segments|Sort-Object {$_.leads} -Descending)
-  if($segments.Count){ $best=($segments|Sort-Object {$_.cpl})[0].label }
+  $fem=@($ag|Where-Object{$_.gender -eq "female"}); $fc=[int](Sum $fem $CF); $fs=Sum $fem "spend"
+  if($fc -gt 0){ $segments+=[ordered]@{label="Mujeres (todas)";spend=[math]::Round($fs,0);conv=$fc;cpConv=[math]::Round($fs/$fc,2)} }
+  $segments=@($segments|Sort-Object {$_.conv} -Descending)
+  if($segments.Count){ $best=($segments|Sort-Object {$_.cpConv})[0].label }
   foreach($s in $segments){ $s.tier= if($s.label -eq $best){"best"}else{""} }
 
   # 4) Regiones (top 7 + resto)

@@ -54,7 +54,7 @@ async function computeBlock(from, to) {
   const [tot, daily, ag, reg, ads] = await Promise.all([
     getW("account_id,campaign,campaign_objective,spend,impressions,reach,clicks,link_clicks,actions_lead," + CONVF, from, to),
     getW("account_id,date,spend,impressions,actions_lead," + CONVF, from, to),
-    getW("account_id,age,gender,spend,link_clicks,actions_lead", from, to),
+    getW("account_id,age,gender,spend," + CONVF, from, to),
     getW("account_id,region,spend", from, to),
     getW("account_id,ad_name,spend,impressions,clicks,link_clicks,actions_lead," + CONVF, from, to),
   ]);
@@ -92,18 +92,18 @@ async function computeBlock(from, to) {
     return { date, spend: round(sp,2), leads: ld, conversations: cv, cpm: im ? round(sp/im*1000) : 0, cpl: ld ? round(sp/ld,2) : null, cpConv: cv ? round(sp/cv,2) : null };
   });
 
-  const male = AGES.map(a => Math.round(sum(ag.filter(r => r.age===a && r.gender==="male"), "actions_lead")));
-  const female = AGES.map(a => Math.round(sum(ag.filter(r => r.age===a && r.gender==="female"), "actions_lead")));
+  const male = AGES.map(a => Math.round(sum(ag.filter(r => r.age===a && r.gender==="male"), CONVF)));
+  const female = AGES.map(a => Math.round(sum(ag.filter(r => r.age===a && r.gender==="female"), CONVF)));
   let segments = [];
   for (const a of AGES) {
     const g = ag.filter(r => r.age===a && r.gender==="male");
-    const sl = Math.round(sum(g,"actions_lead")), ss = sum(g,"spend");
-    if (sl > 0) segments.push({ label:"Hombres "+a, spend: round(ss), leads: sl, cpl: round(ss/sl,1) });
+    const sc = Math.round(sum(g,CONVF)), ss = sum(g,"spend");
+    if (sc > 0) segments.push({ label:"Hombres "+a, spend: round(ss), conv: sc, cpConv: round(ss/sc,2) });
   }
-  const fem = ag.filter(r => r.gender==="female"); const fl = Math.round(sum(fem,"actions_lead")), fs = sum(fem,"spend");
-  if (fl > 0) segments.push({ label:"Mujeres (todas)", spend: round(fs), leads: fl, cpl: round(fs/fl,1) });
-  segments.sort((a,b) => b.leads - a.leads);
-  if (segments.length) { const best = [...segments].sort((a,b)=>a.cpl-b.cpl)[0].label; segments.forEach(s => s.tier = s.label===best ? "best" : ""); }
+  const fem = ag.filter(r => r.gender==="female"); const fc = Math.round(sum(fem,CONVF)), fs = sum(fem,"spend");
+  if (fc > 0) segments.push({ label:"Mujeres (todas)", spend: round(fs), conv: fc, cpConv: round(fs/fc,2) });
+  segments.sort((a,b) => b.conv - a.conv);
+  if (segments.length) { const best = [...segments].sort((a,b)=>a.cpConv-b.cpConv)[0].label; segments.forEach(s => s.tier = s.label===best ? "best" : ""); }
 
   let regG = [...groupBy(reg,"region").entries()].map(([region,g]) => ({ region, spend: round(sum(g,"spend")) })).sort((a,b)=>b.spend-a.spend);
   let regions = regG.slice(0,7);
