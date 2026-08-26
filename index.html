@@ -242,6 +242,15 @@
         </div>
         <div class="emptybar" id="segEmpty" style="display:none">Aún no hay registros de seguimiento de operaciones para este mes.</div>
 
+        <details class="sec-details" id="detAvance">
+          <summary>Avance diario y escalamiento · seguimiento operativo</summary>
+          <div class="grid2">
+            <div class="card"><h3>Avance diario</h3><div class="csub">Actividad por día: contactos, cotizaciones y ventas</div><div class="chartbox"><canvas id="cAvance"></canvas></div></div>
+            <div class="card"><h3>Escalamiento (acumulado del mes)</h3><div class="csub">Total corrido — cómo se va sumando el mes</div><div class="chartbox"><canvas id="cAcum"></canvas></div></div>
+          </div>
+          <div class="emptybar" id="avanceEmpty" style="display:none">Sin datos de seguimiento diario para este mes.</div>
+        </details>
+
       </div>
     </div>
   </div>
@@ -314,7 +323,7 @@ const TIER={
   low:{suf:"Sin probar",status:"⚪ Sin conclusión",cls:"low",sCls:"s-low"}
 };
 const RES_LABELS=[["leads","Leads"],["pct","% del total"],["cpl","CPL"],["ctr","CTR"],["spend","Inversión"],["conversations","Conversaciones"]];
-let charts={}, DATA=null, curMonth=null, SEG=null;
+let charts={}, DATA=null, curMonth=null, SEG=null, segCharts={};
 const TIP_COLORS={'VENTA':'#2e9e5b','EN PROCESO':'#1e4aa0','Falta de datos':'#e0a32e','No contesta':'#9C9C9C','ADQUIRIO OTRO SEGURO':'#d4564b'};
 const MOT_COLORS={'Faltan datos / no contesta':'#e0a32e','Cotizó pero no responde':'#1e4aa0','Contrató otro / GNP directo':'#d4564b','Vehículo no asegurable':'#9C9C9C','En proceso / otro':'#5a7fc0'};
 const $=id=>document.getElementById(id);
@@ -457,7 +466,7 @@ function renderBars(id, arr, total, colors){
 function renderSeguimiento(key){
   const s = SEG && SEG.months && SEG.months[key];
   const wrap=$('segWrap'), empty=$('segEmpty');
-  if(!s){ if(wrap) wrap.style.display='none'; if(empty) empty.style.display='block'; return; }
+  if(!s){ if(wrap) wrap.style.display='none'; if(empty) empty.style.display='block'; renderAvance(null); return; }
   if(wrap) wrap.style.display=''; if(empty) empty.style.display='none';
   set('sgTotal', s.total);
   set('sgVenta', s.venta);
@@ -469,6 +478,28 @@ function renderSeguimiento(key){
   set('sgPagVenta', s.venta);
   renderBars('sgTip', s.tipificacion, s.total, TIP_COLORS);
   renderBars('sgMot', s.motivos, s.total, MOT_COLORS);
+  renderAvance(s);
+}
+function renderAvance(s){
+  ['cAvance','cAcum'].forEach(k=>{ if(segCharts[k]){segCharts[k].destroy(); segCharts[k]=null;} });
+  const daily = (s && s.daily) || [];
+  const emp = $('avanceEmpty');
+  if(!daily.length){ if(emp) emp.style.display='block'; return; }
+  if(emp) emp.style.display='none';
+  const labels = daily.map(x=>fDay(x.date));
+  let ac=0, av=0;
+  const accCont = daily.map(x=>{ ac+=x.contactos; return ac; });
+  const accVen  = daily.map(x=>{ av+=x.ventas; return av; });
+  const optsD = {responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}}},scales:{y:{beginAtZero:true,ticks:{precision:0}}}};
+  segCharts.cAvance = new Chart($('cAvance'),{type:'line',data:{labels,datasets:[
+    {label:'Contactos',data:daily.map(x=>x.contactos),borderColor:'#13316b',backgroundColor:'rgba(19,49,107,.10)',tension:.35,borderWidth:2.5,pointRadius:2,fill:true},
+    {label:'Cotizaciones',data:daily.map(x=>x.cotizaciones),borderColor:'#F2A81D',tension:.35,borderWidth:2.5,pointRadius:2},
+    {label:'Ventas',data:daily.map(x=>x.ventas),borderColor:'#2e9e5b',tension:.35,borderWidth:2.5,pointRadius:2}
+  ]},options:optsD});
+  segCharts.cAcum = new Chart($('cAcum'),{type:'line',data:{labels,datasets:[
+    {label:'Contactos acumulados',data:accCont,borderColor:'#1e4aa0',backgroundColor:'rgba(30,74,160,.15)',tension:.3,borderWidth:3,pointRadius:2,fill:true},
+    {label:'Ventas acumuladas',data:accVen,borderColor:'#2e9e5b',backgroundColor:'rgba(46,158,91,.18)',tension:.3,borderWidth:3,pointRadius:2,fill:true}
+  ]},options:optsD});
 }
 let shareChart=null;
 function openShare(){
@@ -526,8 +557,13 @@ async function actualizarDatos(){
                  : 'No se pudo actualizar', true);
   }finally{ b.classList.remove('loading'); }
 }
-const _det=$('detConvierte');
-if(_det) _det.addEventListener('toggle',()=>{ if(_det.open){ setTimeout(()=>['demo','region','funnel'].forEach(k=>{ try{ charts[k] && charts[k].resize(); }catch(e){} }),50); } });
+['detConvierte','detArte','detAvance'].forEach(id=>{
+  const el=$(id);
+  if(el) el.addEventListener('toggle',()=>{ if(el.open){ setTimeout(()=>{
+    Object.values(charts).forEach(c=>{try{c&&c.resize()}catch(e){}});
+    Object.values(segCharts).forEach(c=>{try{c&&c.resize()}catch(e){}});
+  },60); } });
+});
 load();
 </script>
 </body>
