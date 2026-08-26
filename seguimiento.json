@@ -4,6 +4,7 @@
                    "2026-07":  {
                                    "total":  26,
                                    "venta":  1,
+                                   "polizasPagadas":  0,
                                    "gestionables":  0,
                                    "noGestionables":  19,
                                    "cotizaciones":  22,
@@ -72,6 +73,7 @@
                    "2026-08":  {
                                    "total":  69,
                                    "venta":  16,
+                                   "polizasPagadas":  3,
                                    "gestionables":  34,
                                    "noGestionables":  14,
                                    "cotizaciones":  51,
@@ -105,7 +107,7 @@
                                                             "count":  2
                                                         },
                                                         {
-                                                            "label":  "BUZON DE BOZ",
+                                                            "label":  "BUZON DE VOZ",
                                                             "count":  1
                                                         }
                                                     ],

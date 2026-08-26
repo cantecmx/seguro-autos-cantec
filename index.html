@@ -210,11 +210,12 @@
 
         <h2 class="sec">Seguimiento operativo · ventas y gestión</h2>
         <div id="segWrap">
-          <div class="kpis">
+          <div class="kpis" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
             <div class="kpi lead"><div class="lbl">Contactos gestionados</div><div class="val" id="sgTotal">—</div><div class="note">registrados por operaciones</div></div>
-            <div class="kpi cpl"><div class="lbl">Ventas cerradas</div><div class="val" id="sgVenta">—</div><div class="note">tasa de cierre <b id="sgCierre">—</b></div></div>
             <div class="kpi spend"><div class="lbl">Gestionables</div><div class="val" id="sgGest">—</div><div class="note">en proceso + faltan datos</div></div>
             <div class="kpi cpm"><div class="lbl">Cotizaciones</div><div class="val" id="sgCot">—</div><div class="note"><b id="sgCotPct">—</b> de los contactos</div></div>
+            <div class="kpi cpl"><div class="lbl">Ventas cerradas</div><div class="val" id="sgVenta">—</div><div class="note">tasa de cierre <b id="sgCierre">—</b></div></div>
+            <div class="kpi lead"><div class="lbl">Pólizas pagadas</div><div class="val" id="sgPagadas">—</div><div class="note">de <b id="sgPagVenta">—</b> ventas</div></div>
           </div>
           <div class="grid2" style="margin-top:16px">
             <div class="card"><h3>Estado de los contactos (tipificación)</h3><div class="csub">Cómo está la base que trae la pauta</div><div id="sgTip" style="margin-top:8px"></div></div>
@@ -462,6 +463,8 @@ function renderSeguimiento(key){
   set('sgGest', s.gestionables);
   set('sgCot', s.cotizaciones);
   set('sgCotPct', s.total ? Math.round(s.cotizaciones/s.total*100)+'%' : '—');
+  set('sgPagadas', s.polizasPagadas!=null ? s.polizasPagadas : '—');
+  set('sgPagVenta', s.venta);
   renderBars('sgTip', s.tipificacion, s.total, TIP_COLORS);
   renderBars('sgMot', s.motivos, s.total, MOT_COLORS);
 }
