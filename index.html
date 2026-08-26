@@ -51,6 +51,26 @@
   .btn-upd:hover{background:var(--orange-d)} .btn-upd:active{transform:scale(.97)}
   .btn-upd svg{width:16px;height:16px} .btn-upd.loading svg{animation:spin 1s linear infinite}
   @keyframes spin{to{transform:rotate(360deg)}}
+  .btn-share{display:inline-flex;align-items:center;gap:8px;background:var(--blue2);color:#fff;border:none;border-radius:10px;padding:10px 16px;font-size:13.5px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(30,74,160,.3);transition:background .15s}
+  .btn-share:hover{background:var(--blue)} .btn-share svg{width:16px;height:16px}
+  .modal-ov{display:none;position:fixed;inset:0;background:rgba(11,37,69,.55);z-index:100;overflow:auto;padding:24px}
+  .modal-ov.open{display:block}
+  .modal-card{max-width:1020px;margin:0 auto;background:var(--bg);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}
+  .modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;background:linear-gradient(120deg,var(--blue-deep),var(--blue2));color:#fff;padding:18px 22px}
+  .modal-head h3{font-size:17px} .modal-head .csub{color:#cdd9ec;font-size:12.5px;margin-top:3px}
+  .modal-actions{display:flex;gap:8px;align-items:center;flex:none}
+  .btn-ghost{background:rgba(255,255,255,.15);border:none;color:#fff;font-size:12.5px;font-weight:600;padding:8px 12px;border-radius:8px;cursor:pointer}
+  .btn-ghost:hover{background:rgba(255,255,255,.28)}
+  .modal-x{background:rgba(255,255,255,.15);border:none;color:#fff;font-size:20px;width:34px;height:34px;border-radius:8px;cursor:pointer;line-height:1}
+  .modal-x:hover{background:rgba(255,255,255,.28)}
+  .modal-body{padding:22px}
+  .modal-body .seclbl{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700;margin:18px 4px 10px}
+  @media print{
+    body>*{display:none!important}
+    #shareModal{display:block!important;position:static;background:#fff;padding:0}
+    #shareModal .modal-card{box-shadow:none;max-width:100%}
+    .btn-ghost,.modal-x{display:none!important}
+  }
   .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--blue);color:#fff;padding:12px 20px;border-radius:10px;font-size:13.5px;box-shadow:0 8px 24px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.25s;z-index:50}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)} .toast.err{background:var(--orange-d)}
   .errbar,.emptybar{display:none;background:#fdeede;border:1px solid #f3c39b;color:#9a4a12;border-radius:12px;padding:14px 18px;margin-top:6px;font-size:13.5px}
@@ -154,6 +174,10 @@
     <div class="main">
       <div class="controlbar">
         <span class="upd-stamp">Última actualización: <b id="updStamp">—</b></span>
+        <button class="btn-share" id="btnShare" onclick="openShare()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+          Share
+        </button>
         <button class="btn-upd" id="btnUpd" onclick="actualizarDatos()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
           Actualizar datos
@@ -220,6 +244,38 @@
   </div>
 
   <div class="footbar"></div>
+</div>
+
+<div class="modal-ov" id="shareModal" onclick="if(event.target===this)closeShare()">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div>
+        <h3>Resumen para Operaciones · GNP Seguro de Auto</h3>
+        <div class="csub" id="shSub">—</div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-ghost" onclick="window.print()">Imprimir / PDF</button>
+        <button class="modal-x" onclick="closeShare()" aria-label="Cerrar">&times;</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="seclbl">Pauta (Meta Ads)</div>
+      <div class="kpis" style="grid-template-columns:repeat(3,1fr)">
+        <div class="kpi lead"><div class="lbl">Conversaciones iniciadas</div><div class="val" id="shConv">—</div><div class="note">leads potenciales</div></div>
+        <div class="kpi cpl"><div class="lbl">Costo por conversación</div><div class="val" id="shCostConv">—</div><div class="note">MXN por conversación</div></div>
+        <div class="kpi spend"><div class="lbl">Inversión publicitaria</div><div class="val" id="shSpend">—</div><div class="note">MXN en el mes</div></div>
+      </div>
+      <div class="seclbl">Embudo · leads → conversión</div>
+      <div class="card"><div class="chartbox sm"><canvas id="cShare"></canvas></div></div>
+      <div class="seclbl">Operación (ventas y gestión)</div>
+      <div class="kpis">
+        <div class="kpi"><div class="lbl">Contactos gestionados</div><div class="val" id="shGestion">—</div></div>
+        <div class="kpi cpl"><div class="lbl">Ventas cerradas</div><div class="val" id="shVenta">—</div><div class="note">tasa de cierre <b id="shCierre">—</b></div></div>
+        <div class="kpi spend"><div class="lbl">Gestionables</div><div class="val" id="shGest">—</div></div>
+        <div class="kpi cpm"><div class="lbl">Cotizaciones</div><div class="val" id="shCot">—</div></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -407,6 +463,33 @@ function renderSeguimiento(key){
   renderBars('sgTip', s.tipificacion, s.total, TIP_COLORS);
   renderBars('sgMot', s.motivos, s.total, MOT_COLORS);
 }
+let shareChart=null;
+function openShare(){
+  const m = DATA && DATA.months.find(x=>x.key===curMonth);
+  if(!m || !m.data){ showToast('Sin datos para compartir en este mes', true); return; }
+  const k=m.data.kpis;
+  const s = SEG && SEG.months && SEG.months[curMonth];
+  set('shSub', m.label+' '+curMonth.slice(0,4)+' · '+fDay(m.data.periodFrom)+' – '+fDate(m.data.periodTo));
+  set('shConv', Number(k.conversations).toLocaleString('es-MX'));
+  set('shCostConv', k.costPerConv!=null?'$'+Number(k.costPerConv).toFixed(2):'—');
+  set('shSpend', fmtMXN(k.spend));
+  set('shGestion', s?s.total:'—');
+  set('shVenta', s?s.venta:'—');
+  set('shGest', s?s.gestionables:'—');
+  set('shCot', s?s.cotizaciones:'—');
+  set('shCierre', (s&&s.total)?(s.venta/s.total*100).toFixed(1)+'%':'—');
+  $('shareModal').classList.add('open');
+  setTimeout(()=>renderShareChart(k,s),70);
+}
+function closeShare(){ $('shareModal').classList.remove('open'); if(shareChart){shareChart.destroy();shareChart=null;} }
+function renderShareChart(k,s){
+  if(shareChart){shareChart.destroy();shareChart=null;}
+  const labels=['Conversaciones','Contactos gestionados','Cotizaciones','Ventas'];
+  const vals=[k.conversations, s?s.total:0, s?s.cotizaciones:0, s?s.venta:0];
+  shareChart=new Chart($('cShare'),{type:'bar',data:{labels,datasets:[{label:'Volumen',data:vals,backgroundColor:['#13316b','#1e4aa0','#F2A81D','#2e9e5b'],borderRadius:5}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>Number(c.parsed.x).toLocaleString('es-MX')}}},scales:{x:{beginAtZero:true,ticks:{precision:0}}}}});
+}
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeShare(); });
 function showToast(msg,isErr){const t=$('toast');t.textContent=msg;t.className='toast show'+(isErr?' err':'');setTimeout(()=>t.className='toast',3000);}
 async function actualizarDatos(){
   const b=$('btnUpd'); b.classList.add('loading');

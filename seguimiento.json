@@ -1,24 +1,32 @@
 {
-    "updatedAt":  "2026-08-20",
+    "updatedAt":  "2026-08-26",
     "months":  {
                    "2026-07":  {
                                    "total":  26,
                                    "venta":  1,
-                                   "gestionables":  6,
+                                   "gestionables":  0,
                                    "noGestionables":  19,
                                    "cotizaciones":  22,
                                    "tipificacion":  [
                                                         {
-                                                            "label":  "No contesta",
-                                                            "count":  16
+                                                            "label":  "NO CONTESTA",
+                                                            "count":  18
                                                         },
                                                         {
-                                                            "label":  "EN PROCESO",
-                                                            "count":  6
+                                                            "label":  "NO LE INTERESA",
+                                                            "count":  4
+                                                        },
+                                                        {
+                                                            "label":  "NO CONTESTS",
+                                                            "count":  1
+                                                        },
+                                                        {
+                                                            "label":  "NO EXISTE",
+                                                            "count":  1
                                                         },
                                                         {
                                                             "label":  "ADQUIRIO OTRO SEGURO",
-                                                            "count":  3
+                                                            "count":  1
                                                         },
                                                         {
                                                             "label":  "VENTA",
@@ -28,14 +36,14 @@
                                    "motivos":  [
                                                    {
                                                        "label":  "Cotizó pero no responde",
-                                                       "count":  15
-                                                   },
-                                                   {
-                                                       "label":  "En proceso / otro",
-                                                       "count":  5
+                                                       "count":  17
                                                    },
                                                    {
                                                        "label":  "Contrató otro / GNP directo",
+                                                       "count":  3
+                                                   },
+                                                   {
+                                                       "label":  "En proceso / otro",
                                                        "count":  3
                                                    },
                                                    {
@@ -45,45 +53,57 @@
                                                ]
                                },
                    "2026-08":  {
-                                   "total":  60,
-                                   "venta":  13,
-                                   "gestionables":  36,
-                                   "noGestionables":  11,
-                                   "cotizaciones":  42,
+                                   "total":  69,
+                                   "venta":  16,
+                                   "gestionables":  34,
+                                   "noGestionables":  14,
+                                   "cotizaciones":  51,
                                    "tipificacion":  [
                                                         {
                                                             "label":  "EN PROCESO",
-                                                            "count":  24
+                                                            "count":  30
                                                         },
                                                         {
                                                             "label":  "VENTA",
-                                                            "count":  13
+                                                            "count":  16
                                                         },
                                                         {
-                                                            "label":  "Falta de datos",
+                                                            "label":  "NO CONTESTA",
                                                             "count":  12
                                                         },
                                                         {
-                                                            "label":  "No contesta",
-                                                            "count":  9
+                                                            "label":  "Falta de datos",
+                                                            "count":  4
+                                                        },
+                                                        {
+                                                            "label":  "NO EXISTE",
+                                                            "count":  2
                                                         },
                                                         {
                                                             "label":  "ADQUIRIO OTRO SEGURO",
                                                             "count":  2
+                                                        },
+                                                        {
+                                                            "label":  "NO LE INTERESA",
+                                                            "count":  2
+                                                        },
+                                                        {
+                                                            "label":  "BUZON DE BOZ",
+                                                            "count":  1
                                                         }
                                                     ],
                                    "motivos":  [
                                                    {
                                                        "label":  "En proceso / otro",
-                                                       "count":  21
+                                                       "count":  27
                                                    },
                                                    {
                                                        "label":  "Faltan datos / no contesta",
-                                                       "count":  13
+                                                       "count":  12
                                                    },
                                                    {
                                                        "label":  "Cotizó pero no responde",
-                                                       "count":  9
+                                                       "count":  10
                                                    },
                                                    {
                                                        "label":  "Vehículo no asegurable",

@@ -1,5 +1,5 @@
 {
-    "updatedAt":  "2026-08-21",
+    "updatedAt":  "2026-08-26",
     "account":  "993894886753623",
     "defaultMonth":  "2026-08",
     "months":  [
@@ -1046,27 +1046,27 @@
                        "locked":  false,
                        "data":  {
                                     "periodFrom":  "2026-08-01",
-                                    "periodTo":  "2026-08-21",
+                                    "periodTo":  "2026-08-26",
                                     "kpis":  {
                                                  "leads":  0,
                                                  "cpl":  0,
-                                                 "costPerConv":  53.03,
+                                                 "costPerConv":  49.96,
                                                  "leadSpend":  0,
-                                                 "convSpend":  5834,
-                                                 "convConversations":  110,
-                                                 "spend":  5834,
-                                                 "reach":  23467,
-                                                 "frequency":  1.53,
-                                                 "impressions":  35942,
-                                                 "cpm":  162,
-                                                 "linkClicks":  285,
-                                                 "ctr":  1.91,
-                                                 "cpc":  20.5,
+                                                 "convSpend":  9192,
+                                                 "convConversations":  184,
+                                                 "spend":  9192,
+                                                 "reach":  40745,
+                                                 "frequency":  1.6,
+                                                 "impressions":  65330,
+                                                 "cpm":  141,
+                                                 "linkClicks":  494,
+                                                 "ctr":  1.82,
+                                                 "cpc":  18.6,
                                                  "convRate":  0,
-                                                 "conversations":  110,
+                                                 "conversations":  184,
                                                  "leadsPerDay":  0,
-                                                 "spendPerDay":  278,
-                                                 "days":  21
+                                                 "spendPerDay":  354,
+                                                 "days":  26
                                              },
                                     "daily":  [
                                                   {
@@ -1233,7 +1233,7 @@
                                                   },
                                                   {
                                                       "date":  "2026-08-19",
-                                                      "spend":  489.2,
+                                                      "spend":  489.26,
                                                       "leads":  0,
                                                       "conversations":  7,
                                                       "cpm":  106,
@@ -1242,21 +1242,66 @@
                                                   },
                                                   {
                                                       "date":  "2026-08-20",
-                                                      "spend":  442.31,
+                                                      "spend":  442.45,
                                                       "leads":  0,
                                                       "conversations":  9,
                                                       "cpm":  140,
                                                       "cpl":  null,
-                                                      "cpConv":  49.15
+                                                      "cpConv":  49.16
                                                   },
                                                   {
                                                       "date":  "2026-08-21",
-                                                      "spend":  166.48,
+                                                      "spend":  483.43,
                                                       "leads":  0,
-                                                      "conversations":  4,
-                                                      "cpm":  84,
+                                                      "conversations":  15,
+                                                      "cpm":  86,
                                                       "cpl":  null,
-                                                      "cpConv":  41.62
+                                                      "cpConv":  32.23
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-22",
+                                                      "spend":  521.42,
+                                                      "leads":  0,
+                                                      "conversations":  11,
+                                                      "cpm":  106,
+                                                      "cpl":  null,
+                                                      "cpConv":  47.4
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-23",
+                                                      "spend":  654.4,
+                                                      "leads":  0,
+                                                      "conversations":  20,
+                                                      "cpm":  139,
+                                                      "cpl":  null,
+                                                      "cpConv":  32.72
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-24",
+                                                      "spend":  877.23,
+                                                      "leads":  0,
+                                                      "conversations":  15,
+                                                      "cpm":  120,
+                                                      "cpl":  null,
+                                                      "cpConv":  58.48
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-25",
+                                                      "spend":  813.79,
+                                                      "leads":  0,
+                                                      "conversations":  13,
+                                                      "cpm":  120,
+                                                      "cpl":  null,
+                                                      "cpConv":  62.6
+                                                  },
+                                                  {
+                                                      "date":  "2026-08-26",
+                                                      "spend":  49.56,
+                                                      "leads":  0,
+                                                      "conversations":  1,
+                                                      "cpm":  116,
+                                                      "cpl":  null,
+                                                      "cpConv":  49.56
                                                   }
                                               ],
                                     "demo":  {
@@ -1291,35 +1336,35 @@
                                     "regions":  [
                                                     {
                                                         "region":  "Nuevo León",
-                                                        "spend":  1183
+                                                        "spend":  2378
                                                     },
                                                     {
                                                         "region":  "Distrito Federal",
-                                                        "spend":  978
+                                                        "spend":  1495
                                                     },
                                                     {
                                                         "region":  "State of Mexico",
-                                                        "spend":  884
+                                                        "spend":  1326
                                                     },
                                                     {
                                                         "region":  "Jalisco",
-                                                        "spend":  740
+                                                        "spend":  1174
                                                     },
                                                     {
                                                         "region":  "Veracruz",
-                                                        "spend":  184
-                                                    },
-                                                    {
-                                                        "region":  "Chihuahua",
-                                                        "spend":  150
+                                                        "spend":  285
                                                     },
                                                     {
                                                         "region":  "Puebla",
-                                                        "spend":  133
+                                                        "spend":  194
+                                                    },
+                                                    {
+                                                        "region":  "Chihuahua",
+                                                        "spend":  191
                                                     },
                                                     {
                                                         "region":  "__RESTO__",
-                                                        "spend":  1580
+                                                        "spend":  2150
                                                     }
                                                 ],
                                     "artes":  [
@@ -1327,11 +1372,11 @@
                                                       "id":  "llaves",
                                                       "adName":  "Anuncio Impulsado 01 Llaves",
                                                       "leads":  0,
-                                                      "spend":  4077,
+                                                      "spend":  5079,
                                                       "cpl":  0,
-                                                      "cpConv":  63.7,
-                                                      "ctr":  2.12,
-                                                      "conversations":  64,
+                                                      "cpConv":  67.72,
+                                                      "ctr":  2.14,
+                                                      "conversations":  75,
                                                       "pct":  0,
                                                       "rankNum":  1,
                                                       "tier":  "conv"
@@ -1340,11 +1385,11 @@
                                                       "id":  "nuevoanunciodeinteracción",
                                                       "adName":  "Nuevo anuncio de Interacción",
                                                       "leads":  0,
-                                                      "spend":  1389,
+                                                      "spend":  2673,
                                                       "cpl":  0,
-                                                      "cpConv":  36.56,
-                                                      "ctr":  1.69,
-                                                      "conversations":  38,
+                                                      "cpConv":  39.89,
+                                                      "ctr":  1.6,
+                                                      "conversations":  67,
                                                       "pct":  0,
                                                       "rankNum":  2,
                                                       "tier":  "conv"
@@ -1353,11 +1398,11 @@
                                                       "id":  "anuncioagosto",
                                                       "adName":  "Anuncio Agosto",
                                                       "leads":  0,
-                                                      "spend":  368,
+                                                      "spend":  1440,
                                                       "cpl":  0,
-                                                      "cpConv":  45.97,
-                                                      "ctr":  1.59,
-                                                      "conversations":  8,
+                                                      "cpConv":  34.29,
+                                                      "ctr":  1.71,
+                                                      "conversations":  42,
                                                       "pct":  0,
                                                       "rankNum":  3,
                                                       "tier":  "conv"
