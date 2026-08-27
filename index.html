@@ -282,11 +282,12 @@
         <div class="kpi spend"><div class="lbl">Inversión publicitaria</div><div class="val" id="shSpend">—</div><div class="note">MXN en el mes</div></div>
       </div>
       <div class="seclbl">Operación (ventas y gestión)</div>
-      <div class="kpis">
-        <div class="kpi"><div class="lbl">Contactos gestionados</div><div class="val" id="shGestion">—</div></div>
-        <div class="kpi cpl"><div class="lbl">Ventas cerradas</div><div class="val" id="shVenta">—</div><div class="note">tasa de cierre <b id="shCierre">—</b></div></div>
+      <div class="kpis" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+        <div class="kpi lead"><div class="lbl">Contactos gestionados</div><div class="val" id="shGestion">—</div></div>
         <div class="kpi spend"><div class="lbl">Gestionables</div><div class="val" id="shGest">—</div></div>
         <div class="kpi cpm"><div class="lbl">Cotizaciones</div><div class="val" id="shCot">—</div></div>
+        <div class="kpi cpl"><div class="lbl">Ventas cerradas</div><div class="val" id="shVenta">—</div><div class="note">tasa de cierre <b id="shCierre">—</b></div></div>
+        <div class="kpi lead"><div class="lbl">Pólizas pagadas</div><div class="val" id="shPagadas">—</div><div class="note">pago confirmado</div></div>
       </div>
       <div class="seclbl">Conversaciones iniciadas vs Cotizaciones · día a día</div>
       <div class="card"><div class="chartbox sm"><canvas id="cShare"></canvas></div></div>
@@ -519,6 +520,7 @@ function openShare(){
   set('shVenta', s?s.venta:'—');
   set('shGest', s?s.gestionables:'—');
   set('shCot', s?s.cotizaciones:'—');
+  set('shPagadas', s&&s.polizasPagadas!=null?s.polizasPagadas:'—');
   set('shCierre', (s&&s.total)?(s.venta/s.total*100).toFixed(1)+'%':'—');
   $('shareModal').classList.add('open');
   setTimeout(()=>renderShareChart(m.data,s),70);
