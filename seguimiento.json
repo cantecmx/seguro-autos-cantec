@@ -1,5 +1,5 @@
 {
-    "updatedAt":  "2026-08-26",
+    "updatedAt":  "2026-08-27",
     "months":  {
                    "2026-07":  {
                                    "total":  26,
@@ -79,7 +79,7 @@
                    "2026-08":  {
                                    "total":  69,
                                    "venta":  16,
-                                   "polizasPagadas":  3,
+                                   "polizasPagadas":  4,
                                    "gestionables":  34,
                                    "noGestionables":  14,
                                    "cotizaciones":  51,
@@ -159,7 +159,7 @@
                                                      "contactos":  1,
                                                      "cotizaciones":  1,
                                                      "ventas":  1,
-                                                     "pagadas":  0
+                                                     "pagadas":  1
                                                  },
                                                  {
                                                      "date":  "2026-08-05",

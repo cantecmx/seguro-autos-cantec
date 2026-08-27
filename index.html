@@ -553,8 +553,9 @@ async function actualizarDatos(){
     const m = DATA.months.find(x=>x.key===resp.key);
     if(m){ m.data = resp.data; m.locked = false; }
     DATA.updatedAt = resp.updatedAt; set('updStamp', fDate(DATA.updatedAt));
+    try{ const rs=await fetch('seguimiento.json?t='+Date.now(),{cache:'no-store'}); if(rs.ok) SEG=await rs.json(); }catch(_){}
     renderMonths(); selectMonth(resp.key);
-    showToast('Datos actualizados EN VIVO desde Windsor · '+(resp.label||''));
+    showToast('Datos actualizados · Windsor en vivo'+(SEG&&SEG.updatedAt?(' + ventas al '+fDate(SEG.updatedAt)):''));
   }catch(e){
     const ok = await load();  // respaldo: recarga el data.json publicado
     showToast(ok ? ('Windsor en vivo no disponible; se recargó el último guardado ('+fDate(DATA.updatedAt)+')')
