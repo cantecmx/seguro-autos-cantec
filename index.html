@@ -330,6 +330,15 @@ const TIER={
 const RES_LABELS=[["leads","Leads"],["pct","% del total"],["cpl","CPL"],["ctr","CTR"],["spend","Inversión"],["conversations","Conversaciones"]];
 let charts={}, DATA=null, curMonth=null, SEG=null, segCharts={};
 const TIP_COLORS={'VENTA':'#2e9e5b','EN PROCESO':'#1e4aa0','Falta de datos':'#e0a32e','No contesta':'#9C9C9C','ADQUIRIO OTRO SEGURO':'#d4564b'};
+function tipColor(label){
+  const u=(label||'').toUpperCase();
+  if(u.includes('VENTA')) return '#2e9e5b';               // cerrado
+  if(u.includes('EN PROCESO')) return '#1e4aa0';          // gestionable activo
+  if(u.includes('FALTA')) return '#e0a32e';               // recuperable
+  if(u.includes('NO LE INTERESA')||u.includes('OTRO SEGURO')) return '#d4564b'; // perdido
+  if(u.includes('NO CONTEST')||u.includes('NO EXISTE')||u.includes('BUZON')) return '#9C9C9C'; // frío/mala data
+  return '#F47A1F';
+}
 const MOT_COLORS={'Faltan datos / no contesta':'#e0a32e','Cotizó pero no responde':'#1e4aa0','Contrató otro / GNP directo':'#d4564b','Vehículo no asegurable':'#9C9C9C','En proceso / otro':'#5a7fc0'};
 const $=id=>document.getElementById(id);
 const set=(id,v)=>{const e=$(id);if(e)e.textContent=v;};
@@ -463,7 +472,7 @@ function renderBars(id, arr, total, colors){
   arr.forEach(x=>{
     const pct = total ? Math.round(x.count/total*100) : 0;
     const w = Math.round(x.count/max*100);
-    const col = (colors && colors[x.label]) || '#F47A1F';
+    const col = (typeof colors==='function' ? colors(x.label) : (colors && colors[x.label])) || '#F47A1F';
     el.insertAdjacentHTML('beforeend',
       `<div class="barrow"><span class="bl">${x.label}</span><span class="bt"><span class="bf" style="width:${w}%;background:${col}"></span></span><span class="bn">${x.count} · ${pct}%</span></div>`);
   });
@@ -481,7 +490,7 @@ function renderSeguimiento(key){
   set('sgCotPct', s.total ? Math.round(s.cotizaciones/s.total*100)+'%' : '—');
   set('sgPagadas', s.polizasPagadas!=null ? s.polizasPagadas : '—');
   set('sgPagVenta', s.venta);
-  renderBars('sgTip', s.tipificacion, s.total, TIP_COLORS);
+  renderBars('sgTip', s.tipificacion, s.total, tipColor);
   renderBars('sgMot', s.motivos, s.total, MOT_COLORS);
   renderAvance(s);
 }
