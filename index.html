@@ -232,8 +232,8 @@
           <summary>Seguimiento operativo · ventas y gestión</summary>
         <div id="segWrap">
           <div class="kpis" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
-            <div class="kpi lead"><div class="lbl">Contactos gestionados</div><div class="val" id="sgTotal">—</div><div class="note">registrados por operaciones</div></div>
-            <div class="kpi spend"><div class="lbl">Gestionables</div><div class="val" id="sgGest">—</div><div class="note">en proceso + faltan datos</div></div>
+            <div class="kpi lead"><div class="lbl">Contactos gestionados</div><div class="val" id="sgTotal">—</div><div class="note"><b id="sgTotalPct">—</b> de las conversaciones iniciadas</div></div>
+            <div class="kpi spend"><div class="lbl">Gestionables</div><div class="val" id="sgGest">—</div><div class="note"><b id="sgGestPct">—</b> de los contactos gestionados</div></div>
             <div class="kpi cpm"><div class="lbl">Cotizaciones</div><div class="val" id="sgCot">—</div><div class="note"><b id="sgCotPct">—</b> de los contactos</div></div>
             <div class="kpi cpl"><div class="lbl">Ventas cerradas</div><div class="val" id="sgVenta">—</div><div class="note">tasa de cierre <b id="sgCierre">—</b></div></div>
             <div class="kpi lead"><div class="lbl">Pólizas pagadas</div><div class="val" id="sgPagadas">—</div><div class="note">de <b id="sgPagVenta">—</b> ventas</div></div>
@@ -483,6 +483,10 @@ function renderSeguimiento(key){
   if(!s){ if(wrap) wrap.style.display='none'; if(empty) empty.style.display='block'; renderAvance(null); return; }
   if(wrap) wrap.style.display=''; if(empty) empty.style.display='none';
   set('sgTotal', s.total);
+  const _md = DATA && DATA.months && DATA.months.find(x=>x.key===key);
+  const _conv = (_md && _md.data && _md.data.kpis) ? _md.data.kpis.conversations : 0;
+  set('sgTotalPct', _conv ? Math.round(s.total/_conv*100)+'%' : '—');
+  set('sgGestPct', s.total ? Math.round(s.gestionables/s.total*100)+'%' : '—');
   set('sgVenta', s.venta);
   set('sgCierre', s.total ? (s.venta/s.total*100).toFixed(1)+'%' : '—');
   set('sgGest', s.gestionables);
