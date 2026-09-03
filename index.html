@@ -283,8 +283,8 @@
       </div>
       <div class="seclbl">Operación (ventas y gestión)</div>
       <div class="kpis" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
-        <div class="kpi lead"><div class="lbl">Contactos gestionados</div><div class="val" id="shGestion">—</div></div>
-        <div class="kpi spend"><div class="lbl">Gestionables</div><div class="val" id="shGest">—</div></div>
+        <div class="kpi lead"><div class="lbl">Contactos gestionados</div><div class="val" id="shGestion">—</div><div class="note"><b id="shTotalPct">—</b> de las conversaciones iniciadas</div></div>
+        <div class="kpi spend"><div class="lbl">Gestionables</div><div class="val" id="shGest">—</div><div class="note"><b id="shGestPct">—</b> de los contactos gestionados</div></div>
         <div class="kpi cpm"><div class="lbl">Cotizaciones</div><div class="val" id="shCot">—</div></div>
         <div class="kpi cpl"><div class="lbl">Ventas cerradas</div><div class="val" id="shVenta">—</div><div class="note">tasa de cierre <b id="shCierre">—</b></div></div>
         <div class="kpi lead"><div class="lbl">Pólizas pagadas</div><div class="val" id="shPagadas">—</div><div class="note">pago confirmado</div></div>
@@ -530,6 +530,8 @@ function openShare(){
   set('shCostConv', k.costPerConv!=null?'$'+Number(k.costPerConv).toFixed(2):'—');
   set('shSpend', fmtMXN(k.spend));
   set('shGestion', s?s.total:'—');
+  set('shTotalPct', (s && k.conversations) ? Math.round(s.total/k.conversations*100)+'%' : '—');
+  set('shGestPct', (s && s.total) ? Math.round(s.gestionables/s.total*100)+'%' : '—');
   set('shVenta', s?s.venta:'—');
   set('shGest', s?s.gestionables:'—');
   set('shCot', s?s.cotizaciones:'—');
