@@ -1,5 +1,5 @@
 {
-    "updatedAt":  "2026-09-14",
+    "updatedAt":  "2026-09-15",
     "months":  {
                    "2026-07":  {
                                    "total":  26,
@@ -272,16 +272,16 @@
                                              ]
                                },
                    "2026-09":  {
-                                   "total":  48,
+                                   "total":  51,
                                    "venta":  13,
                                    "polizasPagadas":  7,
-                                   "gestionables":  32,
+                                   "gestionables":  35,
                                    "noGestionables":  3,
-                                   "cotizaciones":  41,
+                                   "cotizaciones":  44,
                                    "tipificacion":  [
                                                         {
                                                             "label":  "EN PROCESO",
-                                                            "count":  32
+                                                            "count":  35
                                                         },
                                                         {
                                                             "label":  "VENTA",
@@ -295,7 +295,7 @@
                                    "motivos":  [
                                                    {
                                                        "label":  "En proceso (abierto)",
-                                                       "count":  32
+                                                       "count":  35
                                                    },
                                                    {
                                                        "label":  "Vehículo no asegurable",
@@ -385,6 +385,13 @@
                                                      "contactos":  4,
                                                      "cotizaciones":  3,
                                                      "ventas":  1,
+                                                     "pagadas":  0
+                                                 },
+                                                 {
+                                                     "date":  "2026-09-15",
+                                                     "contactos":  3,
+                                                     "cotizaciones":  3,
+                                                     "ventas":  0,
                                                      "pagadas":  0
                                                  }
                                              ]
