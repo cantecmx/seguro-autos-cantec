@@ -571,9 +571,15 @@ async function actualizarDatos(){
     const m = DATA.months.find(x=>x.key===resp.key);
     if(m){ m.data = resp.data; m.locked = false; }
     DATA.updatedAt = resp.updatedAt; set('updStamp', fDate(DATA.updatedAt));
-    try{ const rs=await fetch('seguimiento.json?t='+Date.now(),{cache:'no-store'}); if(rs.ok) SEG=await rs.json(); }catch(_){}
+    let segLive=false;
+    try{
+      const rs=await fetch('/.netlify/functions/seguimiento?t='+Date.now(),{cache:'no-store'});
+      const sj = rs.ok ? await rs.json() : null;
+      if(sj && sj.months && !sj.error){ SEG=sj; segLive=true; }
+    }catch(_){}
+    if(!segLive){ try{ const rf=await fetch('seguimiento.json?t='+Date.now(),{cache:'no-store'}); if(rf.ok) SEG=await rf.json(); }catch(__){} }
     renderMonths(); selectMonth(resp.key);
-    showToast('Datos actualizados · Windsor en vivo'+(SEG&&SEG.updatedAt?(' + ventas al '+fDate(SEG.updatedAt)):''));
+    showToast('Datos actualizados · Windsor en vivo'+(SEG&&SEG.updatedAt?(' + ventas '+(segLive?'en vivo':'guardadas')+' al '+fDate(SEG.updatedAt)):''));
   }catch(e){
     const ok = await load();  // respaldo: recarga el data.json publicado
     showToast(ok ? ('Windsor en vivo no disponible; se recargó el último guardado ('+fDate(DATA.updatedAt)+')')
