@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18",
+  "updatedAt": "2026-09-19",
   "account": "993894886753623",
   "defaultMonth": "2026-09",
   "months": [
@@ -1522,27 +1522,27 @@
       "locked": false,
       "data": {
         "periodFrom": "2026-09-01",
-        "periodTo": "2026-09-18",
+        "periodTo": "2026-09-19",
         "kpis": {
           "leads": 0,
           "cpl": 0,
-          "costPerConv": 36.03,
+          "costPerConv": 35.49,
           "leadSpend": 0.0,
-          "convSpend": 9655.0,
-          "convConversations": 268,
-          "spend": 9655.0,
-          "reach": 73089,
-          "frequency": 1.49,
-          "impressions": 108728,
+          "convSpend": 10328.0,
+          "convConversations": 291,
+          "spend": 10328.0,
+          "reach": 77527,
+          "frequency": 1.5,
+          "impressions": 115986,
           "cpm": 89.0,
-          "linkClicks": 850,
+          "linkClicks": 911,
           "ctr": 1.83,
-          "cpc": 11.4,
+          "cpc": 11.3,
           "convRate": 0.0,
-          "conversations": 268,
+          "conversations": 291,
           "leadsPerDay": 0.0,
-          "spendPerDay": 536.0,
-          "days": 18
+          "spendPerDay": 544.0,
+          "days": 19
         },
         "daily": [
           {
@@ -1691,21 +1691,30 @@
           },
           {
             "date": "2026-09-17",
-            "spend": 654.73,
+            "spend": 656.43,
             "leads": 0,
             "conversations": 19,
             "cpm": 97.0,
             "cpl": null,
-            "cpConv": 34.46
+            "cpConv": 34.55
           },
           {
             "date": "2026-09-18",
-            "spend": 88.32,
+            "spend": 648.63,
             "leads": 0,
-            "conversations": 4,
-            "cpm": 77.0,
+            "conversations": 20,
+            "cpm": 89.0,
             "cpl": null,
-            "cpConv": 22.08
+            "cpConv": 32.43
+          },
+          {
+            "date": "2026-09-19",
+            "spend": 110.88,
+            "leads": 0,
+            "conversations": 7,
+            "cpm": 105.0,
+            "cpl": null,
+            "cpConv": 15.84
           }
         ],
         "demo": {
@@ -1718,105 +1727,105 @@
             "65+"
           ],
           "male": [
-            11,
-            31,
-            47,
+            12,
             32,
-            34,
-            18
+            50,
+            36,
+            35,
+            23
           ],
           "female": [
             6,
-            19,
-            25,
             22,
-            17,
+            27,
+            23,
+            19,
             4
           ]
         },
         "segments": [
           {
             "label": "Mujeres (todas)",
-            "spend": 3056.0,
-            "conv": 93,
-            "cpConv": 32.86,
+            "spend": 3257.0,
+            "conv": 101,
+            "cpConv": 32.25,
             "tier": ""
           },
           {
             "label": "Hombres 35-44",
-            "spend": 1705.0,
-            "conv": 47,
-            "cpConv": 36.27,
+            "spend": 1817.0,
+            "conv": 50,
+            "cpConv": 36.35,
+            "tier": ""
+          },
+          {
+            "label": "Hombres 45-54",
+            "spend": 1560.0,
+            "conv": 36,
+            "cpConv": 43.32,
             "tier": ""
           },
           {
             "label": "Hombres 55-64",
-            "spend": 958.0,
-            "conv": 34,
-            "cpConv": 28.18,
-            "tier": "best"
-          },
-          {
-            "label": "Hombres 45-54",
-            "spend": 1445.0,
-            "conv": 32,
-            "cpConv": 45.16,
+            "spend": 1052.0,
+            "conv": 35,
+            "cpConv": 30.07,
             "tier": ""
           },
           {
             "label": "Hombres 25-34",
-            "spend": 1458.0,
-            "conv": 31,
-            "cpConv": 47.05,
+            "spend": 1532.0,
+            "conv": 32,
+            "cpConv": 47.88,
             "tier": ""
           },
           {
             "label": "Hombres 65+",
-            "spend": 559.0,
-            "conv": 18,
-            "cpConv": 31.07,
-            "tier": ""
+            "spend": 609.0,
+            "conv": 23,
+            "cpConv": 26.47,
+            "tier": "best"
           },
           {
             "label": "Hombres 18-24",
-            "spend": 412.0,
-            "conv": 11,
-            "cpConv": 37.49,
+            "spend": 432.0,
+            "conv": 12,
+            "cpConv": 35.98,
             "tier": ""
           }
         ],
         "regions": [
           {
             "region": "Nuevo León",
-            "spend": 4186.0
+            "spend": 4495.0
           },
           {
             "region": "Distrito Federal",
-            "spend": 1863.0
+            "spend": 1986.0
           },
           {
             "region": "Jalisco",
-            "spend": 1523.0
+            "spend": 1611.0
           },
           {
             "region": "State of Mexico",
-            "spend": 835.0
+            "spend": 880.0
           },
           {
             "region": "Veracruz",
-            "spend": 423.0
+            "spend": 462.0
           },
           {
-            "region": "Sonora",
-            "spend": 194.0
+            "region": "Michoacán de Ocampo",
+            "spend": 210.0
           },
           {
             "region": "Hidalgo",
-            "spend": 192.0
+            "spend": 207.0
           },
           {
             "region": "__RESTO__",
-            "spend": 441.0
+            "spend": 476.0
           }
         ],
         "artes": [
@@ -1824,11 +1833,11 @@
             "id": "interaccion",
             "adName": "Nuevo anuncio de Interacción",
             "leads": 0,
-            "spend": 6251.0,
+            "spend": 6731.0,
             "cpl": 0,
-            "cpConv": 37.88,
-            "ctr": 1.73,
-            "conversations": 165,
+            "cpConv": 37.4,
+            "ctr": 1.74,
+            "conversations": 180,
             "pct": 0,
             "rankNum": 1,
             "tier": "conv"
@@ -1837,11 +1846,11 @@
             "id": "agosto",
             "adName": "Anuncio Agosto",
             "leads": 0,
-            "spend": 3407.0,
+            "spend": 3597.0,
             "cpl": 0,
-            "cpConv": 33.08,
+            "cpConv": 32.4,
             "ctr": 2.05,
-            "conversations": 103,
+            "conversations": 111,
             "pct": 0,
             "rankNum": 2,
             "tier": "conv"
