@@ -9,10 +9,10 @@
     "dayLabels":  [
                       "Lun",
                       "Mar",
-                      "MiÃ©",
+                      "Mié",
                       "Jue",
                       "Vie",
-                      "SÃ¡b",
+                      "Sáb",
                       "Dom"
                   ],
     "matrix":  [
@@ -335,7 +335,7 @@
                       "dias":  5
                   },
                   {
-                      "d":  "MiÃ©",
+                      "d":  "Mié",
                       "total":  89,
                       "avg":  17.8,
                       "dias":  5
@@ -353,7 +353,7 @@
                       "dias":  4
                   },
                   {
-                      "d":  "SÃ¡b",
+                      "d":  "Sáb",
                       "total":  61,
                       "avg":  15.25,
                       "dias":  4
