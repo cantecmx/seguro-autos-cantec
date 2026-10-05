@@ -141,6 +141,7 @@
   table.heat tfoot th{color:var(--muted);border-top:2px solid var(--line);padding-top:3px}
   table.heat td.rtot{font-weight:800;color:var(--blue);background:none!important;border-left:2px solid var(--line);padding-left:7px;font-size:10px}
   table.heat th.rt{color:var(--muted);border-left:2px solid var(--line);padding-left:7px}
+  table.heat td.hot, table.heat th.hot{color:#F47A1F!important;background:rgba(242,122,31,.18)!important;font-weight:800!important;border-radius:4px}
   .heatleg{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);margin-top:10px}
   .heatleg i{width:16px;height:12px;border-radius:3px;display:inline-block}
   .footbar{height:5px;border-radius:999px;background:linear-gradient(90deg,var(--orange),var(--gold) 40%,var(--blue2) 100%);margin:26px 0 10px}
@@ -627,16 +628,20 @@ function renderHeat(){
   heatCharts.hour=new Chart($('cHeatHour'),{type:'bar',data:{labels:H.byHour.map(x=>x.h+'h'),datasets:[{label:'Prom. conv/hora',data:H.byHour.map(x=>x.avg),backgroundColor:'#F2A81D',borderRadius:3}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{autoSkip:false,maxRotation:0,font:{size:9}}},y:{beginAtZero:true}}}});
   // --- mapa de calor ---
-  const max=H.maxCell||1; let html='<table class="heat"><thead><tr><th></th>';
-  for(let h=0;h<24;h++){ html+='<th>'+h+'</th>'; }
+  const max=H.maxCell||1;
+  const hotHours=new Set([...H.byHour].sort((a,b)=>b.total-a.total).slice(0,5).map(x=>x.h));
+  const hotDays=new Set([...H.byDay].sort((a,b)=>b.total-a.total).slice(0,3).map(x=>x.d));
+  let html='<table class="heat"><thead><tr><th></th>';
+  for(let h=0;h<24;h++){ html+='<th class="'+(hotHours.has(h)?'hot':'')+'">'+h+'</th>'; }
   html+='<th class="rt">Total</th></tr></thead><tbody>';
   for(let d=0;d<7;d++){
-    html+='<tr><th class="hd">'+H.dayLabels[d]+'</th>';
+    const dh=hotDays.has(H.dayLabels[d]);
+    html+='<tr><th class="hd'+(dh?' hot':'')+'">'+H.dayLabels[d]+'</th>';
     for(let h=0;h<24;h++){ const v=H.matrix[d][h]; html+='<td class="'+(v?'':'z')+'" style="background:'+heatColor(v,max)+'" title="'+H.dayLabels[d]+' '+h+'h: '+v+' conv">'+(v||'·')+'</td>'; }
-    html+='<td class="rtot">'+(H.byDay[d].total||0)+'</td></tr>';
+    html+='<td class="rtot'+(dh?' hot':'')+'">'+(H.byDay[d].total||0)+'</td></tr>';
   }
   html+='</tbody><tfoot><tr><th class="hd">Total</th>';
-  for(let h=0;h<24;h++){ html+='<td class="tot">'+(H.byHour[h].total||0)+'</td>'; }
+  for(let h=0;h<24;h++){ html+='<td class="tot'+(hotHours.has(h)?' hot':'')+'">'+(H.byHour[h].total||0)+'</td>'; }
   html+='<td class="tot rtot">'+(H.total||0)+'</td></tr></tfoot></table>';
   $('heatWrap').innerHTML=html;
   // --- insight dinámico ---
