@@ -132,6 +132,13 @@
   .sec-details[open]>summary::before{transform:rotate(90deg)}
   .sec-details>summary:hover{color:var(--blue)}
   .sec-details .grid2:first-of-type{margin-top:14px}
+  table.heat{width:auto;border-collapse:separate;border-spacing:2px;font-variant-numeric:tabular-nums}
+  table.heat th{border:none;padding:0;font-size:10px;color:var(--muted);font-weight:700;text-align:center}
+  table.heat th.hd{text-align:right;padding-right:6px;width:34px}
+  table.heat td{border:none;padding:0;width:26px;height:22px;text-align:center;font-size:9.5px;color:#0b2545;border-radius:4px;font-weight:600}
+  table.heat td.z{color:var(--line)}
+  .heatleg{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);margin-top:10px}
+  .heatleg i{width:16px;height:12px;border-radius:3px;display:inline-block}
   .footbar{height:5px;border-radius:999px;background:linear-gradient(90deg,var(--orange),var(--gold) 40%,var(--blue2) 100%);margin:26px 0 10px}
   #content.dim{opacity:.4;pointer-events:none}
   @media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.insights{grid-template-columns:1fr}.arte{grid-template-columns:1fr}.arte-cols{grid-template-columns:1fr}.hr{align-items:flex-start;text-align:left}}
@@ -225,6 +232,21 @@
           <div class="grid2">
             <div class="card"><h3>Inversión vs. Conversaciones por día</h3><div class="csub">Barras = gasto diario (MXN) · Línea = conversaciones iniciadas</div><div class="chartbox"><canvas id="cTrend"></canvas></div></div>
             <div class="card"><h3>Costo por Conversación diario</h3><div class="csub">MXN por conversación, día a día — tendencia a la baja = mejor</div><div class="chartbox"><canvas id="cCpl"></canvas></div></div>
+          </div>
+        </details>
+
+        <details class="sec-details" id="detHora">
+          <summary>Tendencia por día y hora · septiembre (para planear octubre)</summary>
+          <div class="grid2">
+            <div class="card"><h3>Promedio de conversaciones por día</h3><div class="csub" id="heatDaySub">Día de la semana · septiembre</div><div class="chartbox sm"><canvas id="cHeatDay"></canvas></div></div>
+            <div class="card"><h3>Promedio de conversaciones por hora</h3><div class="csub">Hora del día · zona horaria CDMX</div><div class="chartbox sm"><canvas id="cHeatHour"></canvas></div></div>
+          </div>
+          <div class="card" style="margin-top:16px">
+            <h3>Mapa de calor · día × hora</h3>
+            <div class="csub">Conversaciones iniciadas en septiembre — más intenso = más actividad. Guía para concentrar presupuesto y horarios en octubre.</div>
+            <div id="heatWrap" style="overflow-x:auto;padding-bottom:4px"></div>
+            <div class="heatleg">Menos <i style="background:rgba(30,74,160,.10)"></i><i style="background:rgba(30,74,160,.32)"></i><i style="background:rgba(30,74,160,.55)"></i><i style="background:rgba(30,74,160,.78)"></i><i style="background:rgba(30,74,160,1)"></i> Más</div>
+            <div id="heatInsight" class="csub" style="margin-top:12px;line-height:1.6"></div>
           </div>
         </details>
 
@@ -328,7 +350,7 @@ const TIER={
   low:{suf:"Sin probar",status:"⚪ Sin conclusión",cls:"low",sCls:"s-low"}
 };
 const RES_LABELS=[["leads","Leads"],["pct","% del total"],["cpl","CPL"],["ctr","CTR"],["spend","Inversión"],["conversations","Conversaciones"]];
-let charts={}, DATA=null, curMonth=null, SEG=null, segCharts={};
+let charts={}, DATA=null, curMonth=null, SEG=null, segCharts={}, HEAT=null, heatCharts={};
 const TIP_COLORS={'VENTA':'#2e9e5b','EN PROCESO':'#1e4aa0','Falta de datos':'#e0a32e','No contesta':'#9C9C9C','ADQUIRIO OTRO SEGURO':'#d4564b'};
 function tipColor(label){
   const u=(label||'').toUpperCase();
@@ -348,6 +370,8 @@ async function load(){
   catch(e){ $('errBanner').style.display='block'; return false; }
   $('errBanner').style.display='none';
   try{ const rs=await fetch('seguimiento.json?t='+Date.now(),{cache:'no-store'}); SEG = rs.ok ? await rs.json() : null; }catch(e){ SEG=null; }
+  try{ const rh=await fetch('heatmap.json?t='+Date.now(),{cache:'no-store'}); HEAT = rh.ok ? await rh.json() : null; }catch(e){ HEAT=null; }
+  renderHeat();
   set('cuenta', DATA.account); set('updStamp', fDate(DATA.updatedAt));
   renderMonths();
   selectMonth(curMonth && DATA.months.some(m=>m.key===curMonth&&!m.locked) ? curMonth : DATA.defaultMonth);
@@ -586,11 +610,41 @@ async function actualizarDatos(){
                  : 'No se pudo actualizar', true);
   }finally{ b.classList.remove('loading'); }
 }
-['detConvierte','detArte','detAvance','detEvol','detSeg'].forEach(id=>{
+function heatColor(v,max){ const a = max>0 ? (0.08 + 0.92*(v/max)) : 0.08; return 'rgba(30,74,160,'+a.toFixed(3)+')'; }
+function renderHeat(){
+  if(!HEAT){ return; }
+  Object.values(heatCharts).forEach(c=>c&&c.destroy()); heatCharts={};
+  const H=HEAT;
+  set('heatDaySub','Día de la semana · septiembre ('+H.total+' conv, '+H.avgPerDay+'/día)');
+  // --- barras por día ---
+  heatCharts.day=new Chart($('cHeatDay'),{type:'bar',data:{labels:H.byDay.map(x=>x.d),datasets:[{label:'Prom. conv/día',data:H.byDay.map(x=>x.avg),backgroundColor:'#1e4aa0',borderRadius:5}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{precision:0}}}}});
+  // --- barras por hora ---
+  heatCharts.hour=new Chart($('cHeatHour'),{type:'bar',data:{labels:H.byHour.map(x=>x.h+'h'),datasets:[{label:'Prom. conv/hora',data:H.byHour.map(x=>x.avg),backgroundColor:'#F2A81D',borderRadius:3}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{autoSkip:false,maxRotation:0,font:{size:9}}},y:{beginAtZero:true}}}});
+  // --- mapa de calor ---
+  const max=H.maxCell||1; let html='<table class="heat"><thead><tr><th></th>';
+  for(let h=0;h<24;h++){ html+='<th>'+h+'</th>'; }
+  html+='</tr></thead><tbody>';
+  for(let d=0;d<7;d++){
+    html+='<tr><th class="hd">'+H.dayLabels[d]+'</th>';
+    for(let h=0;h<24;h++){ const v=H.matrix[d][h]; html+='<td class="'+(v?'':'z')+'" style="background:'+heatColor(v,max)+'" title="'+H.dayLabels[d]+' '+h+'h: '+v+' conv">'+(v||'·')+'</td>'; }
+    html+='</tr>';
+  }
+  html+='</tbody></table>';
+  $('heatWrap').innerHTML=html;
+  // --- insight dinámico ---
+  const topDays=[...H.byDay].sort((a,b)=>b.avg-a.avg).slice(0,3).map(x=>x.d);
+  const topHours=[...H.byHour].sort((a,b)=>b.total-a.total).slice(0,4).map(x=>x.h).sort((a,b)=>a-b);
+  const lowDay=[...H.byDay].sort((a,b)=>a.avg-b.avg)[0].d;
+  $('heatInsight').innerHTML='<b>Lectura para octubre:</b> los mejores días son <b>'+topDays.join(', ')+'</b> y las horas con más conversaciones son <b>'+topHours.map(h=>h+'h').join(', ')+'</b> (tardes y mediodía). Recomendación: concentra presupuesto y programación de anuncios en esas franjas, carga más los días fuertes y recorta el <b>'+lowDay+'</b>, que es el más flojo.';
+}
+['detConvierte','detArte','detAvance','detEvol','detSeg','detHora'].forEach(id=>{
   const el=$(id);
   if(el) el.addEventListener('toggle',()=>{ if(el.open){ setTimeout(()=>{
     Object.values(charts).forEach(c=>{try{c&&c.resize()}catch(e){}});
     Object.values(segCharts).forEach(c=>{try{c&&c.resize()}catch(e){}});
+    Object.values(heatCharts).forEach(c=>{try{c&&c.resize()}catch(e){}});
   },60); } });
 });
 load();
