@@ -137,6 +137,8 @@
   table.heat th.hd{text-align:right;padding-right:6px;width:34px}
   table.heat td{border:none;padding:0;width:26px;height:22px;text-align:center;font-size:9.5px;color:#0b2545;border-radius:4px;font-weight:600}
   table.heat td.z{color:var(--line)}
+  table.heat tfoot td{font-weight:800;color:var(--blue);font-size:10px;background:none!important;border-top:2px solid var(--line);padding-top:3px}
+  table.heat tfoot th{color:var(--muted);border-top:2px solid var(--line);padding-top:3px}
   .heatleg{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);margin-top:10px}
   .heatleg i{width:16px;height:12px;border-radius:3px;display:inline-block}
   .footbar{height:5px;border-radius:999px;background:linear-gradient(90deg,var(--orange),var(--gold) 40%,var(--blue2) 100%);margin:26px 0 10px}
@@ -631,7 +633,9 @@ function renderHeat(){
     for(let h=0;h<24;h++){ const v=H.matrix[d][h]; html+='<td class="'+(v?'':'z')+'" style="background:'+heatColor(v,max)+'" title="'+H.dayLabels[d]+' '+h+'h: '+v+' conv">'+(v||'·')+'</td>'; }
     html+='</tr>';
   }
-  html+='</tbody></table>';
+  html+='</tbody><tfoot><tr><th class="hd">Total</th>';
+  for(let h=0;h<24;h++){ html+='<td class="tot">'+(H.byHour[h].total||0)+'</td>'; }
+  html+='</tr></tfoot></table>';
   $('heatWrap').innerHTML=html;
   // --- insight dinámico ---
   const topDays=[...H.byDay].sort((a,b)=>b.avg-a.avg).slice(0,3).map(x=>x.d);
