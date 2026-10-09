@@ -31,6 +31,9 @@ function doGet(e) {
 function norm(s) { return (s == null ? '' : String(s)).trim().toUpperCase(); }
 function isSi(s) { var t = norm(s); return t.length > 0 && t.charAt(0) === 'S'; }
 function pad(n)  { return (n < 10 ? '0' : '') + n; }
+// Gestionable = lead en gestión activa. Operaciones migró "EN PROCESO" a
+// "COTIZACION" / "PROCESO PENDIENTE" (oct-2026); se reconocen por palabra clave.
+function isGestEst(est) { return est.indexOf('PROCESO') >= 0 || est.indexOf('COTIZ') >= 0; }
 
 // Columnas (0-based): 0 fecha · 14 estatus · 15 cotización · 16 comentario
 //                     17 ¿póliza? · 19 etapa · 23 ¿pagó?
@@ -52,7 +55,7 @@ function motivo(r, est) {
   if (est === 'NO SALE EN SISTEMA' || /NO ESTA EN EL SISTEMA|NACIONALIZADO/.test(c)) return 'Vehículo no asegurable';
   if (/GNP|BBVA|OTRO SEGURO|YA CONTRATO|REALIZO LA CONTRATACION|CONTRATO SEGURO/.test(c)) return 'Contrató otro / GNP directo';
   if (/COTIZ/.test(c) && /NO CONTESTO|NO RESPON|NO HUBO|NO OBTUVIMOS|RSPUESTA|RESPUETSA/.test(c)) return 'Cotizó pero no responde';
-  if (est === 'EN PROCESO') return 'En proceso (abierto)';
+  if (isGestEst(est)) return 'En proceso (abierto)';
   return 'Otro';
 }
 
@@ -101,7 +104,7 @@ function buildSeguimiento() {
   mk.forEach(function (k) {
     var mr    = rows.filter(function (x) { return x.key === k; });
     var venta = mr.filter(function (x) { return x.est === 'VENTA'; }).length;
-    var ep    = mr.filter(function (x) { return x.est === 'EN PROCESO'; }).length;
+    var ep    = mr.filter(function (x) { return isGestEst(x.est); }).length;
     var nonV  = mr.filter(function (x) { return x.est !== 'VENTA'; });
 
     var dmap = {};
